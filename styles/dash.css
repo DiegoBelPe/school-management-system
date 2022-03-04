@@ -143,7 +143,7 @@ body {
 #sidemenu #menu-items .item.separator {
   height: 1px;
   border-bottom: solid 1px var(--hovercolor);
-  margin: 15px 0;
+  margin: 1px 0;
 }
 
 .menu-expanded {
