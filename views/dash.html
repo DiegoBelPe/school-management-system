@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/dash.css">
+  <title>Dashboard principal</title>
+</head>
+<body>
+  <div id="sidemenu" class="menu-collapsed">
+     <!-- menu -->
+    <div id="header">
+      <div id="sidemenu-title"><span>Logo</span></div>
+      <div id="menu-btn">
+        <div class="btn-hamburger"></div>
+        <div class="btn-hamburger"></div>
+        <div class="btn-hamburger"></div>
+    </div>
+    </div>
+    <!-- profile -->
+    <div id="profile">
+      <div id="profile-photho"><img src="../assets/user.png" alt=""></div>
+      <div id="profile-name"><span>Diego Beltran</span></div>
+    </div>
+    <!-- items -->
+    <div id="menu-items">
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/home.png" alt="">  </div>
+          <div class="title"> <span>Principal</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/home.png" alt="">  </div>
+          <div class="title"> <span>Principal</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/home.png" alt="">  </div>
+          <div class="title"> <span>Principal</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+    </div>
+  </div>
+  <div id="main-container">
+    hola
+  </div>
+<script>
+  const btn = document.querySelector('#menu-btn');
+  const menu = document.querySelector('#sidemenu');
+  btn.addEventListener('click', e=>{
+    menu.classList.toggle("menu-expanded");
+    menu.classList.toggle("menu-collapsed");
+    document.querySelector('body').classList.toggle('body-expanded')
+  })
+
+</script>
+</body>
+</html>
