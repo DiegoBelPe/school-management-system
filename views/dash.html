@@ -13,8 +13,8 @@
 <body>
   <div id="sidemenu" class="menu-collapsed">
      <!-- menu -->
-    <div id="header">
-      <div id="sidemenu-title"><span>Logo</span></div>
+    <div id="header" class="header">
+      <div id="sidemenu-title"><span>High School</span></div>
       <div id="menu-btn">
         <div class="btn-hamburger"></div>
         <div class="btn-hamburger"></div>
@@ -73,25 +73,27 @@
     </div>
   </div>
   <div id="main-container">
-    <div class="main__logo">
-      <img class="main__logo-img" src="../assets/Logo.svg" alt="logo">
-    </div>
-    <div></div>
-    <div class="main__user">
-      <img  class="main__user-img" src="../assets/user1.png" alt="">
-      <!-- <a href="">user</a> -->
-    </div>
-
-
   </div>
-  <section class="information">
-      <div class="information__user">
+
+  <div class="grid__container">
+    <header class="header__horizontal">
+      <div class="main__logo">
+        <img class="main__logo-img" src="../assets/Logo.svg" alt="logo">
       </div>
-  </section>
-  <section class="card">
+      <div></div>
+      <div class="main__user">
+        <img  class="main__user-img" src="../assets/user1.png" alt="">
+      </div>
+    </header>
+    <section class="information">
+      <div class="information__user">
+    </div></section>
+    <article class="cards">
       <div class="card__news"></div>
       <div class="card__news"></div>
-  </section>
+    </article>
+    <footer class="footer">FOOTER</footer>
+  </div>
 <script>
   const btn = document.querySelector('#menu-btn');
   const menu = document.querySelector('#sidemenu');
