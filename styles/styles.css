@@ -269,10 +269,12 @@ color: #FFFFFF;
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .footer{
-  display: none;
+ display: none;
 
 }
 .footer-container {
