@@ -181,7 +181,7 @@ color: #FFFFFF;
 .body-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
-
+  min-height: auto;
 }
 
 .container-navbar{
@@ -194,6 +194,7 @@ color: #FFFFFF;
   grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   justify-content: space-around;
   row-gap: 10px;
+  height: auto;
 }
 
 .slide {
@@ -226,7 +227,6 @@ color: #FFFFFF;
   margin: auto;
   justify-self: stretch;
   justify-content: center;
-  row-gap: 5%;
 }
 
 .articule-news {
@@ -269,6 +269,16 @@ color: #FFFFFF;
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
+}
+
+.footer{
+  display: none;
+
+}
+.footer-container {
+  height: 50px;
+  margin-top: 54px;
+
 }
 
  }
