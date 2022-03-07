@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/dash.css">
+  <title>Dashboard principal</title>
+</head>
+<body>
+  <div id="sidemenu" class="menu-collapsed">
+     <!-- menu -->
+    <div id="header" class="header">
+      <div id="sidemenu-title"><span>High School</span></div>
+      <div id="menu-btn">
+        <div class="btn-hamburger"></div>
+        <div class="btn-hamburger"></div>
+        <div class="btn-hamburger"></div>
+    </div>
+    </div>
+    <!-- profile -->
+    <div id="profile">
+      <div id="profile-photho"><img src="../assets/user1.png" alt=""></div>
+      <div id="profile-name"><span>Diego Beltran</span></div>
+    </div>
+    <!-- items -->
+    <div id="menu-items">
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/home.png" alt="">  </div>
+          <div class="title"> <span>Principal</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/mensaje-vector.png" alt="">  </div>
+          <div class="title"> <span>Mensajes</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/icono-calendario.png" alt="">  </div>
+          <div class="title"> <span>Calendario</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/tareas.png" alt="">  </div>
+          <div class="title"> <span>Tareas</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/horario.png" alt="">  </div>
+          <div class="title"> <span>Horario</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+      <div class="item">
+        <a href="">
+          <div class="icon"> <img src="../assets/notas.png" alt="">  </div>
+          <div class="title"> <span>Notas</span> </div>
+        </a>
+      </div>
+      <div class="item separator"></div>
+    </div>
+  </div>
+  <div id="main-container">
+  </div>
+
+  <div class="grid__container">
+    <header class="header__horizontal">
+      <div class="main__logo">
+        <img class="main__logo-img" src="../assets/Logo.svg" alt="logo">
+      </div>
+      <div></div>
+      <div class="main__user">
+        <img  class="main__user-img" src="../assets/user1.png" alt="">
+      </div>
+    </header>
+    <section class="information">
+      <div class="information__user">
+        <div class="information__title">
+          <img class= "information__logo"src="../assets/user-dash.svg" alt="">
+          <h2 class="information__logo-title">
+            Datos Personales
+          </h2>
+        </div>
+    </div>
+  </section>
+    <article class="cards">
+      <div class="card__news">
+        <div class="card__title">
+          <img class= "card__logo"src="../assets/mensaje-dash.svg" alt="">
+          <h2 class="card__logo-title">
+            Ultimos mensajes
+          </h2>
+        </div>
+      </div>
+      <div class="card__news">
+        <div class="card__title">
+          <img class= "card__logo"src="../assets/tareas-dash.svg" alt="">
+          <h2 class="card__logo-title">
+            Ultimas tareas
+          </h2>
+        </div>
+      </div>
+    </article>
+    <footer class="footer">FOOTER</footer>
+  </div>
+<script>
+  const btn = document.querySelector('#menu-btn');
+  const menu = document.querySelector('#sidemenu');
+  btn.addEventListener('click', e=>{
+    menu.classList.toggle("menu-expanded");
+    menu.classList.toggle("menu-collapsed");
+    document.querySelector('body').classList.toggle('body-expanded')
+  })
+
+</script>
+</body>
+</html>

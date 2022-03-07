@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-image: url(/assets/login_image.avif);
+  background-image: url(../assets/login_image.avif);
   background-size: cover;
   background-repeat: no-repeat;
 }
