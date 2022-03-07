@@ -274,6 +274,8 @@ body {
 
 }
 
+
+
 .information__user {
   width: 500px;
   height: 200px;
@@ -281,6 +283,31 @@ body {
   box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
   background-color: white;
 }
+
+.information__title{
+  display: flex;
+  width: auto;
+  height: 50px;
+  background-color: #007ED9;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
+
+}
+
+.information__logo{
+  width: 40px;
+  height: 40px;
+  color: white;
+  margin-left: 20px;
+}
+
+.information__logo-title{
+  margin-left: 20px;
+  color: white;
+}
+
+
 
 .cards{
   display: flex;
@@ -298,6 +325,29 @@ body {
   border-radius: 10px;
   box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
   background-color: white;
+}
+
+.card__title{
+  display: flex;
+  width: auto;
+  height: 50px;
+  background-color: darkgoldenrod;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
+
+}
+
+.card__logo{
+  width: 40px;
+  height: 40px;
+  color: white;
+  margin-left: 20px;
+}
+
+.card__logo-title{
+  margin-left: 20px;
+  color: white;
 }
 
 .footer{
