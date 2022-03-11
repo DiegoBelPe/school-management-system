@@ -5,22 +5,23 @@ import "./Home.css"
 
 const Home = () => {
   return (
-    <div class="container-global">
-    <div class="nav-bar">
-      <button type="button">Menu</button>
+    <>
+    <div className="container-global">
+    <div className="nav-bar">
+      <button className='nav-bar__button'   type="button">Menu</button>
       <span>Login</span>
       <span>Contactenos</span>
       <span>Galería</span>
       <span>Nuestro Colegio</span>
     </div>
-    <div class="content">
-      <div class="content__slide"></div>
-      <div class="content__card">card1</div>
-      <div class="content__card">card2</div>
+    <div className="content">
+      <div className="content__slide">slide</div>
+      <div className="content__card">card1</div>
+      <div className="content__card">card2</div>
     </div>
-    <footer class="footer">Footer</footer>
+    <footer className="footer">Footer</footer>
   </div>
-    
+  </>
   )
 }
 
