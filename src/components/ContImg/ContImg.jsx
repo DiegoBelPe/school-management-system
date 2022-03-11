@@ -1,8 +1,12 @@
 import React from 'react'
+import slide from "../../assets/slide.png"
+import './ContImg.css'
 
 const ContImg = () => {
   return (
-    <div>ContImg</div>
+    <div className='container'>
+        <img className='container__img' src={slide} alt="home" />
+    </div>
   )
 }
 

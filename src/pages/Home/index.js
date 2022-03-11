@@ -1,10 +1,9 @@
-/* import logo from './logo.svg'; */
-import ContImg from './ContImg';
+import Home from './Home';
 
 function Index() {
   return (
     <div className="App">
-      <div><ContImg/></div>
+      <div><Home/></div>
       
         
     </div>
