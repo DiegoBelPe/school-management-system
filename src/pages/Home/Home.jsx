@@ -1,5 +1,5 @@
 import React from 'react'
-import ContImg from '../../components/ContImg/ContImg'
+/* import ContImg from '../../components/ContImg/ContImg' */
 import "./Home.css"
 
 
