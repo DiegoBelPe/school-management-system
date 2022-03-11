@@ -1,14 +1,17 @@
-import logo from './logo.svg';
+/* import logo from './logo.svg'; */
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      {/* <div>navBar</div>
-      <div>ContImg</div>
-      <div>Cards</div>
-      <div>Footer</div> */}
-    </div>
+    <BrowserRouter>
+    <Routes>
+      {/* <Route path='/' element={<Home/>}/> */}
+      {/* <Route path='/about' element={<Salary/>}/> */}
+    </Routes>
+
+    
+    </BrowserRouter>
   );
 }
 
