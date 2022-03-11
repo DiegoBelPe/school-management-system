@@ -74,7 +74,7 @@ body {
     text-align: center;
     gap: 2rem;
     padding: 2rem;
-    grid-template-rows: 30rem auto;
+    grid-template-rows: 23rem 15rem;
     grid-template-areas:
     'slide slide'
   }
