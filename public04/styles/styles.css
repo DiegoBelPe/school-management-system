@@ -54,6 +54,10 @@ body {
    padding: 2rem;
  }
 
+ .nav-bar__button {
+   margin-right: 1rem;
+ }
+
  .footer {
    grid-area: 'footer';
    background-color: var(--black-color);
@@ -64,12 +68,12 @@ body {
   .content__slide {
     grid-area: slide;
   }
-
   .content {
     display: grid;
     text-align: center;
     gap: 2rem;
     padding: 2rem;
+    grid-template-rows: 25rem auto;
     grid-template-areas:
     'slide slide'
     'card card';
@@ -86,5 +90,6 @@ body {
     justify-content: space-around;
     padding: 1rem;
     color: var(--white-color);
+    margin-right: 3rem;
   }
 }
