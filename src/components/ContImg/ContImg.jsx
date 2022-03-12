@@ -1,12 +1,34 @@
 import React from 'react'
-import slide from "../../assets/slide.png"
-import './ContImg.css'
+import one from "../../assets/slide.png"
+import two from "../../assets/slide02.jpg"
+import three from "../../assets/slide03.jpg"
+import four from "../../assets/slide04.jpg"
+import styles from "./ContImg.module.css"
 
-const ContImg = () => {
+const ContImg = (children) => {
   return (
-    <div className='container'>
-        <img className='container__img' src={slide} alt="home" />
+
+    <>
+    <div className={styles.container}>
     </div>
+
+<div class={styles.slider}>
+<ul>
+    <li>
+        <img className={styles.slider__img} src={one} alt="home" />
+    </li>
+    <li>
+        <img className={styles.slider__img} src={two} alt="home2" />
+    </li>
+    <li>
+        <img className={styles.slider__img} src={three} alt="home3" />
+    </li>
+    <li>
+        <img className={styles.slider__img} src={four} alt="home4" />
+    </li>
+</ul>
+</div>
+</>
   )
 }
 
