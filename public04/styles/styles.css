@@ -107,11 +107,4 @@ height:12rem;
   padding: 0 1rem;
 
  }
-
-  .nav-bar > span {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    color: var(--white-color);
-  }
 }
