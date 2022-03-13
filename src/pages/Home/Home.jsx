@@ -4,6 +4,7 @@ import ContImg from '../../components/ContImg/ContImg'
 import styles from "./Home.module.css"
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer/Footer'
+import Cards from '../../components/Cards/Cards'
 
 
 const Home = () => {
@@ -13,10 +14,12 @@ const Home = () => {
     <div className={styles.nav__bar}>
       <NavBar/>
     </div>
-    <div className={styles.content}>
+    <div className={styles.container}>
       <div className={styles.content__slide}><ContImg/></div>
-      <div className={styles.content__card}>card1</div>
-      <div className={styles.content__card}>card2</div>
+    </div>
+    <div className={styles.content}>
+      <div className={styles.content__card}><Cards/></div>
+      <div className={styles.content__card}><Cards/></div>
     </div>
     <footer className={styles.footer}><Footer/></footer>
   </div>
