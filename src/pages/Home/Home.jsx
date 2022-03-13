@@ -3,6 +3,7 @@ import ContImg from '../../components/ContImg/ContImg'
 /* import ContImg from '../../components/ContImg/ContImg' */
 import styles from "./Home.module.css"
 import NavBar from '../../components/NavBar'
+import Footer from '../../components/Footer/Footer'
 
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
       <div className={styles.content__card}>card1</div>
       <div className={styles.content__card}>card2</div>
     </div>
-    <footer className={styles.footer}>Footer</footer>
+    <footer className={styles.footer}><Footer/></footer>
   </div>
   </>
   )
