@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import ContImg from './components/ContImg'
 import NavBar from './components/NavBar';
 import Footer from './components/Footer/Footer';
+import Cards from './components/Cards/Cards';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/about' element={<ContImg/>}/>
       <Route path='/navbar' element={<NavBar/>}/>
       <Route path='/footer' element={<Footer/>}/>
+      <Route path='/footer' element={<Cards/>}/>
     </Routes>
 
     
