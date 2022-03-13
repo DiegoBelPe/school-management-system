@@ -2,6 +2,7 @@ import React from 'react'
 import ContImg from '../../components/ContImg/ContImg'
 /* import ContImg from '../../components/ContImg/ContImg' */
 import styles from "./Home.module.css"
+import NavBar from '../../components/NavBar'
 
 
 const Home = () => {
@@ -9,11 +10,7 @@ const Home = () => {
     <>
     <div className={styles.container__global}>
     <div className={styles.nav__bar}>
-      <button className={styles.nav_bar__button}  type="button">Menu</button>
-      <span>Login</span>
-      <span>Contactenos</span>
-      <span>Galería</span>
-      <span>Nuestro Colegio</span>
+      <NavBar/>
     </div>
     <div className={styles.content}>
       <div className={styles.content__slide}><ContImg/></div>
