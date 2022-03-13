@@ -17,10 +17,10 @@
   
   
   body {
-   min-height: 100vh;
+    min-height: 100vh;
   }
   
-  .container-global {
+  .container_global {
     display: flex;
     flex-direction: column;
     align-items: stretch;

@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import "./NavBar.css"
 
 const NavBar = (props) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false); // [variableEstado: number, functionDeCambioEstado]
@@ -21,6 +23,4 @@ const NavBar = (props) => {
   );
 };
 
-export {
-  NavBar,
-};
+export default NavBar;

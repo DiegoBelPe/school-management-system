@@ -1,11 +1,9 @@
-import NavBar from './NavBar';
+import NavBar from './NavBar.jsx';
 
 function Index() {
   return (
     <div className="App">
       <div><NavBar/></div>
-      
-        
     </div>
   );
 }
