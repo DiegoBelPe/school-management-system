@@ -6,7 +6,6 @@ const Footer = () => {
     <>
       <div className="container"> 
               <h4>Redes Sociales</h4>
-          {/* {/ {/ Colmun1 /} /} */}
           <div className='col1'>
               <div className='container__icons'>
                 <div className='icons'>
