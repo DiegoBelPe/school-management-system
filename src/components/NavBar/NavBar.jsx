@@ -12,7 +12,7 @@ const NavBar = (props) => {
   
   return (
     <nav className="nav-bar">
-      <button type="button" onClick={toggleMenu}>Menu</button>
+      <button className='nav-bar__button' type="button" onClick={toggleMenu}></button>  
       <div className={menuClasses}>
         <a>Nuestro Colegio</a>
         <a>Galería</a>
