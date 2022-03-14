@@ -23,10 +23,32 @@
 }
 
 .card__title{
+    display: flex;
     width: inherit;
     height: 3rem;
     background-color: var(--first-color);
     border-radius: 5px 5px 0px 0px;
     color: var(--white-color);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font);
 
+}
+
+.card__text{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    font-family: var(--font);
+    font-size: 20px;
+
+}
+
+.card__img{
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
 }
