@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer/Footer';
 import Cards from './components/Cards/Cards';
 import Dash from './pages/Dash'
-import FunctionContainer from './components/FunctionContainer/FunctionContainer.jsx';
+import FunctionContainer from './components/FunctionContainer';
 
 function App() {
   return (

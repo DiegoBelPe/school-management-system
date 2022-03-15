@@ -12,7 +12,7 @@
 .functionContainer {
     --color: var(--second-color) ;
     font-family: inherit;
-    display: inline-block;
+    display: flex;
     width: 8em;
     height: 2.6em;
     line-height: 2.5em;
@@ -26,7 +26,7 @@
     border-radius: 6px;
     font-weight: 500;
     color: var(--color);
-    text-align: center;
+    justify-content: center;
    }
    
    .functionContainer:before {

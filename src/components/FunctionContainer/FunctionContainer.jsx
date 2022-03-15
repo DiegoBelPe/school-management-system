@@ -1,7 +1,7 @@
 import React from 'react'
 import './FunctionContainer.css'
 
-const elementsName = ['Tareas', 'Mensajes', 'Calendario']
+const elementsName = ['Tareas', 'Mensajes', 'Calendario', 'Horario']
 
 
 const FunctionContainer  = () => {
