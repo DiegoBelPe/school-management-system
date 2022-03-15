@@ -6,13 +6,14 @@ import ContImg from './components/ContImg'
 import NavBar from './components/NavBar';
 import Footer from './components/Footer/Footer';
 import Cards from './components/Cards/Cards';
+import Dash from './pages/Dash'
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/about' element={<ContImg/>}/>
+      <Route path='/dash' element={<Dash/>}/>
       <Route path='/navbar' element={<NavBar/>}/>
       <Route path='/footer' element={<Footer/>}/>
       <Route path='/card' element={<Cards/>}/>
