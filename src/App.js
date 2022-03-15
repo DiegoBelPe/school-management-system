@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer/Footer';
 import Cards from './components/Cards/Cards';
 import Dash from './pages/Dash'
+import FunctionContainer from './components/FunctionContainer/FunctionContainer.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/navbar' element={<NavBar/>}/>
       <Route path='/footer' element={<Footer/>}/>
       <Route path='/card' element={<Cards/>}/>
+      <Route path='/functioncontainer' element={<FunctionContainer/>}/>
     </Routes>
 
     
