@@ -1,15 +1,32 @@
-import React from 'react';
-import {Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda } from "@syncfusion/ej2-react-schedule";
-import './Schedule.css'
+import React from 'react'
+import FullCalendar from '@fullcalendar/react' // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 
-const Schedule  = () => {
+const Schedule = () => {
     return (
-    <div>
-        <ScheduleComponent>
-            <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-        </ScheduleComponent>
-    </div>
-    )
-}
 
+        <div>
+              <FullCalendar
+          plugins={[ dayGridPlugin ]}
+          initialView="dayGridMonth"
+        />
+        </div>
+      
+      )
+}
+   
 export default Schedule;
+
+
+
+
+// const Schedule  = () => {
+//     return (
+//     <div>
+//         <ScheduleComponent>
+//             <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+//         </ScheduleComponent>
+//     </div>
+//     )
+// }
+
