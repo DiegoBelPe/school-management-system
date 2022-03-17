@@ -11,7 +11,7 @@ const index = () => {
             <div className={dash.navbar}>
               <DashNav/>
             </div>
-            <div className={dash.main}>MAIN</div>
+            <div className={dash.main}></div>
             <div className={dash.footer}>FOOTER</div>
         </div>
     </>

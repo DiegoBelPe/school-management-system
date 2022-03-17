@@ -2,12 +2,11 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import ContImg from './components/ContImg'
 import NavBar from './components/NavBar';
-import Footer from './components/Footer/Footer';
 import Cards from './components/Cards/Cards';
 import Dash from './pages/Dash/Index'
 import DashNav from './components/DashNav/DasNav'
+import DataTable from './components/DataTable/DataTable';
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
       <Route path='/dash' element={<Dash/>}/>
        <Route path='/dashnav' element={<DashNav/>}/> 
       <Route path='/navbar' element={<NavBar/>}/>
-      <Route path='/footer' element={<Footer/>}/>
+      <Route path='/datatable' element={<DataTable/>}/>
       <Route path='/card' element={<Cards/>}/>
     </Routes>
 
