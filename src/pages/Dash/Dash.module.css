@@ -25,15 +25,15 @@ body{
     min-width: 100%;
 }
 
-.grid__container > * {
+.container__dash > * {
     box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.75);
     border-radius: 4px;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
     
 }
 
-.header{
+.header__dash{
     grid-area: header;
     background-color: var(--third-color);
     color: white;
@@ -43,6 +43,7 @@ body{
     grid-area: navbar;
     background-color: var(--first-color);
     color: white;
+    text-align: left;
 }
 
 .main{
@@ -57,10 +58,10 @@ body{
 
 
 
-.grid__container{
+.container__dash{
     display: grid;
     gap: 10px;
-    grid-template-columns: 300px auto;
+    grid-template-columns: 50px auto;
     grid-template-rows: 50px 610px auto 70px;
     grid-template-areas: 
         "navbar header"
