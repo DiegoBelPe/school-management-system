@@ -21,7 +21,7 @@
     font-size: 18px;
     padding: 0;
     margin: 0;
-    margin-left: var(--width-collapsed);
+   /*  margin-left: var(--width-collapsed); */
     background-color: var(--gray-light-color);
   
   }
