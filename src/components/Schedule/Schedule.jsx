@@ -1,6 +1,7 @@
 import React from 'react';
 import FullCalendar from '@fullcalendar/react'; // must go before plugins
 import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
 
 
@@ -8,14 +9,24 @@ const Schedule = () => {
     return (
       <div>
         <FullCalendar 
-          plugins={[timeGridPlugin]}
+          plugins={[timeGridPlugin, interactionPlugin]}
           locale = 'es'
           weekends = {false}
+          customButtons={{
+            text: 'add event...',
+            click: function() {
+              alert('clicked the custom button!');
+            }
+          }}
+
           headerToolbar={{
             left: '',
             center: '',
-            right: ''
+            right: 'myCustomButton'
           }}
+          editable = {true}
+          selectable = {true}
+          selectHelper = {true}
           dayHeaderFormat = {{ weekday: 'long'}}
           slotMinTime = '6:00'
           slotMaxTime= '19:00'
