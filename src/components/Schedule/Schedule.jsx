@@ -4,6 +4,18 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
 
+const events = [];
+
+function createEvent(startDate, title, endDate) {
+  const event = {
+    id: 1, 
+    title: title,
+    start: startDate,
+    allDay: endDate ? endDate : true 
+  }
+  events.push(event);
+}
+
 
 const Schedule = () => {
     return (
@@ -12,17 +24,10 @@ const Schedule = () => {
           plugins={[timeGridPlugin, interactionPlugin]}
           locale = 'es'
           weekends = {false}
-          customButtons={{
-            text: 'add event...',
-            click: function() {
-              alert('clicked the custom button!');
-            }
-          }}
-
           headerToolbar={{
             left: '',
             center: '',
-            right: 'myCustomButton'
+            right: ''
           }}
           editable = {true}
           selectable = {true}
@@ -35,6 +40,9 @@ const Schedule = () => {
           slotDuration = '1:00:00'
           expandRows = {true}
           aspectRatio = '1.5'
+          select = {function(selectionInfo) {
+              alert(selectionInfo.startStr, 'Some event', selectionInfo.endStr);
+          }}
         />  
       </div>    
     );
