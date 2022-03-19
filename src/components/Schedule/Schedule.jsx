@@ -41,7 +41,10 @@ const Schedule = () => {
           expandRows = {true}
           aspectRatio = '1.5'
           select = {function(selectionInfo) {
-              alert(selectionInfo.startStr, 'Some event', selectionInfo.endStr);
+            console.log(selectionInfo)
+            events.push(selectionInfo)
+            console.log('soy los eventos' + events)
+            alert(selectionInfo.startStr, 'Some event', selectionInfo.endStr); 
           }}
         />  
       </div>    
