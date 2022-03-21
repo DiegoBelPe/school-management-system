@@ -1,21 +1,9 @@
 import React from 'react';
-import FullCalendar from '@fullcalendar/react'; // must go before plugins
+import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-/* import { getWeekSchedule } from '../../services/weekSchedule'; */
 
 
-const events = [];
-
-function createEvent(startDate, title, endDate) {
-  const event = {
-    id: 1, 
-    title: title,
-    start: startDate,
-    allDay: endDate ? endDate : true 
-  }
-  events.push(event);
-}
 
 
 const Schedule = () => {
@@ -41,13 +29,7 @@ const Schedule = () => {
           slotDuration = '1:00:00'
           expandRows = {true}
           aspectRatio = '1.5'
-          select = {function(selectionInfo) {
-            console.log(selectionInfo)
-            events.push(selectionInfo)
-            console.log('soy los eventos' + events)
-            alert(selectionInfo.startStr, 'Some event', selectionInfo.endStr); 
-          }}
-          
+          events ="http://localhost:8080/api/shcedule"
         />  
       </div>    
     );
@@ -57,14 +39,4 @@ export default Schedule;
 
 
 
-
-// const Schedule  = () => {
-//     return (
-//     <div>
-//         <ScheduleComponent>
-//             <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-//         </ScheduleComponent>
-//     </div>
-//     )
-// }
 

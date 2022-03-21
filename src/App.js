@@ -10,6 +10,7 @@ import FunctionContainer from './components/FunctionContainer';
 import Schedule from './components/Schedule/Schedule';
 import Dash from './pages/Dash/Index'
 import DashNav from './components/DashNav/DasNav'
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path='/card' element={<Cards/>}/>
       <Route path='/functioncontainer' element={<FunctionContainer/>}/>
       <Route path='/schedule' element={<Schedule/>}/>
+      <Route path='/login' element={<Login/>}/>
     </Routes>
 
     
