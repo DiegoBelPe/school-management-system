@@ -1,0 +1,10 @@
+{
+    "schedules": [
+        {
+            "id": "8A",
+            "title": "Fundamentos de Programación",
+            "start": "Mon Mar 14 2022 08:00:00 GMT-0500 (hora estándar de Colombia)", 
+            "end": "Mon Mar 14 2022 11:00:00 GMT-0500 (hora estándar de Colombia)"
+        }
+    ]
+}

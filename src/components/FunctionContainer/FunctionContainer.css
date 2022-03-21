@@ -1,0 +1,61 @@
+:root {
+    --font: "Raleway", sans-serif;
+    --first-color: #2C327D;
+    --second-color: #702355;
+    --third-color: #B16C33;
+    --black-color: #0A0A0A;
+    --white-color: #FEFEFE;
+ 
+  }
+
+
+.functionContainer {
+    --color: var(--second-color) ;
+    font-family: inherit;
+    display: flex;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+    justify-content: center;
+   }
+   
+   .functionContainer:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+   }
+   
+   .functionContainer:hover {
+    color: #fff;
+   }
+   
+   .functionContainer:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   .functionContainer:hover:before {
+    top: -30px;
+    left: -30px;
+   }
+   
+   .functionContainer:active:before {
+    background:var(--first-color);
+    transition: background 0s;
+}
+       
