@@ -27,7 +27,6 @@
     "eject": "react-scripts eject",
     "db": "json-server --watch db.json --port 8080 --routes routes.json"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",

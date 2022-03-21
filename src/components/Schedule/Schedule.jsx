@@ -2,7 +2,7 @@ import React from 'react';
 import FullCalendar from '@fullcalendar/react'; // must go before plugins
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { getWeekSchedule } from '../../services/weekSchedule';
+/* import { getWeekSchedule } from '../../services/weekSchedule'; */
 
 
 const events = [];
