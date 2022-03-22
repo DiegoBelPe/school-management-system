@@ -1,13 +1,13 @@
 import React from 'react'
-import style from './Login.module.css'
+import './Login.css'
 import { Link } from 'react-router-dom';
 
 
 const Login  = () => {
 
     return (
-        <div className="container">
-            <div className="screen">
+        <div className="containerLogin">
+            <div className="screenLogin">
                 <div className="screen__content">
                     <form className="login">
                         <div className="login__field">

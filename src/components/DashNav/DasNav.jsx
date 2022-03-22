@@ -55,10 +55,10 @@ const DasNav = (props) => {
       </div>
       <div className="item separator"></div>
       <div className="item">
-        <a href="">
+        <Link to="../DataTable">
           <div className="icon"> <img src={images.img5}alt=""/>  </div>
           <div className="title"> <span>Tareas</span> </div>
-        </a>
+        </Link>
       </div>
       <div className="item separator"></div>
       <div className="item">

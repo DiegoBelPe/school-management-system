@@ -17,18 +17,16 @@
 	padding: 0;	
 	font-family: Raleway, sans-serif;
 }
- body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
-}
 
-.container {
+.containerLogin {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
 }
 
-.screen {		
+.screenLogin {		
 	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
 	position: relative;	
 	height: 600px;

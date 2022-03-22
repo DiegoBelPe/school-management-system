@@ -1,28 +1,16 @@
 {
-<<<<<<< HEAD
-    "schedules": [
-        {
-            "id": "8A",
-            "title": "Fundamentos de Programación",
-            "start": "2022-03-21T08:00:00", 
-            "end": "2022-03-21T10:00:00"
-        },
-
-        {
-            "id": "8A",
-            "title": "Matemáticas",
-            "start": "2022-03-21T10:00:00", 
-            "end": "2022-03-21T12:00:00"
-        }
-
-    ]
-=======
   "schedules": [
     {
       "id": "8A",
       "title": "Fundamentos de Programación",
-      "start": "Mon Mar 14 2022 08:00:00 GMT-0500 (hora estándar de Colombia)",
-      "end": "Mon Mar 14 2022 11:00:00 GMT-0500 (hora estándar de Colombia)"
+      "start": "2022-03-21T08:00:00",
+      "end": "2022-03-21T10:00:00"
+    },
+    {
+      "id": "8A",
+      "title": "Matemáticas",
+      "start": "2022-03-21T10:00:00",
+      "end": "2022-03-21T12:00:00"
     }
   ],
   "chores": [
@@ -46,7 +34,13 @@
       "description": "tarea de ...",
       "observations": "ninguna",
       "endDate": "22/03/2022"
+    },
+    {
+      "course": "Fisica",
+      "description": "Sacar centro de masa",
+      "observations": "",
+      "endDate": "",
+      "id": 4
     }
   ]
->>>>>>> d1c5f104d7a569f9386e5f651dd22ffff6ca086d
 }
