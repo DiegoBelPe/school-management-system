@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "schedules": [
         {
             "id": "8A",
@@ -15,4 +16,37 @@
         }
 
     ]
+=======
+  "schedules": [
+    {
+      "id": "8A",
+      "title": "Fundamentos de Programación",
+      "start": "Mon Mar 14 2022 08:00:00 GMT-0500 (hora estándar de Colombia)",
+      "end": "Mon Mar 14 2022 11:00:00 GMT-0500 (hora estándar de Colombia)"
+    }
+  ],
+  "chores": [
+    {
+      "id": 1,
+      "course": "Matematicas",
+      "description": "tarea de ...",
+      "observations": "ninguna",
+      "endDate": "22/03/2022"
+    },
+    {
+      "id": 2,
+      "course": "Programacion",
+      "description": "tarea de ...",
+      "observations": "ninguna",
+      "endDate": "22/03/2022"
+    },
+    {
+      "id": 3,
+      "course": "Ingles",
+      "description": "tarea de ...",
+      "observations": "ninguna",
+      "endDate": "22/03/2022"
+    }
+  ]
+>>>>>>> d1c5f104d7a569f9386e5f651dd22ffff6ca086d
 }
