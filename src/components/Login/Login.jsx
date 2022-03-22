@@ -1,33 +1,36 @@
 import React from 'react'
-import './Login.css'
+import style from './Login.module.css'
+import { Link } from 'react-router-dom';
 
 
 const Login  = () => {
 
     return (
-        <div class="container">
-            <div class="screen">
-                <div class="screen__content">
-                    <form class="login">
-                        <div class="login__field">
-                            <i class="login__icon fas fa-user"></i>
-                            <input type="text" class="login__input" placeholder="Usuario"></input>
+        <div className="container">
+            <div className="screen">
+                <div className="screen__content">
+                    <form className="login">
+                        <div className="login__field">
+                            <i className="login__icon fas fa-user"></i>
+                            <input type="text" className="login__input" placeholder="Usuario"></input>
                         </div>
-                        <div class="login__field">
-                            <i class="login__icon fas fa-lock"></i>
-                            <input type="password" class="login__input" placeholder="Contraseña"></input>
+                        <div className="login__field">
+                            <i className="login__icon fas fa-lock"></i>
+                            <input type="password" className="login__input" placeholder="Contraseña"></input>
                         </div>
-                        <button class="button login__submit">
-                            <span class="button__text">Ingresar</span>
-                            <i class="button__icon fas fa-chevron-right"></i>
+                        <button className="button login__submit">
+                            <Link to="../dash">
+                            <span className="button__text">Ingresar</span>
+                            <i className="button__icon fas fa-chevron-right"></i>
+                            </Link>
                         </button>				
                     </form>
                 </div>
-                <div class="screen__background">
-                    <span class="screen__background__shape screen__background__shape4"></span>
-                    <span class="screen__background__shape screen__background__shape3"></span>		
-                    <span class="screen__background__shape screen__background__shape2"></span>
-                    <span class="screen__background__shape screen__background__shape1"></span>
+                <div className="screen__background">
+                    <span className="screen__background__shape screen__background__shape4"></span>
+                    <span className="screen__background__shape screen__background__shape3"></span>		
+                    <span className="screen__background__shape screen__background__shape2"></span>
+                    <span className="screen__background__shape screen__background__shape1"></span>
                 </div>		
             </div>
         </div>
