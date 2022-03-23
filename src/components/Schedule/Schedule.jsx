@@ -7,22 +7,23 @@ import interactionPlugin from '@fullcalendar/interaction';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 const Schedule = () => {
-    // const [events, setEvents] = useState([]);
-    // useEffect(() => {
-    //   const  fetchData = async () => {
-    //     const response = await fetch('http://localhost:8080/api/schedules');
-    //     const newEvents = await (await response).json();
-    //     setEvents(newEvents);
-    //   };
-    //   fetchData();
-    // }, []);
-    const { data: events, error } = useSWR('http://localhost:8080/api/schedules', fetcher);
-    if(error) {
-      return <div>Tenemos un problema...</div>
-    }
-    if(!events) {
-      return <div>Cargando...</div>
-    }
+    const [events, setEvents] = useState([]);
+    useEffect(() => {
+      const  fetchData = async () => {
+        const response = await fetch('http://localhost:8080/api/schedules');
+        const newEvents = await (await response).json();
+        setEvents(newEvents);
+      };
+      fetchData();
+    }, []);
+
+    // const { data: events, error } = useSWR('http://localhost:8080/api/schedules', fetcher);
+    // if(error) {
+    //   return <div>Tenemos un problema...</div>
+    // }
+    // if(!events) {
+    //   return <div>Cargando...</div>
+    // }
     return (
       <div>
         <FullCalendar 

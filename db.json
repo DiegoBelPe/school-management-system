@@ -41,6 +41,13 @@
       "observations": "",
       "endDate": "",
       "id": 4
+    },
+    {
+      "course": "Artistica",
+      "description": "Pintar un bodegon",
+      "observations": "",
+      "endDate": "25/03/2022",
+      "id": 5
     }
   ]
 }
