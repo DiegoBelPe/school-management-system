@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import Cards from './components/Cards/Cards';
 import FunctionContainer from './components/FunctionContainer';
 import Schedule from './components/Schedule/Schedule';
-import Dash from './pages/Dash/Index'
+import Dash from './pages/Dash/Dash'
 import DashNav from './components/DashNav/DasNav'
 import Login from './components/Login/Login';
 import DataTable from './components/DataTable/DataTable';
