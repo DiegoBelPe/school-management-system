@@ -2,7 +2,7 @@ import React from 'react';
 import dash from './Dash.module.css';
 import DashNav from '../../components/DashNav/DasNav';
 
-const index = () => {
+const Dash = () => {
   return (
     <>
       <div className={dash.container__dash}>
@@ -10,11 +10,11 @@ const index = () => {
         <div className={dash.navbar}>
           <DashNav />
         </div>
-        <div className={dash.main}></div>
+        <div className={dash.main}>Hola mundo</div>
         <div className={dash.footer}>FOOTER</div>
       </div>
     </>
   );
 };
 
-export default index;
+export default Dash;
