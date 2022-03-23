@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './DasNav.css'
 import images from '../../assets/images'
+import { Link } from 'react-router-dom';
 
 
 
@@ -54,17 +55,17 @@ const DasNav = (props) => {
       </div>
       <div className="item separator"></div>
       <div className="item">
-        <a href="">
+        <Link to="../DataTable">
           <div className="icon"> <img src={images.img5}alt=""/>  </div>
           <div className="title"> <span>Tareas</span> </div>
-        </a>
+        </Link>
       </div>
       <div className="item separator"></div>
       <div className="item">
-        <a href="">
+        <Link to="../Schedule">
           <div className="icon"> <img src={images.img6} alt=""/>  </div>
           <div className="title"> <span>Horario</span> </div>
-        </a>
+        </Link>
       </div>
       <div className="item separator"></div>
       <div className="item">

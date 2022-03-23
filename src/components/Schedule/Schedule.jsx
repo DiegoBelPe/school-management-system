@@ -1,24 +1,29 @@
-import React from 'react';
-import FullCalendar from '@fullcalendar/react'; // must go before plugins
+import React, { useEffect, useState } from 'react';
+import useSWR from 'swr';
+import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-/* import { getWeekSchedule } from '../../services/weekSchedule'; */
 
 
-const events = [];
-
-function createEvent(startDate, title, endDate) {
-  const event = {
-    id: 1, 
-    title: title,
-    start: startDate,
-    allDay: endDate ? endDate : true 
-  }
-  events.push(event);
-}
-
-
+const fetcher = (...args) => fetch(...args).then(res => res.json())
 const Schedule = () => {
+    const [events, setEvents] = useState([]);
+    useEffect(() => {
+      const  fetchData = async () => {
+        const response = await fetch('http://localhost:8080/api/schedules');
+        const newEvents = await (await response).json();
+        setEvents(newEvents);
+      };
+      fetchData();
+    }, []);
+
+    // const { data: events, error } = useSWR('http://localhost:8080/api/schedules', fetcher);
+    // if(error) {
+    //   return <div>Tenemos un problema...</div>
+    // }
+    // if(!events) {
+    //   return <div>Cargando...</div>
+    // }
     return (
       <div>
         <FullCalendar 
@@ -30,9 +35,9 @@ const Schedule = () => {
             center: '',
             right: ''
           }}
-          editable = {true}
-          selectable = {true}
-          selectHelper = {true}
+          editable
+          selectable
+          selectHelper 
           dayHeaderFormat = {{ weekday: 'long'}}
           slotMinTime = '6:00'
           slotMaxTime= '19:00'
@@ -41,13 +46,7 @@ const Schedule = () => {
           slotDuration = '1:00:00'
           expandRows = {true}
           aspectRatio = '1.5'
-          select = {function(selectionInfo) {
-            console.log(selectionInfo)
-            events.push(selectionInfo)
-            console.log('soy los eventos' + events)
-            alert(selectionInfo.startStr, 'Some event', selectionInfo.endStr); 
-          }}
-          
+          events = {events}
         />  
       </div>    
     );
@@ -57,14 +56,4 @@ export default Schedule;
 
 
 
-
-// const Schedule  = () => {
-//     return (
-//     <div>
-//         <ScheduleComponent>
-//             <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-//         </ScheduleComponent>
-//     </div>
-//     )
-// }
 

@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import "./NavBar.css"
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false); // [variableEstado: number, functionDeCambioEstado]
@@ -17,7 +18,12 @@ const NavBar = (props) => {
         <a>Nuestro Colegio</a>
         <a>Galería</a>
         <a>Contactenos</a>
-        <a>Login</a>
+        <a>
+          <Link to='../Login' style={{ color: 'white' }}>
+            Login
+          </Link> 
+        </a>
+       
       </div>
     </nav>
   );

@@ -3,8 +3,14 @@
     {
       "id": "8A",
       "title": "Fundamentos de Programación",
-      "start": "Mon Mar 14 2022 08:00:00 GMT-0500 (hora estándar de Colombia)",
-      "end": "Mon Mar 14 2022 11:00:00 GMT-0500 (hora estándar de Colombia)"
+      "start": "2022-03-21T08:00:00",
+      "end": "2022-03-21T10:00:00"
+    },
+    {
+      "id": "8A",
+      "title": "Matemáticas",
+      "start": "2022-03-21T10:00:00",
+      "end": "2022-03-21T12:00:00"
     }
   ],
   "chores": [
@@ -28,6 +34,20 @@
       "description": "tarea de ...",
       "observations": "ninguna",
       "endDate": "22/03/2022"
+    },
+    {
+      "course": "Fisica",
+      "description": "Sacar centro de masa",
+      "observations": "",
+      "endDate": "",
+      "id": 4
+    },
+    {
+      "course": "Artistica",
+      "description": "Pintar un bodegon",
+      "observations": "",
+      "endDate": "25/03/2022",
+      "id": 5
     }
   ]
 }
