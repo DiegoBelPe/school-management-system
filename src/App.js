@@ -9,6 +9,7 @@ import Dash from './pages/Dash/Dash'
 import DashNav from './components/DashNav/DasNav'
 import Login from './components/Login/Login';
 import DataTable from './components/DataTable/DataTable';
+import Accordion from './components/Accordion';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path='/functioncontainer' element={<FunctionContainer/>}/>
       <Route path='/schedule' element={<Schedule/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/accordion' element={<Accordion/>}/>
     </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,78 @@
+:root {
+  --font: "Raleway", sans-serif;
+  --first-color: #2C327D;
+  --second-color: #702355;
+  --third-color: #B16C33;
+  --black-color: #0A0A0A;
+  --white-color: #FEFEFE;
+
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+}
+
+.App{
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 0;
+
+}
+
+.container{
+  width: 100%;
+  max-width: 540px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.accordion{
+  width: 100%;
+  max-width: 540px;
+  margin: 18px auto;
+  color: var(--white-color);
+}
+
+.accordionHeading{
+  padding: 14px 0;
+}
+
+.accordionHeading.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.accordionHeading p{
+  background: var(--first-color);
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.accordionHeading span{
+  cursor: pointer;
+}
+
+.accordionContent{
+  background-color: var(--second-color);
+  height: 0;
+  opacity: 0;
+  display: flex;
+  overflow: hidden;
+  transition: all 600ms ease-in-out;
+}
+
+.accordionContent.show{
+  height: 180px;
+  opacity: 1;
+}
+
+.accordionContent p {
+  background-color: var(--second-color);
+  font-size: 16px;
+  line-height: 1.6;
+}
