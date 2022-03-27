@@ -10,6 +10,8 @@ import DashNav from './components/DashNav/DasNav'
 import Login from './components/Login/Login';
 import DataTable from './components/DataTable/DataTable';
 import Accordion from './components/Accordion';
+import MessajeCRUD from './components/MessajeCRUD/MessajeCRUD';
+import CrudApi from './components/MessajeCRUD/CrudApi';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
       <Route path='/schedule' element={<Schedule/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/accordion' element={<Accordion/>}/>
+      <Route path='/messajeCRUD' element={<MessajeCRUD/>}/>
+      <Route path='/CRUDApi' element={<CrudApi/>}/>
     </Routes>
     </BrowserRouter>
   );

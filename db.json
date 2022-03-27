@@ -49,5 +49,37 @@
       "endDate": "25/03/2022",
       "id": 5
     }
+  ],
+  "messajeDb": [
+    {
+      "id": 1,
+      "name": "Boris",
+      "messaje": "Si fue a clase"
+    },
+    {
+      "id": 2,
+      "name": "Diego",
+      "messaje": "Si fue a clase"
+    },
+    {
+      "id": 3,
+      "name": "Jose",
+      "messaje": "Si fue a clase"
+    },
+    {
+      "id": 4,
+      "name": "Santiago ",
+      "messaje": "No fue a clase de Ingles"
+    },
+    {
+      "name": "Cristian Moreno",
+      "messaje": "Dicto clase el viernes de mongo db ",
+      "id": 1648415673241
+    },
+    {
+      "name": "Paola ",
+      "messaje": "Aplico tailWind",
+      "id": 1648417412506
+    }
   ]
 }
