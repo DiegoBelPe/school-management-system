@@ -4,20 +4,20 @@
   --bgcolor: rgb(52, 52, 52);
   --hovercolor: rgb(23, 23, 23);
   --width-collapsed: 50px;
-  --font: "Raleway", sans-serif;
-  --first-color: #007ED9;
+  --font: 'Raleway', sans-serif;
+  --first-color: #007ed9;
   --first-alpha-color: rgba(0, 87, 217, 0.75);
-  --second-color: #14192D;
+  --second-color: #14192d;
   --second-alpha-color: rgba(20, 25, 45, 0.75);
-  --third-color: #14192D;
-  --third-alpha-color: #130D6F;
-  --white-color: #FFFFFF;
-  --gray-light-color: #F3F3F3;
-  --gray-color: #CCCCCC;
+  --third-color: #14192d;
+  --third-alpha-color: #130d6f;
+  --white-color: #ffffff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #cccccc;
   --gray-dark-color: #666666;
 }
 
-html{
+html {
   height: 100%;
 }
 
@@ -28,16 +28,13 @@ body {
   margin: 0;
   margin-left: var(--width-collapsed);
   background-color: var(--gray-light-color);
-
 }
-
-
 
 .body-expanded {
   margin-left: var(--width);
 }
 
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,7 +73,7 @@ body {
   vertical-align: middle;
 }
 
-#sidemenu #header #menu-btn{
+#sidemenu #header #menu-btn {
   display: inline-block;
 }
 
@@ -189,7 +186,6 @@ body {
   width: calc(var(--width) - var(--width-collapsed) -5px);
   overflow: hidden;
   /* display: inline-block; */
-
 }
 
 .menu-expanded #profile #profile-photho {
@@ -218,29 +214,27 @@ body {
   width: 100px;
 }
 
- .grid__container > *{
-   /* box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+.grid__container > * {
+  /* box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
    border-radius: 4px; */
-   padding: 10px;
-   text-align: center;
+  padding: 10px;
+  text-align: center;
 
-   /* min-width: 100%; */
- }
+  /* min-width: 100%; */
+}
 
+.header__horizontal {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  grid-area: header;
+  background-color: var(--first-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 13px;
+}
 
-
- .header__horizontal{
-   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
-   border-radius: 4px;
-   grid-area: header;
-   background-color: var(--first-color);
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding-top: 13px;
- }
-
- .main__logo-img{
+.main__logo-img {
   height: 50px;
   width: 50px;
   margin-left: 30px;
@@ -251,17 +245,17 @@ body {
   text-align: center;
 }
 
-.main__user-img{
+.main__user-img {
   height: 50px;
   width: 50px;
   margin-left: 30px;
 }
 
- .information{
+.information {
   grid-area: information;
 }
 
-.cards{
+.cards {
   grid-area: cards;
 }
 
@@ -271,10 +265,7 @@ body {
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
-
 }
-
-
 
 .information__user {
   width: 500px;
@@ -284,41 +275,36 @@ body {
   background-color: white;
 }
 
-.information__title{
+.information__title {
   display: flex;
   width: auto;
   height: 50px;
-  background-color: #007ED9;
+  background-color: #007ed9;
   border-radius: 10px;
   align-items: center;
   box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
-
 }
 
-.information__logo{
+.information__logo {
   width: 40px;
   height: 40px;
   color: white;
   margin-left: 20px;
 }
 
-.information__logo-title{
+.information__logo-title {
   margin-left: 20px;
   color: white;
 }
 
-
-
-.cards{
+.cards {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
-
-.card__news{
-
+.card__news {
   width: 500px;
   height: 200px;
   align-items: center;
@@ -327,7 +313,7 @@ body {
   background-color: white;
 }
 
-.card__title{
+.card__title {
   display: flex;
   width: auto;
   height: 50px;
@@ -335,22 +321,21 @@ body {
   border-radius: 10px;
   align-items: center;
   box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
-
 }
 
-.card__logo{
+.card__logo {
   width: 40px;
   height: 40px;
   color: white;
   margin-left: 20px;
 }
 
-.card__logo-title{
+.card__logo-title {
   margin-left: 20px;
   color: white;
 }
 
-.footer{
+.footer {
   grid-area: footer;
   background-color: var(--third-alpha-color);
   color: white;
@@ -358,37 +343,36 @@ body {
   border-radius: 4px;
 }
 
- .grid__container{
-   display: grid;
-   gap: 10px;
-   /* grid-template-rows: 100px 400px 200px 100px; */
-   grid-template-areas:
-      "header"
-      "information"
-      "cards"
-      "footer";
-    grid-template:
-      "header"      50px
-      "information" 250px
-      "cards"       500px
-      "footer"      50px
- }
+.grid__container {
+  display: grid;
+  gap: 10px;
+  /* grid-template-rows: 100px 400px 200px 100px; */
+  grid-template-areas:
+    'header'
+    'information'
+    'cards'
+    'footer';
+  grid-template:
+    'header' 50px
+    'information' 250px
+    'cards' 500px
+    'footer' 50px;
+}
 
-
- @media(min-width: 768px){
-  .grid__container{
+@media (min-width: 768px) {
+  .grid__container {
     display: grid;
     gap: 10px;
     grid-template-areas:
-       "header"
-       "information"
-       "cards"
-       "footer";
-     grid-template:
-       "header"      50px
-       "information" 350px
-       "cards"       300px
-       "footer"      50px
+      'header'
+      'information'
+      'cards'
+      'footer';
+    grid-template:
+      'header' 50px
+      'information' 350px
+      'cards' 300px
+      'footer' 50px;
   }
   .information {
     display: flex;
@@ -396,7 +380,6 @@ body {
     grid-template-columns: auto;
     justify-content: center;
     align-items: center;
-
   }
   .information__user {
     width: 700px;
@@ -405,14 +388,12 @@ body {
     box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
   }
 
-  .cards{
+  .cards {
     display: flex;
     flex-direction: row;
   }
 
-
-  .card__news{
-
+  .card__news {
     width: 350px;
     height: 200px;
     border-radius: 10px;
@@ -420,18 +401,13 @@ body {
   }
 }
 
-
-
-
-
-@media(min-width: 992px){
+@media (min-width: 992px) {
   .information {
     display: flex;
     flex-direction: column;
     grid-template-columns: auto;
     justify-content: center;
     align-items: center;
-
   }
   .information__user {
     width: 900px;
@@ -440,20 +416,15 @@ body {
     box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
   }
 
-  .cards{
+  .cards {
     display: flex;
     flex-direction: row;
   }
 
-
-  .card__news{
-
+  .card__news {
     width: 450px;
     height: 250px;
     border-radius: 10px;
     box-shadow: 2px 2px 2px 2px rgb(52, 52, 52);
   }
-
 }
-
-
