@@ -16,7 +16,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dash/*" element={<Dash />} />
+        <Route path="/dash" element={<Dash />}>
+          <Route path="table" element={<DataTable />} />
+          <Route path="schedule" element={<Schedule />} />
+        </Route>
         <Route path="/navbar" element={<NavBar />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/functioncontainer" element={<FunctionContainer />} />
