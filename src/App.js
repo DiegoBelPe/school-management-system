@@ -9,10 +9,12 @@ import Dash from './pages/Dash/Dash';
 import DashNav from './components/DashNav/DasNav';
 import Login from './components/Login/Login';
 import DataTable from './components/DataTable/DataTable';
+import Accordion from './components/Accordion';
 
 function App() {
   return (
     <BrowserRouter>
+<<<<<<< HEAD
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dash/*" element={<Dash />} />
@@ -22,6 +24,20 @@ function App() {
 
         <Route path="/login" element={<Login />} />
       </Routes>
+=======
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/dash' element={<Dash/>}/>
+      <Route path='/dashnav' element={<DashNav/>}/> 
+      <Route path='/navbar' element={<NavBar/>}/>
+      <Route path='/datatable' element={<DataTable/>}/>
+      <Route path='/card' element={<Cards/>}/>
+      <Route path='/functioncontainer' element={<FunctionContainer/>}/>
+      <Route path='/schedule' element={<Schedule/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/accordion' element={<Accordion/>}/>
+    </Routes>
+>>>>>>> a0ec8f9d3d84b204a14652768b5f791e3523ef8f
     </BrowserRouter>
   );
 }
