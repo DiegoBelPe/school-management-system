@@ -12,21 +12,6 @@
     --white-color: #FEFEFE;
   }
   
-  html{
-    height: 100%;
-  }
-  
-  body {
-    font-family: var(--font);
-    font-size: 18px;
-    padding: 0;
-    margin: 0;
-   /*  margin-left: var(--width-collapsed); */
-    background-color: var(--gray-light-color);
-  
-  }
-  
-  
   
   .body-expanded {
     margin-left: var(--width);
@@ -45,7 +30,6 @@
   #sidemenu {
     background-color: var(--bgcolor);
     color: white;
-    position: fixed;
     height: 100%;
     left: 0;
     top: 0;

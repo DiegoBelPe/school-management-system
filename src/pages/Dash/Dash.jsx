@@ -1,19 +1,22 @@
 import React from 'react';
-import dash from './Dash.module.css';
+import { Outlet } from 'react-router-dom';
+import styles from './Dash.module.css';
 import DashNav from '../../components/DashNav/DasNav';
-import DataTable from '../../components/DataTable/DataTable';
-import Schedule from '../../components/Schedule/Schedule';
 
-const Dash= () => {
+
+const Dash = () => {
+  
   return (
     <>
-      <div className={dash.container__dash}>
-        <div className={dash.header__dash}>HEADER</div>
-        <div className={dash.navbar}>
+      <div className={styles.container__dash}>
+        <div className={styles.header__dash}>HEADER</div>
+        <div className={styles.navbar}>
           <DashNav />
         </div>
-        <div className={dash.main}><Schedule/></div>
-        <div className={dash.footer}>FOOTER</div>
+        <div className={styles.main}>
+          <Outlet />
+        </div>
+        <div className={styles.footer}>FOOTER</div>
       </div>
     </>
   );
