@@ -1,72 +1,50 @@
 :root {
-    --font: "Raleway", sans-serif;
-    --first-color: #2C327D;
-    --second-color: #702355;
-    --third-color: #B16C33;
-    --black-color: #0A0A0A;
-    --white-color: #FEFEFE;
-  }
-
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  --font: 'Raleway', sans-serif;
+  --first-color: #2c327d;
+  --second-color: #702355;
+  --third-color: #b16c33;
+  --black-color: #0a0a0a;
+  --white-color: #fefefe;
 }
 
-html{
-    height: 100%;
-    
-}
-
-body{
-    font-family: var(--font);
-    height: 100%;
-    min-width: 100%;
+.container__dash {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 50px 610px auto 70px;
+  grid-template-areas:
+    'navbar header'
+    'navbar main'
+    'navbar main'
+    'navbar footer';
 }
 
 .container__dash > * {
-    box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 4px;
-    /* padding: 10px; */
-    text-align: center;
-    
+  box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  /* padding: 10px; */
+  text-align: center;
 }
 
-.header__dash{
-    grid-area: header;
-    background-color: var(--third-color);
-    color: white;
+.header__dash {
+  grid-area: header;
+  background-color: var(--third-color);
+  color: white;
 }
 
-.navbar{
-    grid-area: navbar;
-    background-color: var(--first-color);
-    color: white;
-    text-align: left;
+.navbar {
+  grid-area: navbar;
+  background-color: var(--first-color);
+  color: white;
+  text-align: left;
 }
 
-.main{
-    grid-area: main;
+.main {
+  grid-area: main;
 }
 
-.footer{
-    grid-area: footer;
-    background-color: var(--first-color);
-    color: white;
-}
-
-
-
-.container__dash{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 50px auto;
-    grid-template-rows: 50px 610px auto 70px;
-    grid-template-areas: 
-        "navbar header"
-        "navbar main"
-        "navbar main"
-        "navbar footer";
-
+.footer {
+  grid-area: footer;
+  background-color: var(--first-color);
+  color: white;
 }
