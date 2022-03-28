@@ -10,7 +10,10 @@ import DashNav from './components/DashNav/DasNav';
 import Login from './components/Login/Login';
 import DataTable from './components/DataTable/DataTable';
 import Accordion from './components/Accordion';
+import MessajeCRUD from './components/MessajeCRUD/MessajeCRUD';
+import CrudApi from './components/MessajeCRUD/CrudApi'
 import About from './pages/About/About';
+
 
 function App() {
   return (
