@@ -41,6 +41,13 @@
       "observations": "",
       "endDate": "25/03/2022",
       "id": 5
+    },
+    {
+      "course": "Español",
+      "description": "abcs",
+      "observations": "term",
+      "endDate": "24/03/2022",
+      "id": 6
     }
   ]
 }

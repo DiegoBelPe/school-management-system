@@ -5,6 +5,7 @@ import calendar from './icono-calendario.png'
 import chores from './tareas.png'
 import lessons from './horario.png'
 import qualification from './notas.png'
+import about from './slide01.jpg'
 
 export default {
     "img1": user,
@@ -14,5 +15,6 @@ export default {
     "img5": chores,
     "img6": lessons,
     "img7": qualification,
+    "img8": about,
 
 }
