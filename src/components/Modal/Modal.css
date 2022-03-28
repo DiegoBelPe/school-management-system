@@ -19,7 +19,8 @@
     font-weight: 600;
 }
 
-.modal-container {
+
+.calendar-form-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;

@@ -5,19 +5,24 @@
       "title": "Fundamentos de Programación",
       "startRecur": "2022-01-01",
       "endRecur": "2022-12-31",
-      "daysOfWeek": [1, 3],
-      "startTime" : "8:00:00",
-      "endTime" : "10:00:00"
-
+      "daysOfWeek": [
+        1,
+        3
+      ],
+      "startTime": "8:00:00",
+      "endTime": "10:00:00"
     },
     {
       "id": "8A",
       "title": "Matemáticas",
       "startRecur": "2022-01-01",
       "endRecur": "2022-12-31",
-      "daysOfWeek": [2, 4],
-      "startTime" : "8:00:00",
-      "endTime" : "10:00:00"
+      "daysOfWeek": [
+        2,
+        4
+      ],
+      "startTime": "8:00:00",
+      "endTime": "10:00:00"
     }
   ],
   "chores": [
@@ -48,9 +53,16 @@
       "observations": "",
       "endDate": "25/03/2022",
       "id": 5
+    },
+    {
+      "course": "Lenguage",
+      "description": "Escribir un poema",
+      "observations": "",
+      "endDate": "",
+      "id": 6
     }
   ],
-  "events":[
+  "events": [
     {}
   ]
 }
