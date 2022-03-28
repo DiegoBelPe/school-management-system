@@ -12,6 +12,10 @@ import DataTable from './components/DataTable/DataTable';
 import Accordion from './components/Accordion';
 import Calendar from './components/Calendar/Calendar';
 import Modals from './pages/Modals';
+import MessajeCRUD from './components/MessajeCRUD/MessajeCRUD';
+import CrudApi from './components/MessajeCRUD/CrudApi'
+import About from './pages/About/About';
+
 
 function App() {
   return (
@@ -27,6 +31,7 @@ function App() {
         <Route path="/card" element={<Cards />} />
         <Route path="/functioncontainer" element={<FunctionContainer />} />
         <Route path='/modals' element={<Modals />} />
+        <Route path="/about" element={<About/>} />
         <Route path="/login" element={<Login />} />
         
       </Routes>
