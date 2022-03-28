@@ -10,6 +10,8 @@ import DashNav from './components/DashNav/DasNav';
 import Login from './components/Login/Login';
 import DataTable from './components/DataTable/DataTable';
 import Accordion from './components/Accordion';
+import Calendar from './components/Calendar/Calendar';
+import Modals from './pages/Modals';
 
 function App() {
   return (
@@ -19,12 +21,14 @@ function App() {
         <Route path="/dash" element={<Dash />}>
           <Route path="table" element={<DataTable />} />
           <Route path="schedule" element={<Schedule />} />
+          <Route path="calendar" element={<Calendar />} />
         </Route>
         <Route path="/navbar" element={<NavBar />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/functioncontainer" element={<FunctionContainer />} />
-
+        <Route path='/modals' element={<Modals />} />
         <Route path="/login" element={<Login />} />
+        
       </Routes>
     </BrowserRouter>
   );
