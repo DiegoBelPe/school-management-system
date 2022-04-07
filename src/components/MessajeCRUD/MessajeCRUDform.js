@@ -1,41 +1,43 @@
 import React, { useEffect, useState } from 'react';
 
-const initialForm={
-  name:"",
-  messaje:"",
-  id:null,
-}
+const initialForm = {
+  name: '',
+  messaje: '',
+  id: null,
+};
 
-const MessajeCRUDform = ({createData ,updateData,dataToEdit,setDataToEdit}) => {
-  const[form,setForm]=useState(initialForm);
+function MessajeCRUDform({
+  createData, updateData, dataToEdit, setDataToEdit,
+}) {
+  const [form, setForm] = useState(initialForm);
 
-  useEffect(()=>{
-    if(dataToEdit){
-      setForm(dataToEdit)
-    }else{
-      setForm(initialForm)
+  useEffect(() => {
+    if (dataToEdit) {
+      setForm(dataToEdit);
+    } else {
+      setForm(initialForm);
     }
-  },[dataToEdit])
+  }, [dataToEdit]);
 
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]:e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(!form.name || !form.messaje){
-      alert("Datos incompletos");
+    if (!form.name || !form.messaje) {
+      alert('Datos incompletos');
       return;
     }
 
-    if(form.id === null){
+    if (form.id === null) {
       createData(form);
-    }else{
-      updateData(form)
+    } else {
+      updateData(form);
     }
 
     handleReset();
@@ -43,12 +45,12 @@ const MessajeCRUDform = ({createData ,updateData,dataToEdit,setDataToEdit}) => {
 
   const handleReset = (e) => {
     setForm(initialForm);
-    setDataToEdit(null)
+    setDataToEdit(null);
   };
 
   return (
     <div>
-      <h3>{dataToEdit ? "Editar":"Agregar"}</h3>
+      <h3>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -65,10 +67,10 @@ const MessajeCRUDform = ({createData ,updateData,dataToEdit,setDataToEdit}) => {
           value={form.messaje}
         />
         <input type="Submit" value="Enviar" />
-        <input type="reset" value="Limpiar" onClick={handleReset}/>
+        <input type="reset" value="Limpiar" onClick={handleReset} />
       </form>
     </div>
   );
-};
+}
 
 export default MessajeCRUDform;

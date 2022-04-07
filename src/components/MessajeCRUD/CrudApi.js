@@ -5,15 +5,14 @@ import MessajeCRUDtable from './MessajeCRUDtable';
 import Loader from './Loader';
 import MessageCRUD from './MessageCRUD';
 
-
-const CrudApi = () => {
+function CrudApi() {
   const [db, setDb] = useState(null);
   const [dataToEdit, setDataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  let api = methodHTTP();
-  let url = 'http://localhost:8080/api/messajeDb';
+  const api = methodHTTP();
+  const url = 'http://localhost:8080/api/messajeDb';
 
   useEffect(() => {
     setLoading(true);
@@ -36,7 +35,7 @@ const CrudApi = () => {
   const createData = (data) => {
     data.id = Date.now();
 
-    let options = {
+    const options = {
       body: data,
       headers: { 'content-type': 'application/json' },
     };
@@ -53,10 +52,10 @@ const CrudApi = () => {
   };
 
   const updateData = (data) => {
-    let endpoint = `${url}/${data.id}`;
+    const endpoint = `${url}/${data.id}`;
     console.log(endpoint);
 
-    let options = {
+    const options = {
       body: data,
       headers: { 'content-type': 'application/json' },
     };
@@ -64,7 +63,7 @@ const CrudApi = () => {
     api.put(endpoint, options).then((res) => {
       // console.log(res);
       if (!res.err) {
-        let newData = db.map((el) => (el.id === data.id ? data : el));
+        const newData = db.map((el) => (el.id === data.id ? data : el));
         setDb(newData);
       } else {
         setError(res);
@@ -73,26 +72,26 @@ const CrudApi = () => {
   };
 
   const deleteData = (id) => {
-    let isDelete = window.confirm(
-      `¿Estas seguro de eliminar el registro con el ID '${id}'?`
+    const isDelete = window.confirm(
+      `¿Estas seguro de eliminar el registro con el ID '${id}'?`,
     );
 
     if (isDelete) {
-      let endpoint = `${url}/${id}`;
-      let options = {
+      const endpoint = `${url}/${id}`;
+      const options = {
         headers: { 'content-type': 'application/json' },
       };
 
       api.del(endpoint, options).then((res) => {
         if (!res.err) {
-          let newData = db.filter((el) => el.id !== id);
+          const newData = db.filter((el) => el.id !== id);
           setDb(newData);
         } else {
           setError(res);
         }
       });
     } else {
-      return;
+
     }
   };
 
@@ -121,6 +120,6 @@ const CrudApi = () => {
       )}
     </div>
   );
-};
+}
 
 export default CrudApi;

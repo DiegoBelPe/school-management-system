@@ -20,33 +20,32 @@ const initialDb = [
   },
 ];
 
-const MessajeCRUD = () => {
+function MessajeCRUD() {
   const [db, setDb] = useState(initialDb);
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const createData = (data) => {
-    data.id=Date.now()
-    setDb([...db,data])
+    data.id = Date.now();
+    setDb([...db, data]);
   };
 
   const updateData = (data) => {
-    let newData = db.map(el => el.id === data.id ? data:el)
+    const newData = db.map((el) => (el.id === data.id ? data : el));
     setDb(newData);
   };
 
   const deleteData = (id) => {
-    let isDelete =window.confirm(
-      `¿Estas seguro de eliminar el registro con el ID '${id}'?`
-      );
+    const isDelete = window.confirm(
+      `¿Estas seguro de eliminar el registro con el ID '${id}'?`,
+    );
 
-      if(isDelete){
-        let newData = db.filter(el => el.id !== id);
-        setDb(newData);
-      } else {
-        return;
-      }
+    if (isDelete) {
+      const newData = db.filter((el) => el.id !== id);
+      setDb(newData);
+    } else {
+
+    }
   };
-
 
   return (
     <div>
@@ -64,6 +63,6 @@ const MessajeCRUD = () => {
       />
     </div>
   );
-};
+}
 
 export default MessajeCRUD;

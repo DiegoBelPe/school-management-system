@@ -4,9 +4,8 @@ import ContImg from './ContImg';
 function Index() {
   return (
     <div className="App">
-      <div><ContImg/></div>
-      
-        
+      <div><ContImg /></div>
+
     </div>
   );
 }

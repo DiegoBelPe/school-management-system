@@ -1,7 +1,7 @@
 import React from 'react';
 import MessajeCRUDtrow from './MessajeCRUDtrow';
 
-const MessajeCRUDtable = ({ data, setDataToEdit, deleteData }) => {
+function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
   return (
     <div>
       <h3>Mensajes de Entrada</h3>
@@ -32,6 +32,6 @@ const MessajeCRUDtable = ({ data, setDataToEdit, deleteData }) => {
       </table>
     </div>
   );
-};
+}
 
 export default MessajeCRUDtable;

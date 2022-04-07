@@ -1,23 +1,23 @@
 import React from 'react';
 import './Loader.css';
 
-const Loader = () => {
+function Loader() {
   return (
-    <div className='lds-spinner'>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className="lds-spinner">
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
     </div>
   );
-};
+}
 
 export default Loader;

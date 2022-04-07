@@ -3,9 +3,8 @@ import DataTable from './DataTable';
 function Index() {
   return (
     <div className="App">
-      <div><DataTable/></div>
-      
-        
+      <div><DataTable /></div>
+
     </div>
   );
 }
