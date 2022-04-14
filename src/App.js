@@ -6,11 +6,11 @@ import Cards from './components/Cards/Cards';
 import FunctionContainer from './components/FunctionContainer';
 import Schedule from './components/Schedule/Schedule';
 import Dash from './pages/Dash/Dash';
-import DashNav from './components/DashNav/DasNav';
+// import DashNav from './components/DashNav/DasNav';
 import Login from './components/Login/Login';
 import DataTable from './components/DataTable/DataTable';
-import Accordion from './components/Accordion';
-import MessajeCRUD from './components/MessajeCRUD/MessajeCRUD';
+// import Accordion from './components/Accordion';
+// import MessajeCRUD from './components/MessajeCRUD/MessajeCRUD';
 import CrudApi from './components/MessajeCRUD/CrudApi'
 import About from './pages/About/About';
 
@@ -29,6 +29,7 @@ function App() {
         <Route path="/functioncontainer" element={<FunctionContainer />} />
         <Route path="/about" element={<About/>} />
         <Route path="/login" element={<Login />} />
+        <Route path="/CrudApi" element={<CrudApi/>} />
       </Routes>
     </BrowserRouter>
   );
