@@ -2,11 +2,11 @@ import React from 'react';
 import style from './About.module.css';
 import images from '../../assets/images';
 
-const About = () => {
+function About() {
   return (
     <div className={style.section__about}>
       <div className={style.container__title}>
-      <h2 className={style.about__title}> Conoce nuestro colegio</h2>
+        <h2 className={style.about__title}> Conoce nuestro colegio</h2>
       </div>
       <div className={style.section__content}>
         <div className={style.about__img}>
@@ -23,6 +23,6 @@ const About = () => {
       </div>
     </div>
   );
-};
+}
 
 export default About;

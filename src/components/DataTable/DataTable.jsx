@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Table,
   TableContainer,
@@ -11,28 +11,28 @@ import {
   Modal,
   Button,
   TextField,
-} from "@material-ui/core";
-import { Edit, Delete } from "@material-ui/icons";
+} from '@material-ui/core';
+import { Edit, Delete } from '@material-ui/icons';
 
-const baseUrl = "http://localhost:8080/api/chores/";
+const baseUrl = 'http://localhost:8080/api/chores/';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
-    position: "absolute",
+    position: 'absolute',
     width: 400,
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
   },
   iconos: {
-    cursor: "pointer",
+    cursor: 'pointer',
   },
   inputMaterial: {
-    width: "100%",
+    width: '100%',
   },
 }));
 
@@ -44,10 +44,10 @@ function DataTable() {
   const [modalEliminar, setModalEliminar] = useState(false);
 
   const [consolaSeleccionada, setConsolaSeleccionada] = useState({
-    course: "",
-    description: "",
-    observations: "",
-    endDate: "",
+    course: '',
+    description: '',
+    observations: '',
+    endDate: '',
   });
 
   const handleChange = (e) => {
@@ -76,14 +76,13 @@ function DataTable() {
     await axios
       .put(baseUrl + consolaSeleccionada.id, consolaSeleccionada)
       .then((response) => {
-        var dataNueva = data;
+        const dataNueva = data;
         dataNueva.map((consola) => {
           if (consolaSeleccionada.id === consola.id) {
             consola.course = consolaSeleccionada.course;
             consola.description = consolaSeleccionada.description;
             consola.observations = consolaSeleccionada.observations;
             consola.endDate = consolaSeleccionada.endDate;
-            
           }
         });
         setData(dataNueva);
@@ -112,7 +111,7 @@ function DataTable() {
 
   const seleccionarConsola = (consola, caso) => {
     setConsolaSeleccionada(consola);
-    caso === "Editar" ? abrirCerrarModalEditar() : abrirCerrarModalEliminar();
+    caso === 'Editar' ? abrirCerrarModalEditar() : abrirCerrarModalEliminar();
   };
 
   useEffect(async () => {
@@ -168,7 +167,7 @@ function DataTable() {
         className={styles.inputMaterial}
         label="Asignatura"
         onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.course}   
+        value={consolaSeleccionada && consolaSeleccionada.course}
       />
       <br />
       <TextField
@@ -209,8 +208,12 @@ function DataTable() {
   const bodyEliminar = (
     <div className={styles.modal}>
       <p>
-        Estás seguro que deseas eliminar{" "}
-        <b>{consolaSeleccionada && consolaSeleccionada.course}</b> ?{" "}
+        Estás seguro que deseas eliminar
+        {' '}
+        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>
+        {' '}
+        ?
+        {' '}
       </p>
       <div align="right">
         <Button color="secondary" onClick={() => peticionDelete()}>
@@ -239,10 +242,7 @@ function DataTable() {
               <TableCell>Acciones</TableCell>
             </TableRow>
           </TableHead>
-          
-    
-    
-    
+
           <TableBody>
             {data.map((consola) => (
               <TableRow key={consola.id}>
@@ -253,12 +253,12 @@ function DataTable() {
                 <TableCell>
                   <Edit
                     className={styles.iconos}
-                    onClick={() => seleccionarConsola(consola, "Editar")}
+                    onClick={() => seleccionarConsola(consola, 'Editar')}
                   />
                   &nbsp;&nbsp;&nbsp;
                   <Delete
                     className={styles.iconos}
-                    onClick={() => seleccionarConsola(consola, "Eliminar")}
+                    onClick={() => seleccionarConsola(consola, 'Eliminar')}
                   />
                 </TableCell>
               </TableRow>
@@ -283,4 +283,3 @@ function DataTable() {
 }
 
 export default DataTable;
-

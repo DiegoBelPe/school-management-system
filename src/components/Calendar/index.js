@@ -1,11 +1,11 @@
 import React from 'react';
-import Schedule from './Schedule';
+import Calendar from './Calendar';
 import './Schedule.css';
 
 function index() {
   return (
     <div className="App">
-      <Schedule />
+      <Calendar />
     </div>
   );
 }

@@ -1,7 +1,7 @@
-import React from "react";
-import style from "./Cards.module.css";
+import React from 'react';
+import style from './Cards.module.css';
 
-const Cards = (props) => {
+function Cards(props) {
   return (
     <div className={style.container}>
       <div className={style.container__card}>
@@ -15,6 +15,6 @@ const Cards = (props) => {
       </div>
     </div>
   );
-};
+}
 
 export default Cards;
