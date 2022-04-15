@@ -11,6 +11,7 @@ import DataTable from './components/DataTable/DataTable';
 import Calendar from './components/Calendar/Calendar';
 import Modals from './pages/Modals';
 import About from './pages/About/About';
+import CrudApi from './components/MessajeCRUD/CrudApi';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="table" element={<DataTable />} />
           <Route path="schedule" element={<Schedule />} />
           <Route path="calendar" element={<Calendar />} />
+          <Route path="messages" element={<CrudApi />} />
         </Route>
         <Route path="/navbar" element={<NavBar />} />
         <Route path="/card" element={<Cards />} />

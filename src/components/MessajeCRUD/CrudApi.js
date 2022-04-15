@@ -12,7 +12,7 @@ function CrudApi() {
   const [loading, setLoading] = useState(false);
 
   const api = methodHTTP();
-  const url = 'http://localhost:8080/api/messajeDb';
+  const url = 'https://backend-school-management.herokuapp.com/api/message';
 
   useEffect(() => {
     setLoading(true);

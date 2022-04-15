@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { Edit, Delete } from '@material-ui/icons';
 
-const baseUrl = 'http://localhost:8080/api/chores/';
+const baseUrl = 'https://backend-school-management.herokuapp.com/api/tareas';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
