@@ -72,9 +72,7 @@ function CrudApi() {
   };
 
   const deleteData = (id) => {
-    const isDelete = window.confirm(
-      `¿Estas seguro de eliminar el registro con el ID '${id}'?`,
-    );
+    const isDelete = window.confirm(`¿Estas seguro de eliminar el registro con el ID '${id}'?`);
 
     if (isDelete) {
       const endpoint = `${url}/${id}`;
@@ -91,7 +89,7 @@ function CrudApi() {
         }
       });
     } else {
-
+      console.log('No se elimino el registro');
     }
   };
 
