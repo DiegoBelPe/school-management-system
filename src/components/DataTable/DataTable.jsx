@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -13,8 +14,9 @@ import {
   TextField,
 } from '@material-ui/core';
 import { Edit, Delete } from '@material-ui/icons';
+import { getTasks } from '../../services/task'
 
-const baseUrl = 'https://backend-school-management.herokuapp.com/api/tareas';
+const baseUrl = 'https://backend-school-management.herokuapp.com';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -37,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function DataTable() {
+  const dispatch = useDispatch();
   const styles = useStyles();
   const [data, setData] = useState([]);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -59,22 +62,22 @@ function DataTable() {
     console.log(consolaSeleccionada);
   };
 
-  const peticionGet = async () => {
-    await axios.get(baseUrl).then((response) => {
+  /* const peticionGet = async () => {
+    await axios.get(`${baseUrl}/api/tareas`).then((response) => {
       setData(response.data);
     });
-  };
+  }; */
 
-  const peticionPost = async () => {
+  /* const peticionPost = async () => {
     await axios.post(baseUrl, consolaSeleccionada).then((response) => {
       setData(data.concat(response.data));
       abrirCerrarModalInsertar();
     });
-  };
+  }; */
 
-  const peticionPut = async () => {
+  /* const peticionPut = async () => {
     await axios
-      .put(baseUrl + '/api/tareas' + consolaSeleccionada.id, consolaSeleccionada)
+      .put(baseUrl + '/' + consolaSeleccionada.id, consolaSeleccionada)
       .then((response) => {
         const dataNueva = data;
         dataNueva.map((consola) => {
@@ -88,14 +91,14 @@ function DataTable() {
         setData(dataNueva);
         abrirCerrarModalEditar();
       });
-  };
+  }; */
 
-  const peticionDelete = async () => {
+  /* const peticionDelete = async () => {
     await axios.delete(baseUrl + consolaSeleccionada.id).then((response) => {
       setData(data.filter((consola) => consola.id !== consolaSeleccionada.id));
       abrirCerrarModalEliminar();
     });
-  };
+  }; */
 
   const abrirCerrarModalInsertar = () => {
     setModalInsertar(!modalInsertar);
@@ -114,8 +117,16 @@ function DataTable() {
     caso === 'Editar' ? abrirCerrarModalEditar() : abrirCerrarModalEliminar();
   };
 
-  useEffect(async () => {
+  /* useEffect(async () => {
     await peticionGet();
+    dispatch(getTasks());
+  }, []); */
+  useEffect(async() => {
+    const fecthTodos = async () => {
+      const todos = await getTasks();
+      console.log('todos', todos);
+    }
+    fecthTodos();
   }, []);
 
   const bodyInsertar = (
@@ -208,12 +219,8 @@ function DataTable() {
   const bodyEliminar = (
     <div className={styles.modal}>
       <p>
-        Estás seguro que deseas eliminar
-        {' '}
-        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>
-        {' '}
-        ?
-        {' '}
+        Estás seguro que deseas eliminar{' '}
+        <b>{consolaSeleccionada && consolaSeleccionada.course}</b> ?{' '}
       </p>
       <div align="right">
         <Button color="secondary" onClick={() => peticionDelete()}>
