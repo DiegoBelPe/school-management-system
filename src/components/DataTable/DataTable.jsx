@@ -74,7 +74,7 @@ function DataTable() {
 
   const peticionPut = async () => {
     await axios
-      .put(baseUrl + consolaSeleccionada.id, consolaSeleccionada)
+      .put(baseUrl + '/api/tareas' + consolaSeleccionada.id, consolaSeleccionada)
       .then((response) => {
         const dataNueva = data;
         dataNueva.map((consola) => {
