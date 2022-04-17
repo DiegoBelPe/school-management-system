@@ -13,13 +13,15 @@ export const methodHTTP = () => {
     if (!options.body) delete options.body;
     setTimeout(() => controller.abort(), 3000);
     return fetch(endpoint, options)
-      .then((res) => (res.ok
-        ? res.json()
-        : Promise.reject({
-          err: true,
-          status: res.status || '00',
-          statusText: res.statusText || 'Ocurrió un error',
-        })))
+      .then((res) =>
+        res.ok
+          ? res.json()
+          : Promise.reject({
+              err: true,
+              status: res.status || '00',
+              statusText: res.statusText || 'Ocurrió un error',
+            })
+      )
       .catch((err) => err);
   };
   const get = (url, options = {}) => customFetch(url, options);
