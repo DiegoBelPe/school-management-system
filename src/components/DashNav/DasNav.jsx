@@ -36,29 +36,26 @@ function DasNav(props) {
           <a href="">
             <div className="icon">
               {' '}
-              <img src={images.img2} alt="" />
-              {' '}
+              <img src={images.img2} alt="" />{' '}
             </div>
             <div className="title">
               {' '}
-              <span>Principal</span>
-              {' '}
+              <span>Principal</span>{' '}
             </div>
           </a>
         </div>
         <div className="item separator" />
         <div className="item">
-          <a href="">
+          <Link to="/dash/messages">
             <div className="icon">
               {' '}
               <img src={images.img3} alt="" />
             </div>
             <div className="title">
               {' '}
-              <span>Mensajes</span>
-              {' '}
+              <span>Mensajes</span>{' '}
             </div>
-          </a>
+          </Link>
         </div>
         <div className="item separator" />
         <div className="item">
@@ -69,8 +66,7 @@ function DasNav(props) {
             </div>
             <div className="title">
               {' '}
-              <span>Calendario</span>
-              {' '}
+              <span>Calendario</span>{' '}
             </div>
           </Link>
         </div>
@@ -79,13 +75,11 @@ function DasNav(props) {
           <Link to="/dash/table">
             <div className="icon">
               {' '}
-              <img src={images.img5} alt="" />
-              {' '}
+              <img src={images.img5} alt="" />{' '}
             </div>
             <div className="title">
               {' '}
-              <span>Tareas</span>
-              {' '}
+              <span>Tareas</span>{' '}
             </div>
           </Link>
         </div>
@@ -94,13 +88,11 @@ function DasNav(props) {
           <Link to="/dash/schedule">
             <div className="icon">
               {' '}
-              <img src={images.img6} alt="" />
-              {' '}
+              <img src={images.img6} alt="" />{' '}
             </div>
             <div className="title">
               {' '}
-              <span>Horario</span>
-              {' '}
+              <span>Horario</span>{' '}
             </div>
           </Link>
         </div>
@@ -109,13 +101,11 @@ function DasNav(props) {
           <a href="">
             <div className="icon">
               {' '}
-              <img src={images.img7} alt="" />
-              {' '}
+              <img src={images.img7} alt="" />{' '}
             </div>
             <div className="title">
               {' '}
-              <span>Notas</span>
-              {' '}
+              <span>Notas</span>{' '}
             </div>
           </a>
         </div>
