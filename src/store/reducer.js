@@ -1,5 +1,6 @@
 /* const initialState = {
   tasks: [],
+<<<<<<< HEAD
 }; */
 
 /* function reducer(state = initialState, action) {
@@ -34,5 +35,11 @@
       return state;
   }
 } */
+=======
+};
+
+function reducer(state = initialState, action) {
+};
+>>>>>>> develop
 
 /* export default reducer; */

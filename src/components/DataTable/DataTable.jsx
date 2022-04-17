@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { Edit, Delete } from '@material-ui/icons';
 
-const baseUrl = 'https://backend-school-management.herokuapp.com';
+const baseUrl = 'https://backend-school-management.herokuapp.com/api/tareas';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -60,7 +60,7 @@ function DataTable() {
   };
 
   const peticionGet = async () => {
-    await axios.get(`${baseUrl}/api/tareas`).then((response) => {
+    await axios.get(baseUrl).then((response) => {
       setData(response.data);
     });
   };
@@ -74,7 +74,7 @@ function DataTable() {
 
   const peticionPut = async () => {
     await axios
-      .patch(`${baseUrl}/api/tareas/id` + consolaSeleccionada.id, consolaSeleccionada)
+      .put(baseUrl + consolaSeleccionada.id, consolaSeleccionada)
       .then((response) => {
         const dataNueva = data;
         dataNueva.map((consola) => {
