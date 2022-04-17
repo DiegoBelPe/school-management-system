@@ -21,13 +21,15 @@ export const methodHTTP = () => {
     setTimeout(() => controller.abort(), 3000);
 
     return fetch(endpoint, options)
-      .then((res) => (res.ok
-        ? res.json()
-        : Promise.reject({
-          err: true,
-          status: res.status || '00',
-          statusText: res.statusText || 'Ocurrió un error',
-        })))
+      .then((res) =>
+        res.ok
+          ? res.json()
+          : Promise.reject({
+              err: true,
+              status: res.status || '00',
+              statusText: res.statusText || 'Ocurrió un error',
+            })
+      )
       .catch((err) => err);
   };
 

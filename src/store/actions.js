@@ -1,2 +1,2 @@
-// action redux
-export const getTasks = () => ( {type: 'GET_TASKS', paylod:  tasks });
+export const getAllTasks = (tasks) => ({ type: 'GET_TASKS', payload: tasks });
+export const getOneTask = (task) => ({ type: 'GET_ONE_TASK', payload: task });
