@@ -5,7 +5,6 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "parser: /usr/local/lib/node_modules/babel-eslint",
     "airbnb"
   ],
 
