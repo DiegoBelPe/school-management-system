@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
@@ -17,30 +18,19 @@ import { useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';
 
 
+=======
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
+import { DataGrid } from '@mui/x-data-grid';
+import { Edit, Delete } from '@material-ui/icons';
+>>>>>>> f9fbbd23a862a031a3b575163398aac508d71e95
 
-const baseUrl = "http://localhost:8080/api/chores/";
-
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    position: "absolute",
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-  },
-  iconos: {
-    cursor: "pointer",
-  },
-  inputMaterial: {
-    width: "100%",
-  },
-}));
+import { getTask } from '../../services/task';
+import { getAllTasks } from '../../store/actions';
 
 function DataTable() {
+<<<<<<< HEAD
   
   const styles = useStyles();
   const [data, setData] = useState([]);
@@ -123,170 +113,52 @@ function DataTable() {
 
   useEffect(async () => {
     await peticionGet();
+=======
+  const dispatch = useDispatch();
+  const clases = {
+    _id: '6256fb64810952aff49d8ebb',
+    course: 'Programacion',
+    description: 'react',
+    endDate: '14/04/2022',
+    __v: 0,
+  };
+  const [data, setData] = React.useState([]);
+  const columns = [
+    {
+      field: 'course',
+      headerName: 'Asignatura',
+    },
+    {
+      field: 'description',
+      headerName: 'Descripcion',
+    },
+    {
+      field: 'endDate',
+      headerName: 'Fecha de finalizacion',
+    },
+  ];
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const results = await getTask();
+      setData(results);
+      console.log(results);
+      dispatch(getAllTasks(results));
+    };
+    fetchTodos();
+>>>>>>> f9fbbd23a862a031a3b575163398aac508d71e95
   }, []);
-
-  const bodyInsertar = (
-    <div className={styles.modal}>
-      <h3>Agregar Nueva Consola</h3>
-      <TextField
-        name="course"
-        className={styles.inputMaterial}
-        label="Asignatura"
-        onChange={handleChange}
-      />
-      <br />
-      <TextField
-        name="description"
-        className={styles.inputMaterial}
-        label="Descripcion"
-        onChange={handleChange}
-      />
-      <br />
-      <TextField
-        name="observations"
-        className={styles.inputMaterial}
-        label="Observaciones"
-        onChange={handleChange}
-      />
-      <br />
-      <TextField
-        name="endDate"
-        className={styles.inputMaterial}
-        label="Fecha de entrega"
-        onChange={handleChange}
-      />
-      <br />
-      <br />
-      <div align="right">
-        <Button color="primary" onClick={() => peticionPost()}>
-          Insertar
-        </Button>
-        <Button onClick={() => abrirCerrarModalInsertar()}>Cancelar</Button>
-      </div>
-    </div>
-  );
-
-  const bodyEditar = (
-    <div className={styles.modal}>
-      <h3>Editar Consola</h3>
-      <TextField
-        name="course"
-        className={styles.inputMaterial}
-        label="Asignatura"
-        onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.course}   
-      />
-      <br />
-      <TextField
-        name="description"
-        className={styles.inputMaterial}
-        label="Descripcion"
-        onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.description}
-      />
-      <br />
-      <TextField
-        name="observations"
-        className={styles.inputMaterial}
-        label="Observaciones"
-        onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.observations}
-      />
-      <br />
-      <TextField
-        name="endDate"
-        className={styles.inputMaterial}
-        label="Fecha de entrega"
-        onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.endDate}
-        ondition
-      />
-      <br />
-      <br />
-      <div align="right">
-        <Button color="primary" onClick={() => peticionPut()}>
-          Editar
-        </Button>
-        <Button onClick={() => abrirCerrarModalEditar()}>Cancelar</Button>
-      </div>
-    </div>
-  );
-
-  const bodyEliminar = (
-    <div className={styles.modal}>
-      <p>
-        Estás seguro que deseas eliminar{" "}
-        <b>{consolaSeleccionada && consolaSeleccionada.course}</b> ?{" "}
-      </p>
-      <div align="right">
-        <Button color="secondary" onClick={() => peticionDelete()}>
-          Sí
-        </Button>
-        <Button onClick={() => abrirCerrarModalEliminar()}>No</Button>
-      </div>
-    </div>
-  );
 
   return (
     <div className="App">
       <h1>DataTable Tareas</h1>
       <br />
-      <Button onClick={() => abrirCerrarModalInsertar()}>Insertar</Button>
-      <br />
-      <br />
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Asignatura</TableCell>
-              <TableCell>Descripcion</TableCell>
-              <TableCell>Observaciones</TableCell>
-              <TableCell>Fecha de entrega</TableCell>
-              <TableCell>Acciones</TableCell>
-            </TableRow>
-          </TableHead>
-          
-    
-    
-    
-          <TableBody>
-            {data.map((consola) => (
-              <TableRow key={consola.id}>
-                <TableCell>{consola.course}</TableCell>
-                <TableCell>{consola.description}</TableCell>
-                <TableCell>{consola.observations}</TableCell>
-                <TableCell>{consola.endDate}</TableCell>
-                <TableCell>
-                  <Edit
-                    className={styles.iconos}
-                    onClick={() => seleccionarConsola(consola, "Editar")}
-                  />
-                  &nbsp;&nbsp;&nbsp;
-                  <Delete
-                    className={styles.iconos}
-                    onClick={() => seleccionarConsola(consola, "Eliminar")}
-                  />
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-
-      <Modal open={modalInsertar} onClose={abrirCerrarModalInsertar}>
-        {bodyInsertar}
-      </Modal>
-
-      <Modal open={modalEditar} onClose={abrirCerrarModalEditar}>
-        {bodyEditar}
-      </Modal>
-
-      <Modal open={modalEliminar} onClose={abrirCerrarModalEliminar}>
-        {bodyEliminar}
-      </Modal>
+      <DataGrid
+        rows={data}
+        columns={columns}
+        getRowId={(row) => row._id}
+      />
     </div>
   );
 }
 
 export default DataTable;
-
