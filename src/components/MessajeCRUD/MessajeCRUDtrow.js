@@ -1,11 +1,14 @@
 import React from 'react';
 
+// eslint-disable-next-line react/prop-types
 function MessajeCRUDtrow({ el, setDataToEdit, deleteData }) {
-  const { name, messaje, id } = el;
+  // eslint-disable-next-line react/prop-types
+  const { remitente, asunto, mensaje, _id: id } = el;
   return (
     <tr>
-      <td>{name}</td>
-      <td>{messaje}</td>
+      <td>{remitente}</td>
+      <td>{asunto}</td>
+      <td>{mensaje}</td>
       <td>
         <button onClick={() => setDataToEdit(el)}>Editar</button>
         <button onClick={() => deleteData(id)}>Eliminar</button>
