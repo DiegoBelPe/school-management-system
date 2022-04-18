@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
 const initialForm = {
-  name: '',
-  messaje: '',
+  remitente: '',
+  asunto: '',
+  mensaje: '',
   id: null,
 };
 
 function MessajeCRUDform({
+  // eslint-disable-next-line react/prop-types
   createData, updateData, dataToEdit, setDataToEdit,
 }) {
   const [form, setForm] = useState(initialForm);
@@ -29,7 +31,8 @@ function MessajeCRUDform({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.name || !form.messaje) {
+    if (!form.remitente || !form.asunto || !form.mensaje) {
+      // eslint-disable-next-line no-alert
       alert('Datos incompletos');
       return;
     }
@@ -40,10 +43,11 @@ function MessajeCRUDform({
       updateData(form);
     }
 
+    // eslint-disable-next-line no-use-before-define
     handleReset();
   };
 
-  const handleReset = (e) => {
+  const handleReset = () => {
     setForm(initialForm);
     setDataToEdit(null);
   };
@@ -54,18 +58,26 @@ function MessajeCRUDform({
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="name"
-          placeholder="Nombre"
+          name="remitente"
+          placeholder="Remitente"
           onChange={handleChange}
-          value={form.name}
+          value={form.remitente}
         />
         <input
           type="text"
-          name="messaje"
+          name="asunto"
+          placeholder="Asunto"
+          onChange={handleChange}
+          value={form.asunto}
+        />
+        <input
+          type="text"
+          name="mensaje"
           placeholder="Mensaje"
           onChange={handleChange}
-          value={form.messaje}
+          value={form.mensaje}
         />
+
         <input type="Submit" value="Enviar" />
         <input type="reset" value="Limpiar" onClick={handleReset} />
       </form>

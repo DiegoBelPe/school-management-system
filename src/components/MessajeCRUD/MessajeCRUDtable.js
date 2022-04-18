@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import MessajeCRUDtrow from './MessajeCRUDtrow';
 
+// eslint-disable-next-line react/prop-types
 function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
   return (
     <div>
@@ -8,7 +10,8 @@ function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
       <table>
         <thead>
           <tr>
-            <th>Nombre</th>
+            <th>Remitente</th>
+            <th>Asunto</th>
             <th>Mensaje</th>
             <th>Opciones</th>
           </tr>
