@@ -13,6 +13,10 @@ import {
   TextField,
 } from "@material-ui/core";
 import { Edit, Delete } from "@material-ui/icons";
+import { useSelector } from "react-redux";
+import { Redirect } from 'react-router-dom';
+
+
 
 const baseUrl = "http://localhost:8080/api/chores/";
 
@@ -37,11 +41,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function DataTable() {
+  
   const styles = useStyles();
   const [data, setData] = useState([]);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
+  
 
   const [consolaSeleccionada, setConsolaSeleccionada] = useState({
     course: "",
