@@ -1,5 +1,6 @@
-const BASE_URL = 'http://localhost:8080'//'https://backend-school-management.herokuapp.com';
+const BASE_URL = 'http://localhost:8080';// 'https://backend-school-management.herokuapp.com';
 
+// eslint-disable-next-line consistent-return
 export async function getMessage() {
   try {
     const resp = await fetch(`${BASE_URL}/api/message`);
@@ -10,6 +11,7 @@ export async function getMessage() {
   }
 }
 
+// eslint-disable-next-line consistent-return
 export async function getMessageById(id) {
   try {
     const resp = await fetch(`${BASE_URL}/api/message/${id}`);
@@ -18,5 +20,4 @@ export async function getMessageById(id) {
   } catch (error) {
     console.log(error);
   }
-};
-
+}

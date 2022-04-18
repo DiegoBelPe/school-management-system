@@ -14,7 +14,6 @@ import {
 } from '@material-ui/core';
 import { Edit, Delete } from '@material-ui/icons';
 
-
 import { getTask } from '../../services/task';
 import { getAllTasks } from '../../store/actions';
 

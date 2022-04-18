@@ -1,5 +1,6 @@
 import React from 'react';
 
+// eslint-disable-next-line react/prop-types
 function MessageCRUD({ msg, bgColor }) {
   const styles = {
     padding: '1rem',

@@ -1,8 +1,9 @@
+/* eslint-disable max-len */
 import React from 'react';
 import './Accordion.css';
 
+// eslint-disable-next-line react/prop-types
 function Accordion({ title, active, setActive }) {
-  console.log(title);
   return (
     <div className="accordion">
       <div className="accordionHeading">
