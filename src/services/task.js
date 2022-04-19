@@ -21,3 +21,20 @@ export async function getOneTask(id) {
     console.log(error);
   }
 }
+
+export async function createTask(task) {
+  try {
+    const payload = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(task),
+    };
+    const resp = await fetch(`${BASE_URL}/api/tareas`, payload);
+    const newTask = await resp.json();
+    return newTask;
+  } catch (error) {
+    console.log(error);
+  }
+}

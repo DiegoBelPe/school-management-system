@@ -9,26 +9,31 @@ import { getAllTasks } from '../../store/actions';
 
 function DataTable() {
   const dispatch = useDispatch();
-  const clases = {
-    _id: '6256fb64810952aff49d8ebb',
-    course: 'Programacion',
-    description: 'react',
-    endDate: '14/04/2022',
-    __v: 0,
-  };
   const [data, setData] = React.useState([]);
   const columns = [
     {
       field: 'course',
       headerName: 'Asignatura',
+      minWidth: 200,
     },
     {
       field: 'description',
       headerName: 'Descripcion',
+      minWidth: 200,
+    },
+    {
+      field: 'observations',
+      headerName: 'Observaciones',
+      minWidth: 200,
     },
     {
       field: 'endDate',
       headerName: 'Fecha de finalizacion',
+      minWidth: 200,
+    },
+    {
+      field: 'actions',
+      headerName: 'Acciones',
     },
   ];
   useEffect(() => {
@@ -42,15 +47,9 @@ function DataTable() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>DataTable Tareas</h1>
-      <br />
-      <DataGrid
-        rows={data}
-        columns={columns}
-        getRowId={(row) => row._id}
-      />
-    </div>
+    <>
+      <DataGrid rows={data} columns={columns} getRowId={(row) => row._id} />;
+    </>
   );
 }
 
