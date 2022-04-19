@@ -18,13 +18,16 @@ export function messageReducer(state, action) {
         db: [...state.db, action.payload],
       };
     }
-    // case TYPES.READ_ONE_DATA: {
-    //   break;
-    // }
     case TYPES.UPDATE_DATA: {
-      console.log(action.payload);
-      // eslint-disable-next-line max-len
-      const newData = state.db.map(({ _id: id }) => (id === action.payload.id ? action.payload : id));
+      const { _id: id } = action.payload;
+      const newData = state.db.map((item) => {
+        const { _id: idUpdate } = item;
+        if (idUpdate === id) {
+          return action.payload;
+        }
+        return item;
+      });
+
       return {
         ...state,
         db: newData,
