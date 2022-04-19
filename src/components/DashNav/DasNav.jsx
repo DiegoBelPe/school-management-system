@@ -3,7 +3,7 @@ import './DasNav.css';
 import { Link } from 'react-router-dom';
 import images from '../../assets/images';
 
-function DasNav(props) {
+function DasNav() {
   const [openC, setOpenC] = useState(false);
   const openMenu = () => {
     setOpenC(!openC);
@@ -15,7 +15,13 @@ function DasNav(props) {
         <div id="sidemenu-title">
           <span>High School</span>
         </div>
-        <div id="menu-btn" onClick={openMenu}>
+        <div
+          id="menu-btn"
+          onClick={openMenu}
+          onKeyDown={openMenu}
+          role="button"
+          tabIndex={0}
+        >
           <div className="btn-hamburger" />
           <div className="btn-hamburger" />
           <div className="btn-hamburger" />
@@ -33,16 +39,18 @@ function DasNav(props) {
 
       <div id="menu-items">
         <div className="item">
-          <a href="">
+          <Link to="/dash">
             <div className="icon">
               {' '}
-              <img src={images.img2} alt="" />{' '}
+              <img src={images.img2} alt="icono home" />
+              {' '}
             </div>
             <div className="title">
               {' '}
-              <span>Principal</span>{' '}
+              <span>Principal</span>
+              {' '}
             </div>
-          </a>
+          </Link>
         </div>
         <div className="item separator" />
         <div className="item">
@@ -53,7 +61,8 @@ function DasNav(props) {
             </div>
             <div className="title">
               {' '}
-              <span>Mensajes</span>{' '}
+              <span>Mensajes</span>
+              {' '}
             </div>
           </Link>
         </div>
@@ -66,7 +75,8 @@ function DasNav(props) {
             </div>
             <div className="title">
               {' '}
-              <span>Calendario</span>{' '}
+              <span>Calendario</span>
+              {' '}
             </div>
           </Link>
         </div>
@@ -75,11 +85,13 @@ function DasNav(props) {
           <Link to="/dash/table">
             <div className="icon">
               {' '}
-              <img src={images.img5} alt="" />{' '}
+              <img src={images.img5} alt="" />
+              {' '}
             </div>
             <div className="title">
               {' '}
-              <span>Tareas</span>{' '}
+              <span>Tareas</span>
+              {' '}
             </div>
           </Link>
         </div>
@@ -88,26 +100,30 @@ function DasNav(props) {
           <Link to="/dash/schedule">
             <div className="icon">
               {' '}
-              <img src={images.img6} alt="" />{' '}
+              <img src={images.img6} alt="" />
+              {' '}
             </div>
             <div className="title">
               {' '}
-              <span>Horario</span>{' '}
+              <span>Horario</span>
+              {' '}
             </div>
           </Link>
         </div>
         <div className="item separator" />
         <div className="item">
-          <a href="">
+          <Link to="/dash">
             <div className="icon">
               {' '}
-              <img src={images.img7} alt="" />{' '}
+              <img src={images.img7} alt="" />
+              {' '}
             </div>
             <div className="title">
               {' '}
-              <span>Notas</span>{' '}
+              <span>Notas</span>
+              {' '}
             </div>
-          </a>
+          </Link>
         </div>
         <div className="item separator" />
       </div>

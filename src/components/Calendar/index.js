@@ -1,6 +1,6 @@
 import React from 'react';
 import Calendar from './Calendar';
-import './Schedule.css';
+import './Calendar.css';
 
 function index() {
   return (

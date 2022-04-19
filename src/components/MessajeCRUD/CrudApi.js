@@ -19,7 +19,6 @@ function CrudApi() {
     methodHTTP()
       .get(url)
       .then((res) => {
-        console.log(res);
         if (!res.err) {
           setDb(res);
           setError(null);

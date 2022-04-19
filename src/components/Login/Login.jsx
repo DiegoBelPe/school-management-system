@@ -16,7 +16,7 @@ function Login() {
               <i className="login__icon fas fa-lock" />
               <input type="password" className="login__input" placeholder="Contraseña" />
             </div>
-            <button className="button login__submit">
+            <button type="button" className="button login__submit">
               <Link to="../dash">
                 <span className="button__text">Ingresar</span>
                 <i className="button__icon fas fa-chevron-right" />

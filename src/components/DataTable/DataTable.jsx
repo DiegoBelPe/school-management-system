@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
 import { DataGrid } from '@mui/x-data-grid';
-import { Edit, Delete } from '@material-ui/icons';
 
 import { getTask } from '../../services/task';
 import { getAllTasks } from '../../store/actions';
@@ -40,16 +38,14 @@ function DataTable() {
     const fetchTodos = async () => {
       const results = await getTask();
       setData(results);
-      console.log(results);
       dispatch(getAllTasks(results));
     };
     fetchTodos();
   }, []);
 
   return (
-    <>
-      <DataGrid rows={data} columns={columns} getRowId={(row) => row._id} />;
-    </>
+    // eslint-disable-next-line no-underscore-dangle
+    <DataGrid rows={data} columns={columns} getRowId={(row) => row._id} />
   );
 }
 

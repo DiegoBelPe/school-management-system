@@ -5,9 +5,8 @@ import three from '../../assets/slide03.jpg';
 import four from '../../assets/slide04.jpg';
 import styles from './ContImg.module.css';
 
-function ContImg(children) {
+function ContImg() {
   return (
-
     <>
       <div className={styles.container} />
 
