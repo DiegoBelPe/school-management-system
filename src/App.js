@@ -30,7 +30,7 @@ function App() {
         <Route path="/modals" element={<Modals />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
-
+        <Route path="/CrudApi" element={<CrudApi />} />
       </Routes>
     </BrowserRouter>
   );
