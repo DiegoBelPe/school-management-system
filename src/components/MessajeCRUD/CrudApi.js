@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, useState } from 'react';
-import { methodHTTP } from '../../Methods/methodhHTTP';
+import methodHTTP from '../../Methods/methodhHTTP';
 import {
   messageInitialState,
   messageReducer,
@@ -8,7 +8,7 @@ import MessajeCRUDform from './MessajeCRUDform';
 import MessajeCRUDtable from './MessajeCRUDtable';
 import Loader from './Loader';
 import MessageCRUD from './MessageCRUD';
-import { TYPES } from '../../store/actionsMessage';
+import TYPES from '../../store/actionsMessage';
 
 function CrudApi() {
   const [state, dispatch] = useReducer(messageReducer, messageInitialState);

@@ -1,6 +1,6 @@
 const helpHttp = () => {
   const customFetch = (endpoint, opt) => {
-    const { options } = opt;
+    const options = opt;
     const defaultHeader = {
       accept: 'application/json',
     };
@@ -29,19 +29,19 @@ const helpHttp = () => {
   const get = (url, options = {}) => customFetch(url, options);
 
   const post = (url, opt) => {
-    const { options } = opt;
+    const options = opt;
     options.method = 'POST';
     return customFetch(url, options);
   };
 
   const put = (url, opt) => {
-    const { options } = opt;
+    const options = opt;
     options.method = 'PUT';
     return customFetch(url, options);
   };
 
   const del = (url, opt) => {
-    const { options } = opt;
+    const options = opt;
     options.method = 'DELETE';
     return customFetch(url, options);
   };

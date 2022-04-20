@@ -1,4 +1,4 @@
-import { TYPES } from './actionsMessage';
+import TYPES from './actionsMessage';
 
 export const messageInitialState = {
   db: null,
@@ -40,7 +40,6 @@ export function messageReducer(state, action) {
         db: newData,
       };
     }
-    // eslint-disable-next-line no-fallthrough
     case TYPES.ERROR_DATA: {
       return messageInitialState;
     }

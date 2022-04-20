@@ -9,6 +9,7 @@ const initialForm = {
 };
 
 function MessajeCRUDform({
+
   createData, updateData, dataToEdit, setDataToEdit,
 }) {
   const [form, setForm] = useState(initialForm);
@@ -86,7 +87,10 @@ MessajeCRUDform.propTypes = {
   createData: PropTypes.func.isRequired,
   updateData: PropTypes.func.isRequired,
   setDataToEdit: PropTypes.func.isRequired,
-  dataToEdit: PropTypes.func.isRequired,
+  dataToEdit: PropTypes.func,
+};
+MessajeCRUDform.defaultProps = {
+  dataToEdit: null,
 };
 
 export default MessajeCRUDform;
