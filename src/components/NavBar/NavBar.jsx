@@ -1,28 +1,39 @@
 import { useState } from 'react';
 import './NavBar.css';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function NavBar(props) {
-  const [isMenuVisible, setIsMenuVisible] = useState(false); // [variableEstado: number, functionDeCambioEstado]
-  // false
+function NavBar() {
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
   };
-  const menuClasses = `nav-bar__links ${isMenuVisible ? 'nav-bar__links--visible' : ''}`;
+  const menuClasses = `nav-bar__links ${
+    isMenuVisible ? 'nav-bar__links--visible' : ''
+  }`;
 
   return (
     <nav className="nav-bar">
-      <button className="nav-bar__button" type="button" onClick={toggleMenu} />
+      <div
+        className="nav-bar__button"
+        onClick={toggleMenu}
+        onKeyDown={toggleMenu}
+        role="button"
+        aria-label="toggleMenu"
+        tabIndex={0}
+      />
       <div className={menuClasses}>
-        <a>Nuestro Colegio</a>
-        <a>Galería</a>
-        <a>Contactenos</a>
-        <a>
-          <Link to="../Login" style={{ color: 'white' }}>
-            Login
-          </Link>
-        </a>
-
+        <Link to="/" style={{ color: 'white' }}>
+          Nuestro Colegio
+        </Link>
+        <Link to="/" style={{ color: 'white' }}>
+          Galería
+        </Link>
+        <Link to="/" style={{ color: 'white' }}>
+          Contactenos
+        </Link>
+        <Link to="../Login" style={{ color: 'white' }}>
+          Login
+        </Link>
       </div>
     </nav>
   );

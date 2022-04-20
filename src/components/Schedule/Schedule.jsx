@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
