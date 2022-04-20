@@ -32,7 +32,6 @@ function CrudApi() {
           dispatch({ type: TYPES.ERROR_DATA });
           setError(res);
         }
-
         setLoading(false);
       });
   }, [url]);
@@ -48,7 +47,6 @@ function CrudApi() {
 
     api.post(url, options).then((res) => {
       if (!res.err) {
-        // setDb([...db, res]);
         dispatch({ type: TYPES.CREATE_DATA, payload: res });
       } else {
         setError(res);
@@ -58,14 +56,15 @@ function CrudApi() {
   };
 
   const updateData = (data) => {
-    const endpoint = `${url}/${data.id}}`;
+    console.log(data);
+    // eslint-disable-next-line no-underscore-dangle
+    const endpoint = `${url}/${data._id}`;
     const options = {
       body: data,
       headers: { 'content-type': 'application/json' },
     };
 
-    api.put(endpoint, options).then((res) => {
-      // console.log(res);
+    api.patch(endpoint, options).then((res) => {
       if (!res.err) {
         // const newData = db.map((el) => (el.id === data.id ? data : el));
         // setDb(newData);

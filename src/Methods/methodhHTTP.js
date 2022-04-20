@@ -36,6 +36,11 @@ export const methodHTTP = () => {
     options.method = 'POST';
     return customFetch(url, options);
   };
+  const patch = (url, options = {}) => {
+    // eslint-disable-next-line no-param-reassign
+    options.method = 'PATCH';
+    return customFetch(url, options);
+  };
   const put = (url, options = {}) => {
     // eslint-disable-next-line no-param-reassign
     options.method = 'PUT';
@@ -51,5 +56,6 @@ export const methodHTTP = () => {
     post,
     put,
     del,
+    patch,
   };
 };
