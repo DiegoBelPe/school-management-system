@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const initialForm = {
   remitente: '',
@@ -8,7 +9,6 @@ const initialForm = {
 };
 
 function MessajeCRUDform({
-  // eslint-disable-next-line react/prop-types
   createData, updateData, dataToEdit, setDataToEdit,
 }) {
   const [form, setForm] = useState(initialForm);
@@ -27,7 +27,10 @@ function MessajeCRUDform({
       [e.target.name]: e.target.value,
     });
   };
-
+  const handleReset = () => {
+    setForm(initialForm);
+    setDataToEdit(null);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -43,13 +46,7 @@ function MessajeCRUDform({
       updateData(form);
     }
 
-    // eslint-disable-next-line no-use-before-define
     handleReset();
-  };
-
-  const handleReset = () => {
-    setForm(initialForm);
-    setDataToEdit(null);
   };
 
   return (
@@ -84,5 +81,12 @@ function MessajeCRUDform({
     </div>
   );
 }
+
+MessajeCRUDform.propTypes = {
+  createData: PropTypes.func.isRequired,
+  updateData: PropTypes.func.isRequired,
+  setDataToEdit: PropTypes.func.isRequired,
+  dataToEdit: PropTypes.func.isRequired,
+};
 
 export default MessajeCRUDform;

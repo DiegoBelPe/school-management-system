@@ -1,6 +1,9 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { methodHTTP } from '../../Methods/methodhHTTP';
-import { messageInitialState, messageReducer } from '../../store/reducerMessage';
+import {
+  messageInitialState,
+  messageReducer,
+} from '../../store/reducerMessage';
 import MessajeCRUDform from './MessajeCRUDform';
 import MessajeCRUDtable from './MessajeCRUDtable';
 import Loader from './Loader';
@@ -8,7 +11,6 @@ import MessageCRUD from './MessageCRUD';
 import { TYPES } from '../../store/actionsMessage';
 
 function CrudApi() {
-  // const [db, setDb] = useState(null);
   const [state, dispatch] = useReducer(messageReducer, messageInitialState);
   const { db } = state;
   const [dataToEdit, setDataToEdit] = useState(null);
@@ -24,11 +26,9 @@ function CrudApi() {
       .get(url)
       .then((res) => {
         if (!res.err) {
-          // setDb(res);
           dispatch({ type: TYPES.READ_ALL_DATA, payload: res });
           setError(null);
         } else {
-          // setDb(null);
           dispatch({ type: TYPES.ERROR_DATA });
           setError(res);
         }
@@ -37,8 +37,8 @@ function CrudApi() {
   }, [url]);
 
   const createData = (data) => {
-    // eslint-disable-next-line no-param-reassign
-    data.id = Date.now();
+    const date = data;
+    date.id = Date.now();
 
     const options = {
       body: data,
@@ -52,11 +52,9 @@ function CrudApi() {
         setError(res);
       }
     });
-    // setDb([...db, data]);
   };
 
   const updateData = (data) => {
-    console.log(data);
     // eslint-disable-next-line no-underscore-dangle
     const endpoint = `${url}/${data._id}`;
     const options = {
@@ -66,8 +64,6 @@ function CrudApi() {
 
     api.patch(endpoint, options).then((res) => {
       if (!res.err) {
-        // const newData = db.map((el) => (el.id === data.id ? data : el));
-        // setDb(newData);
         dispatch({ type: TYPES.UPDATE_DATA, payload: data });
       } else {
         setError(res);
@@ -77,7 +73,9 @@ function CrudApi() {
 
   const deleteData = (id) => {
     // eslint-disable-next-line no-alert
-    const isDelete = window.confirm(`¿Estas seguro de eliminar el registro con el ID '${id}'?`);
+    const isDelete = window.confirm(
+      `¿Estas seguro de eliminar el registro con el ID '${id}'?`,
+    );
 
     if (isDelete) {
       const endpoint = `${url}/${id}`;
@@ -87,8 +85,6 @@ function CrudApi() {
 
       api.del(endpoint, options).then((res) => {
         if (!res.err) {
-          // const newData = db.filter((el) => el.id !== id);
-          // setDb(newData);
           dispatch({ type: TYPES.DELETE_DATA, payload: id });
         } else {
           setError(res);
