@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prop-types
 function MessageCRUD({ msg, bgColor }) {
   const styles = {
     padding: '1rem',
@@ -11,12 +11,15 @@ function MessageCRUD({ msg, bgColor }) {
     backgroundColor: bgColor,
   };
   return (
-
     <div style={styles}>
       <p>{msg}</p>
       {/* <h2>Datos sin cargar </h2> */}
     </div>
   );
 }
+MessageCRUD.propTypes = {
+  msg: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+};
 
 export default MessageCRUD;

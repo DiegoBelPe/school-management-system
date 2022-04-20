@@ -1,5 +1,6 @@
 const helpHttp = () => {
-  const customFetch = (endpoint, options) => {
+  const customFetch = (endpoint, opt) => {
+    const options = opt;
     const defaultHeader = {
       accept: 'application/json',
     };
@@ -13,11 +14,10 @@ const helpHttp = () => {
     options.body = JSON.stringify(options.body) || false;
     if (!options.body) delete options.body;
 
-    console.log(options);
-
     setTimeout(() => controller.abort(), 3000);
 
     return fetch(endpoint, options)
+      // eslint-disable-next-line prefer-promise-reject-errors
       .then((res) => (res.ok ? res.json() : Promise.reject({
         err: true,
         status: res.status || '00',
@@ -28,17 +28,20 @@ const helpHttp = () => {
 
   const get = (url, options = {}) => customFetch(url, options);
 
-  const post = (url, options) => {
+  const post = (url, opt) => {
+    const options = opt;
     options.method = 'POST';
     return customFetch(url, options);
   };
 
-  const put = (url, options) => {
+  const put = (url, opt) => {
+    const options = opt;
     options.method = 'PUT';
     return customFetch(url, options);
   };
 
-  const del = (url, options) => {
+  const del = (url, opt) => {
+    const options = opt;
     options.method = 'DELETE';
     return customFetch(url, options);
   };

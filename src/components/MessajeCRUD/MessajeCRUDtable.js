@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import MessajeCRUDtrow from './MessajeCRUDtrow';
 
-// eslint-disable-next-line react/prop-types
 function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
   return (
     <div>
@@ -36,5 +35,16 @@ function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
     </div>
   );
 }
-
+MessajeCRUDtable.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      remitente: PropTypes.string.isRequired,
+      asunto: PropTypes.string.isRequired,
+      mensaje: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  setDataToEdit: PropTypes.func.isRequired,
+  deleteData: PropTypes.func.isRequired,
+};
 export default MessajeCRUDtable;

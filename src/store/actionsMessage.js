@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/prefer-default-export
-export const TYPES = {
+const TYPES = {
   CREATE_DATA: 'CREATE_DATA',
   READ_ALL_DATA: 'READ_ALL_DATA',
   READ_ONE_DATA: 'READ_ONE_DATA',
@@ -7,3 +6,5 @@ export const TYPES = {
   DELETE_DATA: 'DELETE_DATA',
   ERROR_DATA: 'ERROR_DATA',
 };
+
+export default TYPES;

@@ -1,21 +1,12 @@
-import axios from "axios";
-import authHeader from "./auth-header";
+import axios from 'axios';
+import authHeader from './auth-Header';
 
+const API_URL = 'https://backend-school-management.herokuapp.com/login';
+const getPublicContent = () => axios.get(`${API_URL}all`);
+const getUserBoard = () => axios.get(`${API_URL}user`, { headers: authHeader() });
+const getModeratorBoard = () => axios.get(`${API_URL}mod`, { headers: authHeader() });
+const getAdminBoard = () => axios.get(`${API_URL}admin`, { headers: authHeader() });
 
-const API_URL = "https://backend-school-management.herokuapp.com/login";
-const getPublicContent = () => {
-  return axios.get(API_URL + "all");
-};
-const getUserBoard = () => {
-  return axios.get(API_URL + "user", { headers: authHeader() });
-};
-const getModeratorBoard = () => {
-  return axios.get(API_URL + "mod", { headers: authHeader() });
-};
-const getAdminBoard = () => {
-  return axios.get(API_URL + "admin", { headers: authHeader() });
-};
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   getPublicContent,
   getUserBoard,
