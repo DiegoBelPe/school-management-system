@@ -1,7 +1,6 @@
 const API_URL = 'http://localhost:8080/api';
 
-// eslint-disable-next-line import/prefer-default-export
-export async function getWeekSchedule() {
+async function getWeekSchedule() {
   try {
     const response = await fetch(`${API_URL}/schedules`);
     const data = await response.json();
@@ -10,3 +9,5 @@ export async function getWeekSchedule() {
     throw new Error(error);
   }
 }
+
+export default getWeekSchedule;

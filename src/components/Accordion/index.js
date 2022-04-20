@@ -6,9 +6,12 @@ function Index() {
   const [active, setActive] = useState('Title1');
   return (
     <div className="App">
-      <Accordion title="Bandeja de Entrada" active={active} setActive={setActive} />
+      <Accordion
+        title="Bandeja de Entrada"
+        active={active}
+        setActive={setActive}
+      />
       <Accordion title="Notificaciones" active={active} setActive={setActive} />
-
     </div>
   );
 }
