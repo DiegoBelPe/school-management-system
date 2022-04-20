@@ -49,7 +49,7 @@ const Login  = (props) => {
       }
     };
     if (isLoggedIn) {
-      return <Navigate to="/table" />;
+      return <Navigate to="/dash" />;
     }
 
     return (
