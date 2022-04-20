@@ -1,7 +1,6 @@
 import React from 'react';
 import Calendar from './Calendar';
-// eslint-disable-next-line import/no-unresolved
-import './Schedule.css';
+import './Calendar.css';
 
 function index() {
   return (

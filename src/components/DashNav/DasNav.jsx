@@ -3,8 +3,7 @@ import './DasNav.css';
 import { Link } from 'react-router-dom';
 import images from '../../assets/images';
 
-// eslint-disable-next-line no-unused-vars
-function DasNav(props) {
+function DasNav() {
   const [openC, setOpenC] = useState(false);
   const openMenu = () => {
     setOpenC(!openC);
@@ -16,7 +15,13 @@ function DasNav(props) {
         <div id="sidemenu-title">
           <span>High School</span>
         </div>
-        <div id="menu-btn" onClick={openMenu}>
+        <div
+          id="menu-btn"
+          onClick={openMenu}
+          onKeyDown={openMenu}
+          role="button"
+          tabIndex={0}
+        >
           <div className="btn-hamburger" />
           <div className="btn-hamburger" />
           <div className="btn-hamburger" />
@@ -34,10 +39,10 @@ function DasNav(props) {
 
       <div id="menu-items">
         <div className="item">
-          <a href="">
+          <Link to="/dash">
             <div className="icon">
               {' '}
-              <img src={images.img2} alt="" />
+              <img src={images.img2} alt="icono home" />
               {' '}
             </div>
             <div className="title">
@@ -45,7 +50,7 @@ function DasNav(props) {
               <span>Principal</span>
               {' '}
             </div>
-          </a>
+          </Link>
         </div>
         <div className="item separator" />
         <div className="item">
@@ -107,7 +112,7 @@ function DasNav(props) {
         </div>
         <div className="item separator" />
         <div className="item">
-          <a href="">
+          <Link to="/dash">
             <div className="icon">
               {' '}
               <img src={images.img7} alt="" />
@@ -118,7 +123,7 @@ function DasNav(props) {
               <span>Notas</span>
               {' '}
             </div>
-          </a>
+          </Link>
         </div>
         <div className="item separator" />
       </div>
