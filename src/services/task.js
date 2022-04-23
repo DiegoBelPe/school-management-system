@@ -1,4 +1,4 @@
-const BASE_URL = 'https://backend-school-management.herokuapp.com';
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export async function getTask() {
   try {
