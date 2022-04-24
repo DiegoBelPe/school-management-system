@@ -32,8 +32,19 @@ const useStyles = makeStyles((theme) => ({
 function ModalTask() {
   const styles = useStyles();
   const [modal, setModal] = useState(false);
+
+  const [modalInsertar, setModalInsertar] = useState(false);
+  const [consolaSeleccionada, setConsolaSeleccionada] = useState({
+    course: '',
+    description: '',
+    observations: '',
+    endDate: '',
+  });
   const abrirCerrarModal = () => {
     setModal(!modal);
+  };
+  const ModalInsertar = () => {
+    setModalInsertar(!modalInsertar);
   };
   const body = (
     <div className={styles.modal}>
@@ -52,11 +63,11 @@ function ModalTask() {
       <Button
         variant="contained"
         color="primary"
-        onClick={() => abrirCerrarModal()}
+        onClick={abrirCerrarModal}
       >
         Guardar
       </Button>
-      <Button variant="contained" color="secondary">
+      <Button variant="contained" color="secondary" onClick={abrirCerrarModal}>
         Cancelar
       </Button>
     </div>
@@ -73,7 +84,7 @@ function ModalTask() {
         </Button>
         <Modal
           open={modal}
-          onClose={() => abrirCerrarModal()}
+          onClose={abrirCerrarModal}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
         >

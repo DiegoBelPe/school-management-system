@@ -10,8 +10,28 @@ function todoApp(state = initialState, action) {
         ...state,
         tasks: action.payload,
       };
+    case 'CREATE_TASK':
+      return {
+        ...state,
+        tasks: [...state.tasks, action.payload],
+      };
+    case 'UPDATE_TASK':
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id === action.payload.id) {
+            return action.payload;
+          }
+          return task;
+        }),
+      };
+    case 'DELETE_TASK':
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.id !== action.payload),
+      };
     default:
-      return state;
+      return state.tasks;
   }
 }
 
