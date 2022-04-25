@@ -12,6 +12,8 @@ import Calendar from './components/Calendar/Calendar';
 import Modals from './pages/Modals';
 import About from './pages/About/About';
 import CrudApi from './components/MessajeCRUD/CrudApi';
+import Payments from './components/Payments/Payments';
+import PayPagos from './pages/PayPagos/PayPagos';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/CrudApi" element={<CrudApi />} />
+        <Route path="/payments" element={<Payments />} />
+        <Route path="/pagos" element={<PayPagos />} />
       </Routes>
     </BrowserRouter>
   );
