@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {} from './FormTask';
 import {
   Table,
@@ -20,7 +20,12 @@ import {
   deleteTask,
   updateTask,
 } from '../../services/task';
-import { getAllTasks, postTask, patchTask, deleteTasks } from '../../store/actions';
+import {
+  getAllTasks,
+  postTask,
+  patchTask,
+  deleteTasks,
+} from '../../store/actions';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -44,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 function DataTable() {
   const styles = useStyles();
   const dispatch = useDispatch();
-  const [data, setData] = React.useState([]);
+  const data = useSelector((state) => state.tasks);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
@@ -61,7 +66,6 @@ function DataTable() {
       ...prevState,
       [name]: value,
     }));
-    console.log(consolaSeleccionada);
   };
   const abrirCerrarModalInsertar = () => {
     setModalInsertar(!modalInsertar);
@@ -83,7 +87,6 @@ function DataTable() {
   useEffect(() => {
     const fetchTasks = async () => {
       const results = await getTask();
-      setData(results);
       dispatch(getAllTasks(results));
     };
     fetchTasks();
@@ -92,24 +95,28 @@ function DataTable() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await createTask(consolaSeleccionada);
-    setData([...data, result]);
     dispatch(postTask([...data, result]));
     abrirCerrarModalInsertar();
   };
 
-  const handleSubmitEdit = async (e) => {
-    e.preventDefault();
+  const handleSubmitEdit = async () => {
     const result = await updateTask(consolaSeleccionada);
-    setData(data.map((consola) => (consola._id === result._id ? result : consola)));
-    dispatch(patchTask(data.map((consola) => (consola._id === result._id ? result : consola))));
+    dispatch(
+      patchTask(
+        data.map((task) => (task.id === result.tarea.id ? result.tarea : task)),
+      ),
+    );
     abrirCerrarModalEditar();
   };
 
   const handleSubmitDelete = async (e) => {
     e.preventDefault();
-    const result = await deleteTask(consolaSeleccionada._id);
-    setData(data.filter((consola) => consola._id !== result._id));
-    dispatch(deleteTasks(data.filter((consola) => consola.id !== result.id)));
+    await deleteTask(consolaSeleccionada.id);
+    dispatch(
+      deleteTasks(
+        data.filter((task) => task.id !== consolaSeleccionada.id),
+      ),
+    );
     abrirCerrarModalEliminar();
   };
   const bodyInsertar = (
@@ -202,11 +209,8 @@ function DataTable() {
   const bodyEliminar = (
     <div className={styles.modal}>
       <p>
-        Estás seguro que deseas eliminar
-        {' '}
-        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>
-        ?
-        {' '}
+        Estás seguro que deseas eliminar{' '}
+        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>?{' '}
       </p>
       <div align="right">
         <Button color="secondary" onClick={handleSubmitDelete}>
@@ -235,8 +239,8 @@ function DataTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((tarea) => (
-              <TableRow key={tarea._id}>
+            {data && data.map((tarea) => (
+              <TableRow key={tarea.id}>
                 <TableCell>{tarea.course}</TableCell>
                 <TableCell>{tarea.description}</TableCell>
                 <TableCell>{tarea.observations}</TableCell>
