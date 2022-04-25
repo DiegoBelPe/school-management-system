@@ -1,8 +1,8 @@
-import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { combineReducers } from 'redux';
+import { messageReducer } from './reducerMessage';
 
-import reducer from './reducer';
+const reducer = combineReducers({
+  message: messageReducer,
+});
 
-const store = createStore(reducer, composeWithDevTools());
-
-export default store;
+export default reducer;
