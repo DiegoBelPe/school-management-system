@@ -49,7 +49,10 @@ const useStyles = makeStyles((theme) => ({
 function DataTable() {
   const styles = useStyles();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.tasks);
+  const data = useSelector((state) => {
+    console.log(state);
+    return state.taskReducer.tasks;
+  });
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
@@ -103,8 +106,8 @@ function DataTable() {
     const result = await updateTask(consolaSeleccionada);
     dispatch(
       patchTask(
-        data.map((task) => (task.id === result.tarea.id ? result.tarea : task)),
-      ),
+        data.map((task) => (task.id === result.tarea.id ? result.tarea : task))
+      )
     );
     abrirCerrarModalEditar();
   };
@@ -113,9 +116,7 @@ function DataTable() {
     e.preventDefault();
     await deleteTask(consolaSeleccionada.id);
     dispatch(
-      deleteTasks(
-        data.filter((task) => task.id !== consolaSeleccionada.id),
-      ),
+      deleteTasks(data.filter((task) => task.id !== consolaSeleccionada.id))
     );
     abrirCerrarModalEliminar();
   };
@@ -239,25 +240,26 @@ function DataTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data && data.map((tarea) => (
-              <TableRow key={tarea.id}>
-                <TableCell>{tarea.course}</TableCell>
-                <TableCell>{tarea.description}</TableCell>
-                <TableCell>{tarea.observations}</TableCell>
-                <TableCell>{tarea.endDate}</TableCell>
-                <TableCell>
-                  <Edit
-                    className={styles.iconos}
-                    onClick={() => seleccionarConsola(tarea, 'Editar')}
-                  />
-                  &nbsp;&nbsp;&nbsp;
-                  <Delete
-                    className={styles.iconos}
-                    onClick={() => seleccionarConsola(tarea, 'Eliminar')}
-                  />
-                </TableCell>
-              </TableRow>
-            ))}
+            {data &&
+              data.map((tarea) => (
+                <TableRow key={tarea.id}>
+                  <TableCell>{tarea.course}</TableCell>
+                  <TableCell>{tarea.description}</TableCell>
+                  <TableCell>{tarea.observations}</TableCell>
+                  <TableCell>{tarea.endDate}</TableCell>
+                  <TableCell>
+                    <Edit
+                      className={styles.iconos}
+                      onClick={() => seleccionarConsola(tarea, 'Editar')}
+                    />
+                    &nbsp;&nbsp;&nbsp;
+                    <Delete
+                      className={styles.iconos}
+                      onClick={() => seleccionarConsola(tarea, 'Eliminar')}
+                    />
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
