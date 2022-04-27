@@ -1,11 +1,11 @@
-import { CREATE_DATA, DELETE_DATA, ERROR_DATA, READ_ALL_DATA, UPDATE_DATA } from './index.Message';
+import { CREATE_DATA, DELETE_DATA, ERROR_DATA, READ_ALL_DATA, UPDATE_DATA } from './typesMessage';
 
 export const initialState = {
   db: [],
 };
 
 // eslint-disable-next-line default-param-last
-export function messageReducer(state = initialState, action) {
+function messageReducer(state = initialState, action) {
   switch (action.type) {
     case READ_ALL_DATA:
       return {
@@ -49,3 +49,4 @@ export function messageReducer(state = initialState, action) {
       return state;
   }
 }
+export default messageReducer;

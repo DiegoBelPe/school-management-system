@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createAction, deleteAction, errorAction, readAllAction, updateAction } from '../../store/actionsMessage';
+import { createAction, deleteAction, errorAction, readAllAction, updateAction } from '../../store/message/actionsMessage';
 import methodHTTP from '../../Methods/methodhHTTP';
 import MessajeCRUDform from './MessajeCRUDform';
 import MessajeCRUDtable from './MessajeCRUDtable';
@@ -11,7 +11,7 @@ import MessageCRUD from './MessageCRUD';
 function CrudApi() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const { db } = state.message;
+  const { db } = state.messageReducer;
   const [dataToEdit, setDataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);

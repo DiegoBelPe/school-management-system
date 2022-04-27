@@ -31,7 +31,7 @@ function todoApp(state = initialState, action) {
         tasks: state.tasks.filter((task) => task.id !== action.payload),
       };
     default:
-      return state.tasks;
+      return state;
   }
 }
 
