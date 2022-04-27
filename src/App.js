@@ -13,6 +13,7 @@ import Modals from './pages/Modals';
 import About from './pages/About/About';
 import CrudApi from './components/MessajeCRUD/CrudApi';
 import Activate from './components/VerifyAccount';
+import Student from './components/Students';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/CrudApi" element={<CrudApi />} />
         <Route path="/verify-account/:token" element={<Activate />} />
+        <Route path="/estudiantes" element={<Student />} />
       </Routes>
     </BrowserRouter>
   );
