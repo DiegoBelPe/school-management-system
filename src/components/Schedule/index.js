@@ -1,6 +1,6 @@
 import React from 'react';
 import Schedule from './Schedule';
-import './Schedule.css';
+import './Schedule.module.css';
 
 function index() {
   return (

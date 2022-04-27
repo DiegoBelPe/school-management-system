@@ -33,19 +33,19 @@ function ModalTask() {
   const styles = useStyles();
   const [modal, setModal] = useState(false);
 
-  const [modalInsertar, setModalInsertar] = useState(false);
-  const [consolaSeleccionada, setConsolaSeleccionada] = useState({
-    course: '',
-    description: '',
-    observations: '',
-    endDate: '',
-  });
+  // const [modalInsertar, setModalInsertar] = useState(false);
+  // const [consolaSeleccionada, setConsolaSeleccionada] = useState({
+  //   course: '',
+  //   description: '',
+  //   observations: '',
+  //   endDate: '',
+  // });
   const abrirCerrarModal = () => {
     setModal(!modal);
   };
-  const ModalInsertar = () => {
-    setModalInsertar(!modalInsertar);
-  };
+  // const ModalInsertar = () => {
+  //   setModalInsertar(!modalInsertar);
+  // };
   const body = (
     <div className={styles.modal}>
       <div align="center">
