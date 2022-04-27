@@ -2,6 +2,8 @@ import useSWR from 'swr';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import CircularProgress from '@mui/material/CircularProgress';
+import styles from './Schedule.module.css';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function Schedule() {
@@ -20,7 +22,11 @@ function Schedule() {
     return <div>Tenemos un problema...</div>;
   }
   if (!events) {
-    return <div>Cargando...</div>;
+    return (
+      <div className={styles.loading}>
+        <CircularProgress />
+      </div>
+    );
   }
   return (
     <div>
