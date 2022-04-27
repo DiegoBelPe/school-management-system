@@ -112,7 +112,7 @@ function DasNav() {
         </div>
         <div className="item separator" />
         <div className="item">
-          <Link to="/dash">
+          <Link to="/dash/estudiantes">
             <div className="icon">
               {' '}
               <img src={images.img7} alt="" />
