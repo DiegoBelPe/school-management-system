@@ -13,6 +13,7 @@ import Modals from './pages/Modals';
 import About from './pages/About/About';
 import CrudApi from './components/MessajeCRUD/CrudApi';
 import Activate from './components/VerifyAccount';
+import Student from './components/Students';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="schedule" element={<Schedule />} />
           <Route path="calendar" element={<Calendar />} />
           <Route path="messages" element={<CrudApi />} />
+          <Route path="estudiantes" element={<Student />} />
         </Route>
         <Route path="/navbar" element={<NavBar />} />
         <Route path="/card" element={<Cards />} />
