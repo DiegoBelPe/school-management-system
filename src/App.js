@@ -25,6 +25,7 @@ function App() {
           <Route path="schedule" element={<Schedule />} />
           <Route path="calendar" element={<Calendar />} />
           <Route path="messages" element={<CrudApi />} />
+          <Route path="estudiantes" element={<Student />} />
         </Route>
         <Route path="/navbar" element={<NavBar />} />
         <Route path="/card" element={<Cards />} />
@@ -34,7 +35,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/CrudApi" element={<CrudApi />} />
         <Route path="/verify-account/:token" element={<Activate />} />
-        <Route path="/estudiantes" element={<Student />} />
       </Routes>
     </BrowserRouter>
   );
