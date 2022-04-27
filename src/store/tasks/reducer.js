@@ -1,5 +1,5 @@
 const initialState = {
-  tasks: [],
+  tasks: {},
 };
 
 // eslint-disable-next-line default-param-last

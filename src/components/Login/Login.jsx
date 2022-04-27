@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { login } from '../../auth/actions/auth';
+import { login } from '../../store/auth/actions/auth';
 
 // eslint-disable-next-line consistent-return
 const required = (value) => {
@@ -104,7 +104,11 @@ function Login(props) {
   );
 }
 Login.propTypes = {
-  history: PropTypes.string.isRequired,
+  history: PropTypes.string,
+};
+
+Login.defaultProps = {
+  history: '',
 };
 
 export default Login;
