@@ -6,7 +6,7 @@ import Cards from './components/Cards/Cards';
 import FunctionContainer from './components/FunctionContainer';
 import Schedule from './components/Schedule/Schedule';
 import Dash from './pages/Dash/Dash';
-import Login from './components/Login/Login';
+import Login from './pages/Login';
 import DataTable from './components/DataTable/DataTable';
 import Calendar from './components/Calendar/Calendar';
 import Modals from './pages/Modals';

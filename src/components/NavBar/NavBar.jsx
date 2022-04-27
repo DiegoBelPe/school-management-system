@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './NavBar.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './NavBar.module.css';
 
 function NavBar() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -22,18 +22,18 @@ function NavBar() {
         tabIndex={0}
       />
       <div className={menuClasses}>
-        <Link to="/" style={{ color: 'white' }}>
+        <NavLink to="/" style={{ textDecoration: 'none', color: 'white' }}>
           Nuestro Colegio
-        </Link>
-        <Link to="/" style={{ color: 'white' }}>
+        </NavLink>
+        <NavLink to="/" style={{ textDecoration: 'none', color: 'white' }}>
           Galería
-        </Link>
-        <Link to="/" style={{ color: 'white' }}>
+        </NavLink>
+        <NavLink to="/" style={{ textDecoration: 'none', color: 'white' }}>
           Contactenos
-        </Link>
-        <Link to="../Login" style={{ color: 'white' }}>
+        </NavLink>
+        <NavLink to="../Login" style={{ textDecoration: 'none', color: 'white' }}>
           Login
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );

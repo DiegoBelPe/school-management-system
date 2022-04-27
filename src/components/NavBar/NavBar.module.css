@@ -52,7 +52,10 @@
     border-width: 1px;
     border-color: var(--white-color);
    }
+   .navlinks{
+    text-decoration: none;
 
+   }
    .nav-bar__links {
     position: absolute;
     right: 0;
@@ -81,7 +84,7 @@
    }
 
    @media (min-width: 1024px){
-    .nav-bar > button {
+    .nav-bar__button {
       display: none;
     }
 

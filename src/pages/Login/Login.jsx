@@ -44,8 +44,9 @@ function Login(props) {
           history.push('/dash');
           window.location.reload();
         })
-        .catch(() => {
+        .catch((error) => {
           setLoading(false);
+          console.log(error);
         });
     } else {
       setLoading(false);
