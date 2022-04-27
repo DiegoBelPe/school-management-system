@@ -1,18 +1,15 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+// import taskReducer from './tasks/reducer';
+// import auth from './auth/reducers/auth';
+// import message from './auth/reducers/message';
+import rootReducer from './reducers';
 
-import messageReducer from './message/reducerMessage';
-import taskReducer from './tasks/reducer';
-import auth from '../auth/reducers/auth';
-import message from '../auth/reducers/message';
-
-const reducers = combineReducers({
-  auth,
-  message,
-  taskReducer,
-  messageReducer,
-});
-
-const store = createStore(reducers, composeWithDevTools());
+const middleware = [thunk];
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(...middleware)),
+);
 
 export default store;
