@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 function DataTable() {
   const styles = useStyles();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.taskReducer.tasks);
+  const data = useSelector((state) => state.tasks.task);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);

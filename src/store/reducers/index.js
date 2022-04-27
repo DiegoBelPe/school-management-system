@@ -6,5 +6,5 @@ import taskReducer from '../tasks/reducer';
 export default combineReducers({
   auth,
   message,
-  taskReducer,
+  tasks: taskReducer,
 });
