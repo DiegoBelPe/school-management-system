@@ -12,7 +12,6 @@ export async function getTask() {
 export async function oneTask(id) {
   try {
     const resp = await fetch(`${BASE_URL}/api/tareas/${id}`);
-    console.log(resp);
     const task = await resp.json();
     return task;
   } catch (error) {
@@ -38,7 +37,7 @@ export async function createTask(task) {
 
 export async function updateTask(task) {
   try {
-    const resp = await fetch(`${BASE_URL}/api/tareas/${task._id}`, {
+    const resp = await fetch(`${BASE_URL}/api/tareas/${task.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
