@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {} from './FormTask';
 import {
   Table,
   TableContainer,
@@ -25,7 +24,7 @@ import {
   postTask,
   patchTask,
   deleteTasks,
-} from '../../store/actions';
+} from '../../store/tasks/actions';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -49,10 +48,7 @@ const useStyles = makeStyles((theme) => ({
 function DataTable() {
   const styles = useStyles();
   const dispatch = useDispatch();
-  const data = useSelector((state) => {
-    console.log(state);
-    return state.taskReducer.tasks;
-  });
+  const data = useSelector((state) => state.taskReducer.tasks);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
@@ -84,6 +80,7 @@ function DataTable() {
 
   const seleccionarConsola = (consola, caso) => {
     setConsolaSeleccionada(consola);
+    // eslint-disable-next-line no-unused-expressions
     caso === 'Editar' ? abrirCerrarModalEditar() : abrirCerrarModalEliminar();
   };
 
@@ -106,8 +103,8 @@ function DataTable() {
     const result = await updateTask(consolaSeleccionada);
     dispatch(
       patchTask(
-        data.map((task) => (task.id === result.tarea.id ? result.tarea : task))
-      )
+        data.map((task) => (task.id === result.tarea.id ? result.tarea : task)),
+      ),
     );
     abrirCerrarModalEditar();
   };
@@ -116,7 +113,7 @@ function DataTable() {
     e.preventDefault();
     await deleteTask(consolaSeleccionada.id);
     dispatch(
-      deleteTasks(data.filter((task) => task.id !== consolaSeleccionada.id))
+      deleteTasks(data.filter((task) => task.id !== consolaSeleccionada.id)),
     );
     abrirCerrarModalEliminar();
   };
@@ -210,8 +207,10 @@ function DataTable() {
   const bodyEliminar = (
     <div className={styles.modal}>
       <p>
-        Estás seguro que deseas eliminar{' '}
-        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>?{' '}
+        Estás seguro que deseas eliminar
+        <br />
+        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>
+        ?
       </p>
       <div align="right">
         <Button color="secondary" onClick={handleSubmitDelete}>
@@ -240,8 +239,8 @@ function DataTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data &&
-              data.map((tarea) => (
+            {data
+              && data.map((tarea) => (
                 <TableRow key={tarea.id}>
                   <TableCell>{tarea.course}</TableCell>
                   <TableCell>{tarea.description}</TableCell>

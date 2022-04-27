@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import taskReducer from './reducer';
+import taskReducer from './tasks/reducer';
 import auth from '../auth/reducers/auth';
 import message from '../auth/reducers/message';
 
