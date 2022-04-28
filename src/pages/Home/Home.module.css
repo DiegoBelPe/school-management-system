@@ -32,7 +32,7 @@
   min-height: 4rem;
 }
 
-.nav__bar {
+/* .nav__bar {
   height: 3rem;
   background-color: var(--first-color);
   display: flex;
@@ -40,7 +40,7 @@
   gap: 1rem;
   position: relative;
   color: var(--white-color);
-}
+} */
 
 .content {
   display: flex;
@@ -95,5 +95,3 @@
   }
 }
 
-@media (min-width: 1024px) {
-}
