@@ -94,16 +94,16 @@ function DataTable() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await createTask(consolaSeleccionada);
-    dispatch(postTask([...data, result]));
+    await createTask(consolaSeleccionada);
+    dispatch(postTask(consolaSeleccionada));
     abrirCerrarModalInsertar();
   };
 
   const handleSubmitEdit = async () => {
-    const result = await updateTask(consolaSeleccionada);
+    await updateTask(consolaSeleccionada);
     dispatch(
       patchTask(
-        data.map((task) => (task.id === result.tarea.id ? result.tarea : task)),
+        consolaSeleccionada,
       ),
     );
     abrirCerrarModalEditar();
@@ -113,7 +113,7 @@ function DataTable() {
     e.preventDefault();
     await deleteTask(consolaSeleccionada.id);
     dispatch(
-      deleteTasks(data.filter((task) => task.id !== consolaSeleccionada.id)),
+      deleteTasks(consolaSeleccionada.id),
     );
     abrirCerrarModalEliminar();
   };

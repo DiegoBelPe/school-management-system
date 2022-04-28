@@ -95,25 +95,25 @@ function index() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const results = await createStudent(studentSeleccionado);
-    dispatch(postStudent([...data, results]));
+    await createStudent(studentSeleccionado);
+    dispatch(postStudent(studentSeleccionado));
     abrirCerrarModalInsertar();
   };
 
   const handleSubmitEdit = async () => {
-    const results = await updateStudent(studentSeleccionado);
+    await updateStudent(studentSeleccionado);
     dispatch(
       patchStudent(
-        data.map((student) => (student.id === results.id ? results : student)),
+        studentSeleccionado,
       ),
     );
     abrirCerrarModalEditar();
   };
 
   const handleSubmitDelete = async () => {
-    const results = await deleteStudent(studentSeleccionado.id);
+    await deleteStudent(studentSeleccionado.id);
     dispatch(
-      deleteStudents(data.filter((student) => student.id !== results.id)),
+      deleteStudents(studentSeleccionado.id),
     );
     abrirCerrarModalEliminar();
   };
