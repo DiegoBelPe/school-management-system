@@ -1,18 +1,17 @@
-import React, { useEffect, useReducer, useState } from 'react';
+/* eslint-disable no-shadow */
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { createAction, deleteAction, errorAction, readAllAction, updateAction } from '../../store/message/actionsMessage';
 import methodHTTP from '../../Methods/methodhHTTP';
-import {
-  messageInitialState,
-  messageReducer,
-} from '../../store/reducerMessage';
 import MessajeCRUDform from './MessajeCRUDform';
 import MessajeCRUDtable from './MessajeCRUDtable';
 import Loader from './Loader';
 import MessageCRUD from './MessageCRUD';
-import TYPES from '../../store/actionsMessage';
 
 function CrudApi() {
-  const [state, dispatch] = useReducer(messageReducer, messageInitialState);
-  const { db } = state;
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const { db } = state.messageReducer;
   const [dataToEdit, setDataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -26,15 +25,15 @@ function CrudApi() {
       .get(url)
       .then((res) => {
         if (!res.err) {
-          dispatch({ type: TYPES.READ_ALL_DATA, payload: res });
+          dispatch(readAllAction(res));
           setError(null);
         } else {
-          dispatch({ type: TYPES.ERROR_DATA });
+          dispatch(errorAction(res));
           setError(res);
         }
         setLoading(false);
       });
-  }, [url]);
+  }, [url, dispatch]);
 
   const createData = (data) => {
     const date = data;
@@ -47,7 +46,7 @@ function CrudApi() {
 
     api.post(url, options).then((res) => {
       if (!res.err) {
-        dispatch({ type: TYPES.CREATE_DATA, payload: res });
+        dispatch(createAction(res));
       } else {
         setError(res);
       }
@@ -64,7 +63,7 @@ function CrudApi() {
 
     api.patch(endpoint, options).then((res) => {
       if (!res.err) {
-        dispatch({ type: TYPES.UPDATE_DATA, payload: data });
+        dispatch(updateAction(res));
       } else {
         setError(res);
       }
@@ -85,7 +84,7 @@ function CrudApi() {
 
       api.del(endpoint, options).then((res) => {
         if (!res.err) {
-          dispatch({ type: TYPES.DELETE_DATA, payload: id });
+          dispatch(deleteAction(id));
         } else {
           setError(res);
         }
