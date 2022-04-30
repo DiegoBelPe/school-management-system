@@ -15,8 +15,11 @@ const login = (email, password) => axios.post(API_URL, {
 const logout = () => {
   localStorage.removeItem('user');
 };
+
+const activateAccount = (token) => fetch(`${API_URL}/verify-account/${token}`);
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   login,
   logout,
+  activateAccount,
 };

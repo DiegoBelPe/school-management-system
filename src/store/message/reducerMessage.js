@@ -1,24 +1,25 @@
-import TYPES from './actionsMessage';
+import { CREATE_DATA, DELETE_DATA, ERROR_DATA, READ_ALL_DATA, UPDATE_DATA } from './typesMessage';
 
-export const messageInitialState = {
-  db: null,
+export const initialState = {
+  db: [],
 };
 
-export function messageReducer(state, action) {
+// eslint-disable-next-line default-param-last
+function messageReducer(state = initialState, action) {
   switch (action.type) {
-    case TYPES.READ_ALL_DATA: {
+    case READ_ALL_DATA:
       return {
         ...state,
         db: action.payload.map((data) => data),
       };
-    }
-    case TYPES.CREATE_DATA: {
+
+    case CREATE_DATA: {
       return {
         ...state,
         db: [...state.db, action.payload],
       };
     }
-    case TYPES.UPDATE_DATA: {
+    case UPDATE_DATA: {
       const { _id: id } = action.payload;
       const newData = state.db.map((item) => {
         const { _id: idUpdate } = item;
@@ -33,18 +34,19 @@ export function messageReducer(state, action) {
         db: newData,
       };
     }
-    case TYPES.DELETE_DATA: {
+    case DELETE_DATA: {
       const newData = state.db.filter(({ _id: id }) => id !== action.payload);
       return {
         ...state,
         db: newData,
       };
     }
-    case TYPES.ERROR_DATA: {
-      return messageInitialState;
+    case ERROR_DATA: {
+      return initialState;
     }
 
     default:
       return state;
   }
 }
+export default messageReducer;

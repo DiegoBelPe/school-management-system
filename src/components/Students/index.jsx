@@ -14,17 +14,17 @@ import {
 import { Edit, Delete } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  getTask,
-  createTask,
-  deleteTask,
-  updateTask,
-} from '../../services/task';
+  getStudent,
+  createStudent,
+  deleteStudent,
+  updateStudent,
+} from '../../services/student';
 import {
-  getAllTasks,
-  postTask,
-  patchTask,
-  deleteTasks,
-} from '../../store/tasks/actions';
+  getAllStudents,
+  postStudent,
+  patchStudent,
+  deleteStudents,
+} from '../../store/student/actionStudent';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -45,23 +45,25 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
 }));
-function DataTable() {
+
+function index() {
   const styles = useStyles();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.taskReducer.tasks);
+  const data = useSelector((state) => state.studentReducer.students);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
 
-  const [consolaSeleccionada, setConsolaSeleccionada] = useState({
-    course: '',
-    description: '',
-    observations: '',
-    endDate: '',
+  const [studentSeleccionado, setStudentSeleccionado] = useState({
+    name: '',
+    lastName: '',
+    identification: '',
+    grade: '',
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setConsolaSeleccionada((prevState) => ({
+    setStudentSeleccionado((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -78,73 +80,72 @@ function DataTable() {
     setModalEliminar(!modalEliminar);
   };
 
-  const seleccionarConsola = (consola, caso) => {
-    setConsolaSeleccionada(consola);
+  const seleccionarStudent = (student, caso) => {
+    setStudentSeleccionado(student);
     // eslint-disable-next-line no-unused-expressions
     caso === 'Editar' ? abrirCerrarModalEditar() : abrirCerrarModalEliminar();
   };
-
   useEffect(() => {
     const fetchTasks = async () => {
-      const results = await getTask();
-      dispatch(getAllTasks(results));
+      const results = await getStudent();
+      dispatch(getAllStudents(results));
     };
     fetchTasks();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createTask(consolaSeleccionada);
-    dispatch(postTask(consolaSeleccionada));
+    await createStudent(studentSeleccionado);
+    dispatch(postStudent(studentSeleccionado));
     abrirCerrarModalInsertar();
   };
 
   const handleSubmitEdit = async () => {
-    await updateTask(consolaSeleccionada);
+    await updateStudent(studentSeleccionado);
     dispatch(
-      patchTask(
-        consolaSeleccionada,
+      patchStudent(
+        studentSeleccionado,
       ),
     );
     abrirCerrarModalEditar();
   };
 
-  const handleSubmitDelete = async (e) => {
-    e.preventDefault();
-    await deleteTask(consolaSeleccionada.id);
+  const handleSubmitDelete = async () => {
+    await deleteStudent(studentSeleccionado.id);
     dispatch(
-      deleteTasks(consolaSeleccionada.id),
+      deleteStudents(studentSeleccionado.id),
     );
     abrirCerrarModalEliminar();
   };
+
   const bodyInsertar = (
     <div className={styles.modal}>
-      <h3>Agregar nueva tarea</h3>
+      <h3>Agregar nuevo estudiante</h3>
       <TextField
-        name="course"
+        name="name"
         className={styles.inputMaterial}
-        label="Asignatura"
+        label="Nombres"
         onChange={handleChange}
       />
       <br />
       <TextField
-        name="description"
+        name="lastName"
         className={styles.inputMaterial}
-        label="Descripcion"
+        label="Apellidos"
         onChange={handleChange}
       />
       <br />
       <TextField
-        name="observations"
+        name="identification"
         className={styles.inputMaterial}
-        label="Observaciones"
+        label="Identificación"
         onChange={handleChange}
       />
       <br />
       <TextField
-        name="endDate"
+        name="grade"
         className={styles.inputMaterial}
-        label="Fecha de entrega"
+        label="Grado"
         onChange={handleChange}
       />
       <br />
@@ -160,37 +161,37 @@ function DataTable() {
 
   const bodyEditar = (
     <div className={styles.modal}>
-      <h3>Editar Tarea</h3>
+      <h3>Editar Estudiante</h3>
       <TextField
-        name="course"
+        name="name"
         className={styles.inputMaterial}
-        label="Asignatura"
+        label="Nombres"
         onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.course}
+        value={studentSeleccionado && studentSeleccionado.name}
       />
       <br />
       <TextField
-        name="description"
+        name="lastName"
         className={styles.inputMaterial}
-        label="Descripcion"
+        label="Apellidos"
         onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.description}
+        value={studentSeleccionado && studentSeleccionado.lastName}
       />
       <br />
       <TextField
-        name="observations"
+        name="identification"
         className={styles.inputMaterial}
-        label="Observaciones"
+        label="Identificación"
         onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.observations}
+        value={studentSeleccionado && studentSeleccionado.identification}
       />
       <br />
       <TextField
-        name="endDate"
+        name="grade"
         className={styles.inputMaterial}
-        label="Fecha de entrega"
+        label="Grado"
         onChange={handleChange}
-        value={consolaSeleccionada && consolaSeleccionada.endDate}
+        value={studentSeleccionado && studentSeleccionado.grade}
         ondition
       />
       <br />
@@ -209,7 +210,7 @@ function DataTable() {
       <p>
         Estás seguro que deseas eliminar
         <br />
-        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>
+        <b>{studentSeleccionado && studentSeleccionado.name}</b>
         ?
       </p>
       <div align="right">
@@ -220,9 +221,10 @@ function DataTable() {
       </div>
     </div>
   );
+
   return (
     <div>
-      <h1>DataTable Tareas</h1>
+      <h1>Estudiantes</h1>
       <br />
       <Button onClick={abrirCerrarModalInsertar}>Insertar</Button>
       <br />
@@ -231,30 +233,30 @@ function DataTable() {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Asignatura</TableCell>
-              <TableCell>Descripcion</TableCell>
-              <TableCell>Observaciones</TableCell>
-              <TableCell>Fecha de entrega</TableCell>
+              <TableCell>Nombres</TableCell>
+              <TableCell>Apellidos</TableCell>
+              <TableCell>Identificacion</TableCell>
+              <TableCell>Grado</TableCell>
               <TableCell>Acciones</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data
-              && data.map((tarea) => (
-                <TableRow key={tarea.id}>
-                  <TableCell>{tarea.course}</TableCell>
-                  <TableCell>{tarea.description}</TableCell>
-                  <TableCell>{tarea.observations}</TableCell>
-                  <TableCell>{tarea.endDate}</TableCell>
+              && data.map((student) => (
+                <TableRow key={student.id}>
+                  <TableCell>{student.name}</TableCell>
+                  <TableCell>{student.lastName}</TableCell>
+                  <TableCell>{student.identification}</TableCell>
+                  <TableCell>{student.grade}</TableCell>
                   <TableCell>
                     <Edit
                       className={styles.iconos}
-                      onClick={() => seleccionarConsola(tarea, 'Editar')}
+                      onClick={() => seleccionarStudent(student, 'Editar')}
                     />
                     &nbsp;&nbsp;&nbsp;
                     <Delete
                       className={styles.iconos}
-                      onClick={() => seleccionarConsola(tarea, 'Eliminar')}
+                      onClick={() => seleccionarStudent(student, 'Eliminar')}
                     />
                   </TableCell>
                 </TableRow>
@@ -274,7 +276,8 @@ function DataTable() {
         {bodyEliminar}
       </Modal>
     </div>
+
   );
 }
 
-export default DataTable;
+export default index;
