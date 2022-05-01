@@ -27,10 +27,7 @@ function CheckoutForm() {
       };
       console.log('Payload:', payload);
 
-      const response = await fetch(
-        'http://localhost:8080/api/checkout',
-        payload,
-      );
+      const response = await fetch('http://localhost:8080/api/checkout', payload);
       const body = await response.json();
       console.log('Respuesta del servidor:', body);
       elements.getElement(CardElement).clear();
