@@ -15,6 +15,8 @@ import CrudApi from './components/MessajeCRUD/CrudApi';
 import Activate from './components/VerifyAccount';
 import Student from './components/Students';
 import UploadImage from './components/Upload/UploadImage';
+import Payments from './components/Payments/Payments';
+import PayPagos from './pages/PayPagos/PayPagos';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
         <Route path="/CrudApi" element={<CrudApi />} />
         <Route path="/verify-account/:token" element={<Activate />} />
         <Route path="/uploadImage" element={<UploadImage />} />
+        <Route path="/payments" element={<Payments />} />
+        <Route path="/pagos" element={<PayPagos />} />
       </Routes>
     </BrowserRouter>
   );
