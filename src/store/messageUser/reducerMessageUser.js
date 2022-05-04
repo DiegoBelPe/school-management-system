@@ -11,10 +11,10 @@ export const initialState = {
 function messageReducer(state = initialState, action) {
   switch (action.type) {
     case READ_ALL_DATA_USER:
-      console.log('action.payload', action.payload);
+      console.log('action.payload', action.payload.mensajes);
       return {
         ...state,
-        db: action.payload,
+        db: action.payload.mensajes,
       };
 
     case ERROR_DATA_USER: {

@@ -1,6 +1,7 @@
 /* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { errorAction, readAllAction } from '../../store/messageUser/actionsMessageUser';
 import methodHTTP from '../../Methods/methodhHTTP';
 import MessajeCRUDtable from './MessajeCRUDtable';
@@ -11,12 +12,11 @@ function CrudUser() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const { db } = state.messageReducer;
-  const [setDataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const url = 'http://localhost:8080/api/student/message';
-  const id = '';
+  const { id } = useParams();
 
   useEffect(() => {
     setLoading(true);
@@ -25,7 +25,6 @@ function CrudUser() {
       .then((res) => {
         if (!res.err) {
           dispatch(readAllAction(res));
-          console.log('res', res);
           setError(null);
         } else {
           dispatch(errorAction(res));
@@ -34,6 +33,7 @@ function CrudUser() {
         setLoading(false);
       });
   }, [url, dispatch]);
+  console.log('db', db);
 
   return (
     <div>
@@ -48,11 +48,10 @@ function CrudUser() {
       {db && (
         <MessajeCRUDtable
           data={db}
-          setDataToEdit={setDataToEdit}
+
         />
       )}
     </div>
   );
 }
-
 export default CrudUser;
