@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MessajeCRUDtrow from './MessajeCRUDtrow';
 
-function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
+function MessajeCRUDtable({ data }) {
   return (
     <div>
       <h3>Mensajes de Entrada</h3>
@@ -20,8 +20,6 @@ function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
               <MessajeCRUDtrow
                 key={el.id}
                 el={el}
-                setDataToEdit={setDataToEdit}
-                deleteData={deleteData}
               />
             ))
           ) : (
@@ -43,7 +41,5 @@ MessajeCRUDtable.propTypes = {
       mensaje: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  setDataToEdit: PropTypes.func.isRequired,
-  deleteData: PropTypes.func.isRequired,
 };
 export default MessajeCRUDtable;

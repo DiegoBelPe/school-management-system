@@ -17,7 +17,7 @@ import Student from './components/Students';
 import UploadImage from './components/Upload/UploadImage';
 import Payments from './components/Payments/Payments';
 import PayPagos from './pages/PayPagos/PayPagos';
-import CrudUser from './components/Message.User/CrudUser';
+import CrudUser from './components/MessageUser/CrudUser';
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
         <Route path="/uploadImage" element={<UploadImage />} />
         <Route path="/payments" element={<Payments />} />
         <Route path="/pagos" element={<PayPagos />} />
-        <Route path="/CrudUser" element={<CrudUser />} />
+        <Route path="/CrudUser/message/:id" element={<CrudUser />} />
       </Routes>
     </BrowserRouter>
   );

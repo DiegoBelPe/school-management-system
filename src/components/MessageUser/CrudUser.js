@@ -1,13 +1,13 @@
 /* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteAction, errorAction, readAllAction } from '../../store/message/actionsMessage';
+import { errorAction, readAllAction } from '../../store/messageUser/actionsMessageUser';
 import methodHTTP from '../../Methods/methodhHTTP';
 import MessajeCRUDtable from './MessajeCRUDtable';
 import Loader from './Loader';
 import MessageCRUD from './MessageCRUD';
 
-function CrudApi() {
+function CrudUser() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const { db } = state.messageReducer;
@@ -15,16 +15,17 @@ function CrudApi() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const api = methodHTTP();
-  const url = 'https://backend-school-management.herokuapp.com/api/message';
+  const url = 'http://localhost:8080/api/student/message';
+  const id = '';
 
   useEffect(() => {
     setLoading(true);
     methodHTTP()
-      .get(url)
+      .get(`${url}/${id}`)
       .then((res) => {
         if (!res.err) {
           dispatch(readAllAction(res));
+          console.log('res', res);
           setError(null);
         } else {
           dispatch(errorAction(res));
@@ -34,34 +35,9 @@ function CrudApi() {
       });
   }, [url, dispatch]);
 
-  const deleteData = (id) => {
-    // eslint-disable-next-line no-alert
-    const isDelete = window.confirm(
-      `¿Estas seguro de eliminar el registro con el ID '${id}'?`,
-    );
-
-    if (isDelete) {
-      const endpoint = `${url}/${id}`;
-      const options = {
-        headers: { 'content-type': 'application/json' },
-      };
-
-      api.del(endpoint, options).then((res) => {
-        if (!res.err) {
-          dispatch(deleteAction(id));
-        } else {
-          setError(res);
-        }
-      });
-    } else {
-      // eslint-disable-next-line no-console
-      console.log('No se elimino el registro');
-    }
-  };
-
   return (
     <div>
-      <h2>Buzon de Mensajes Estudiante</h2>
+      <h2>Buzon de Estudiantes</h2>
       {loading && <Loader />}
       {error && (
         <MessageCRUD
@@ -73,11 +49,10 @@ function CrudApi() {
         <MessajeCRUDtable
           data={db}
           setDataToEdit={setDataToEdit}
-          deleteData={deleteData}
         />
       )}
     </div>
   );
 }
 
-export default CrudApi;
+export default CrudUser;
