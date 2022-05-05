@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function UploadImage() {
   const [image, setImage] = useState(null);
+
   const handleChange = (event) => {
     setImage(event.target.files[0]);
   };
@@ -10,11 +11,6 @@ function UploadImage() {
   const handleUploadImage = async () => {
     const formData = new FormData();
     formData.append('file', image);
-
-    // const payload = {
-    //   method: 'POST',
-    //   body: formData,
-    // };
 
     try {
       const result = await axios.post('http://localhost:8080/api/upload/image', formData);
@@ -33,7 +29,6 @@ function UploadImage() {
         accept="image/*"
         onChange={handleChange}
       />
-
       <button type="button" onClick={handleUploadImage}>
         Upload Image
       </button>

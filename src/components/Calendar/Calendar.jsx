@@ -3,6 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import useSWR from 'swr';
 import Modals from '../../pages/Modals';
+import styles from './Calendar.css';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function Calendar() {
@@ -15,7 +16,7 @@ function Calendar() {
   }
 
   return (
-    <div>
+    <div className={styles.fondo}>
       <Modals />
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
