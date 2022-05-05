@@ -7,6 +7,7 @@ import methodHTTP from '../../Methods/methodhHTTP';
 import MessajeCRUDtable from './MessajeCRUDtable';
 import Loader from './Loader';
 import MessageCRUD from './MessageCRUD';
+import styles from './CrudApi.module.css';
 
 function CrudUser() {
   const state = useSelector((state) => state);
@@ -36,7 +37,7 @@ function CrudUser() {
 
   return (
     <div>
-      <h2>Buzon de Estudiantes</h2>
+      <h2 className={styles.form_input}>Buzon de Estudiantes</h2>
       {loading && <Loader />}
       {error && (
         <MessageCRUD

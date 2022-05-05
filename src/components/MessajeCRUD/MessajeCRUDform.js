@@ -53,7 +53,7 @@ function MessajeCRUDform({
 
   return (
     <div>
-      <h3 className={styles.form_input}>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
+      <h3 className={styles.title}>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
       <form
         className={styles.form_container}
         onSubmit={handleSubmit}
