@@ -18,6 +18,7 @@ import UploadImage from './components/Upload/UploadImage';
 import Payments from './components/Payments/Payments';
 import PayPagos from './pages/PayPagos/PayPagos';
 import CrudUser from './components/MessageUser/CrudUser';
+import DataTableUser from './components/DataTableUser';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/payments" element={<Payments />} />
         <Route path="/pagos" element={<PayPagos />} />
         <Route path="/CrudUser/message/:id" element={<CrudUser />} />
+        <Route path="/taskUser/:id" element={<DataTableUser />} />
       </Routes>
     </BrowserRouter>
   );
