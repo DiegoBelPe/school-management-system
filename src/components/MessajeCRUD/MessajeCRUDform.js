@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import styles from './MessageForm.module.css';
 
 const initialForm = {
   remitente: '',
@@ -52,9 +53,13 @@ function MessajeCRUDform({
 
   return (
     <div>
-      <h3>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
-      <form onSubmit={handleSubmit}>
+      <h3 className={styles.form_input}>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
+      <form
+        className={styles.form_container}
+        onSubmit={handleSubmit}
+      >
         <input
+          className={styles.form_input}
           type="text"
           name="remitente"
           placeholder="Remitente"
@@ -62,6 +67,7 @@ function MessajeCRUDform({
           value={form.remitente}
         />
         <input
+          className={styles.form_input}
           type="text"
           name="asunto"
           placeholder="Asunto"
@@ -69,15 +75,17 @@ function MessajeCRUDform({
           value={form.asunto}
         />
         <input
+          className={styles.form_input}
           type="text"
           name="mensaje"
           placeholder="Mensaje"
           onChange={handleChange}
           value={form.mensaje}
         />
-
-        <input type="Submit" value="Enviar" />
-        <input type="reset" value="Limpiar" onClick={handleReset} />
+        <div className={styles.buttom_container}>
+          <input className="buttom_enviar" type="Submit" value="Enviar" />
+          <input className="buttom_limpiar" type="reset" value="Limpiar" onClick={handleReset} />
+        </div>
       </form>
     </div>
   );
