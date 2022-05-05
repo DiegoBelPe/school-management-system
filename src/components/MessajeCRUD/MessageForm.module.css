@@ -80,7 +80,7 @@ input[type="reset"] {
   cursor: pointer;
 }
 
-input[type="text"],
+/* input[type="text"],
 textarea {
   border: thin solid #dedede;
   border-radius: 0.25rem;
@@ -93,4 +93,4 @@ textarea {
   line-height: 1;
   background-color: transparent;
 
-}
+} */
