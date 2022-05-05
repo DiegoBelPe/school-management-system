@@ -33,7 +33,6 @@ function CrudUser() {
         setLoading(false);
       });
   }, [url, dispatch]);
-  console.log('db', db);
 
   return (
     <div>
