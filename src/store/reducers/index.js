@@ -5,7 +5,7 @@ import taskReducer from '../tasks/reducer';
 import studentReducer from '../student/reducerStudent';
 import messageReducer from '../message/reducerMessage';
 import messageUserReducer from '../messageUser/reducerMessageUser';
-import taskUserReducer from '../tasksUser/reducer';
+import taskUserReducer from '../tasksUser/reducerUserTask';
 
 export default combineReducers({
   auth,
