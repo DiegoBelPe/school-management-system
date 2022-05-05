@@ -11,7 +11,7 @@ import {
 
 import { useParams } from 'react-router-dom';
 import { getTasks } from '../../services/taskUser';
-import { getAllTasks } from '../../store/tasksUser/actions';
+import { getAllTasksUser } from '../../store/tasksUser/actionsUserTask';
 
 function DataTable() {
   const { id } = useParams();
@@ -21,7 +21,7 @@ function DataTable() {
   useEffect(() => {
     const fetchTasks = async () => {
       const results = await getTasks(id);
-      dispatch(getAllTasks(results));
+      dispatch(getAllTasksUser(results));
     };
     fetchTasks();
   }, []);
