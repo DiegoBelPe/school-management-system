@@ -11,12 +11,12 @@
   display: grid;
   gap: 10px;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 50px 610px auto 70px;
+  grid-template-rows: 50px 100% auto 70px;
   grid-template-areas:
-    'navbar header'
     'navbar main'
     'navbar main'
-    'navbar footer';
+    'navbar main'
+    'navbar main';
 }
 
 .container__dash > * {
