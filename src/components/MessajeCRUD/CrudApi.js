@@ -97,7 +97,7 @@ function CrudApi() {
 
   return (
     <div>
-      <h2>CRUD Messaje</h2>
+      <h2>Buzon de Mensajes ADMIN</h2>
       <MessajeCRUDform
         createData={createData}
         updateData={updateData}

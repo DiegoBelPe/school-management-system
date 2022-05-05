@@ -1,0 +1,2 @@
+export const READ_ALL_DATA_USER = 'READ_ALL_DATA_USER';
+export const ERROR_DATA_USER = 'ERROR_DATA_USER';
