@@ -11,7 +11,7 @@ import MessageCRUD from './MessageCRUD';
 function CrudUser() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const { db } = state.messageReducer;
+  const { db } = state.messageUserReducer;
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
