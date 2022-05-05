@@ -6,7 +6,7 @@ import Modals from '../../pages/Modals';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function Calendar() {
-  const { data: events, error } = useSWR('http://localhost:8080/api/events', fetcher);
+  const { data: events, error } = useSWR('http://localhost:8080/api/calendar', fetcher);
   if (error) {
     return <div>Tenemos un problema...</div>;
   }
@@ -21,6 +21,7 @@ function Calendar() {
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         locale="es"
+        events={events}
       />
 
     </div>
