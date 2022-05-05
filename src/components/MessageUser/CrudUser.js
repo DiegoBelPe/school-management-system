@@ -7,11 +7,12 @@ import methodHTTP from '../../Methods/methodhHTTP';
 import MessajeCRUDtable from './MessajeCRUDtable';
 import Loader from './Loader';
 import MessageCRUD from './MessageCRUD';
+import styles from './CrudApi.module.css';
 
 function CrudUser() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const { db } = state.messageReducer;
+  const { db } = state.messageUserReducer;
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -33,11 +34,10 @@ function CrudUser() {
         setLoading(false);
       });
   }, [url, dispatch]);
-  console.log('db', db);
 
   return (
     <div>
-      <h2>Buzon de Estudiantes</h2>
+      <h2 className={styles.form_input}>Buzon de Estudiantes</h2>
       {loading && <Loader />}
       {error && (
         <MessageCRUD

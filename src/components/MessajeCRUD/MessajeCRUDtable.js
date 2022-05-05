@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MessajeCRUDtrow from './MessajeCRUDtrow';
+import styles from './MessageTable.module.css';
 
 function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
   return (
     <div>
-      <h3>Mensajes de Entrada</h3>
-      <table>
+      <h3 className={styles.title_form}>Mensajes de Entrada</h3>
+      <table className={styles.table_form}>
         <thead>
           <tr>
             <th>Remitente</th>
