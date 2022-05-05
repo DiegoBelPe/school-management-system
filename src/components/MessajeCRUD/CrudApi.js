@@ -7,6 +7,7 @@ import MessajeCRUDform from './MessajeCRUDform';
 import MessajeCRUDtable from './MessajeCRUDtable';
 import Loader from './Loader';
 import MessageCRUD from './MessageCRUD';
+import styles from './CrudApi.module.css';
 
 function CrudApi() {
   const state = useSelector((state) => state);
@@ -97,7 +98,7 @@ function CrudApi() {
 
   return (
     <div>
-      <h2>Buzon de Mensajes ADMIN</h2>
+      <h2 className={styles.form_input}>Buzon de Mensajes ADMIN</h2>
       <MessajeCRUDform
         createData={createData}
         updateData={updateData}

@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './MessageTRow.module.css';
 
 function MessajeCRUDtrow({ el }) {
   const { remitente, asunto, mensaje } = el;
   return (
     <tr>
-      <td>{remitente}</td>
-      <td>{asunto}</td>
-      <td>{mensaje}</td>
+      <td className={styles.table_files}>{remitente}</td>
+      <td className={styles.table_files}>{asunto}</td>
+      <td className={styles.table_files}>{mensaje}</td>
     </tr>
   );
 }
