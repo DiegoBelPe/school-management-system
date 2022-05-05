@@ -115,17 +115,31 @@ function DasNav() {
           <Link to="/dash/estudiantes">
             <div className="icon">
               {' '}
-              <img src={images.img7} alt="" />
+              <img src={images.img10} alt="" />
               {' '}
             </div>
             <div className="title">
               {' '}
-              <span>Notas</span>
+              <span>Estudiantes</span>
               {' '}
             </div>
           </Link>
         </div>
         <div className="item separator" />
+        <div className="item">
+          <Link to="/">
+            <div className="icon">
+              {' '}
+              <img src={images.img9} alt="" />
+              {' '}
+            </div>
+            <div className="title">
+              {' '}
+              <span>Cerrar Sesión</span>
+              {' '}
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );

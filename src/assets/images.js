@@ -6,6 +6,8 @@ import chores from './tareas.png';
 import lessons from './horario.png';
 import qualification from './notas.png';
 import about from './slide01.jpg';
+import logout from './logout.png';
+import student from './students.png';
 
 export default {
   img1: user,
@@ -16,5 +18,7 @@ export default {
   img6: lessons,
   img7: qualification,
   img8: about,
+  img9: logout,
+  img10: student,
 
 };
