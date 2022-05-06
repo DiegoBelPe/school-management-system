@@ -1,6 +1,7 @@
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import './Payments.css';
+import images from '../../assets/images';
 
 import CheckoutForm from './CheckoutForm';
 
@@ -11,6 +12,10 @@ const stripePromise = loadStripe(
 function Payments() {
   return (
     <div className="formStripe">
+      <div>
+        <img className="img__stripe" src={images.img12} alt="" />
+      </div>
+      <br />
       <Elements stripe={stripePromise}>
         <CheckoutForm />
       </Elements>
