@@ -13,6 +13,11 @@ import logoWhite from './logoWhite.png';
 import introHome from './IntroHome.png';
 import conoceColegio from './Conoce_nuestro_colegio.png';
 import fondoAbout from './FondoAbout.png';
+import contactoHome from './contactanosHome.png';
+import testimonio1 from './testimonio1.png';
+import testimonio2 from './testimonio2.png';
+import testimonio3 from './testimonio3.png';
+import testimonio4 from './testimonio4.png';
 
 export default {
   img1: user,
@@ -30,5 +35,10 @@ export default {
   img13: introHome,
   img14: conoceColegio,
   img15: fondoAbout,
+  img16: contactoHome,
+  img17: testimonio1,
+  img18: testimonio2,
+  img19: testimonio3,
+  img20: testimonio4,
 
 };

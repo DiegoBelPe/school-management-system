@@ -1,15 +1,15 @@
 import React from 'react';
 import style from './Contact.module.css';
+import image from '../../assets/images';
 
 function Contact() {
   return (
     <div className={style.container__contact}>
-      <div>
-        <h2 className={style.contact__title}>Contactanos</h2>
+
+      <div className={style.contact__section__img}>
+        <img src={image.img16} alt="contact" />
       </div>
-
       <div className={style.contact__section}>
-
         <div>
           <form className={style.contact_form} box-shadow-1>
             <input
