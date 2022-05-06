@@ -222,7 +222,7 @@ function DataTable() {
   );
   return (
     <div>
-      <h1>DataTable Tareas</h1>
+      <h1>Lista de Tareas</h1>
       <br />
       <Button onClick={abrirCerrarModalInsertar}>Insertar</Button>
       <br />

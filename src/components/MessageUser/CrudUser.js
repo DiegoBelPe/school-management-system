@@ -36,7 +36,7 @@ function CrudUser() {
   }, [url, dispatch]);
 
   return (
-    <div>
+    <div className={styles.fondo}>
       <h2 className={styles.form_input}>Buzon de Estudiantes</h2>
       {loading && <Loader />}
       {error && (
