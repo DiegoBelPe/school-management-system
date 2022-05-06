@@ -12,7 +12,7 @@ function IntroHome() {
           La educación ayuda a la persona a aprender a ser lo que es capaz de
           ser.
         </p>
-        <Link to="/" className={styles.link_intro}>
+        <Link to="/about" className={styles.link_intro}>
           <span className={styles.button_intro_text}>Conocer más</span>
         </Link>
       </div>
