@@ -41,10 +41,10 @@ function NavBar() {
         </NavLink>
         <NavLink
           className="link_title"
-          to="/"
+          to="/pagos"
           style={{ textDecoration: 'none' }}
         >
-          <div className="nav-bar__link-li">Galería</div>
+          <div className="nav-bar__link-li">Pagos</div>
         </NavLink>
         <NavLink
           className="link_title"
