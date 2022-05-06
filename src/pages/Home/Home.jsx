@@ -1,10 +1,11 @@
 import React from 'react';
-import ContImg from '../../components/ContImg/ContImg';
+/* import ContImg from '../../components/ContImg/ContImg'; */
 import styles from './Home.module.css';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer/Footer';
 import About from '../About/About';
 import Contact from '../../components/Contact/Contact';
+import IntroHome from '../../components/IntroHome/IntroHome';
 
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
       </div>
       <div className={styles.container}>
         <div className={styles.content__slide}>
-          <ContImg />
+          <IntroHome />
         </div>
       </div>
       <div className={styles.content__card}>

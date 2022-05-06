@@ -23,21 +23,29 @@ body {
   margin: 5px 0;
 }
 .nav-bar {
-  height: 3rem;
-  background-color: var(--first-color);
+  height: 4rem;
+  background-color: var(--white-color);
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
   position: relative;
   color: var(--white-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-bar__button {
-  background: url(./hamburguer_menu.svg);
-  padding: 4px;
-  width: 3rem;
+  background: url(./menuResp.svg);
+  padding: 5px;
+  width: 4rem;
   border-width: 1px;
+  text-align: center;
 }
+
+.nav-bar__logo__img {
+  width: 0;
+  height: 0;
+}
+
 
 .nav-bar__links {
   position: relative;
@@ -45,8 +53,12 @@ body {
   display: none;
   flex-direction: column;
   gap: 10px;
-  background: var(--first-color);
   align-items: center;
+}
+
+.link_title {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
 }
 
 .nav-bar__links.nav-bar__links--visible {
@@ -57,12 +69,14 @@ body {
   .nav-bar__links.nav-bar__links--visible {
     display: flex;
     width: 100vw;
-    height: 80vh;
+    height: 50vh;
     justify-content: space-around;
     background-color: #2c317db4;
-    font-size: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
     position: absolute;
     margin-top: 3rem;
+    font-weight: bold;
   }
 }
 
@@ -86,22 +100,6 @@ body {
     color: rgb(17, 17, 152);
     font-size: 20px;
   }
-  /* .link_title:after{
-        content: "";
-        width: 0;
-        height: 4px;
-        background-color: rgb(17, 17, 152);
-        position: absolute;
-        margin-top: 10px;
-        bottom: 0;
-        right: 50%;
-        transition: all .5s;
-        will-change: width;
-      }
-      .link_title:hover:after{
-        width: 100%;
-        right: 0;
-      } */
   .nav-bar__link-li {
     text-decoration: none;
     position: relative;
@@ -118,6 +116,18 @@ body {
     right: 50%;
     transition: all 0.5s;
     will-change: width;
+  }
+  .nav-bar__button-login{
+    background-color: var(--first-color);
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 9px;
+
   }
 
   .nav-bar__link-li:hover:after {

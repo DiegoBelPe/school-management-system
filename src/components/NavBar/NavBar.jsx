@@ -58,7 +58,7 @@ function NavBar() {
           to="../Login"
           style={{ textDecoration: 'none' }}
         >
-          <div className="nav-bar__link-li">Iniciar Sesión</div>
+          <div className="nav-bar__button-login">Iniciar Sesión</div>
         </NavLink>
       </div>
     </nav>

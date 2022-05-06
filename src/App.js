@@ -20,6 +20,7 @@ import PayPagos from './pages/PayPagos/PayPagos';
 import CrudUser from './components/MessageUser/CrudUser';
 import DataTableUser from './components/DataTableUser';
 import DashUser from './pages/DashUser/DashUser';
+import IntroHome from './components/IntroHome/IntroHome';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/uploadImage" element={<UploadImage />} />
         <Route path="/payments" element={<Payments />} />
         <Route path="/pagos" element={<PayPagos />} />
+        <Route path="/IntroHome" element={<IntroHome />} />
         <Route path="/dashUser" element={<DashUser />}>
           <Route path="CrudUser/message/:id" element={<CrudUser />} />
           <Route path="taskUser/:id" element={<DataTableUser />} />
