@@ -18,6 +18,9 @@ import testimonio1 from './testimonio1.png';
 import testimonio2 from './testimonio2.png';
 import testimonio3 from './testimonio3.png';
 import testimonio4 from './testimonio4.png';
+import facebook from './fb.png';
+import instagram from './instagram.png';
+import twitter from './twitter.png';
 
 export default {
   img1: user,
@@ -40,5 +43,8 @@ export default {
   img18: testimonio2,
   img19: testimonio3,
   img20: testimonio4,
+  img21: facebook,
+  img22: instagram,
+  img23: twitter,
 
 };

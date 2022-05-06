@@ -30,6 +30,11 @@
     color: var(--white-color);
 }
 
+.icons_logos{
+  width: 2rem;
+  height: 2rem;
+}
+
 .col-copyrigh{
     color: var(--white-color);
     font-size: 12px;
