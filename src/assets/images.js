@@ -9,6 +9,7 @@ import about from './slide01.jpg';
 import logout from './logout.png';
 import student from './students.png';
 import userStudent from './user2.jpg';
+import logoWhite from './logoWhite.png';
 
 export default {
   img1: user,
@@ -22,5 +23,6 @@ export default {
   img9: logout,
   img10: student,
   img11: userStudent,
+  img12: logoWhite,
 
 };
