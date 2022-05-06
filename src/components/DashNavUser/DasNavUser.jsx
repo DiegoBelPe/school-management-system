@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import './DasNav.css';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import images from '../../assets/images';
 
 function DasNav() {
   const [openC, setOpenC] = useState(false);
+  const studentId = useSelector((state) => state.auth.user.studentId[0].id);
+  const gradeId = useSelector((state) => state.auth.user.studentId[0].gradeId);
+  const urlTasks = `/dashUser/taskUser/${gradeId}`;
+  const urlMessage = `/dashUser/CrudUser/message/${studentId}`;
   const openMenu = () => {
     setOpenC(!openC);
   };
@@ -30,10 +35,13 @@ function DasNav() {
 
       <div id="profile">
         <div id="profile-photho">
-          <img src="https://res.cloudinary.com/borismg04/image/upload/v1651782518/vokrlm18kyulpsjtmucn.png" alt="" />
+          <img
+            src="https://res.cloudinary.com/borismg04/image/upload/v1651782518/vokrlm18kyulpsjtmucn.png"
+            alt=""
+          />
         </div>
         <div id="profile-name">
-          <span>Diego Beltran</span>
+          <span>Boris Monroy</span>
         </div>
       </div>
 
@@ -54,7 +62,7 @@ function DasNav() {
         </div>
         <div className="item separator" />
         <div className="item">
-          <Link to="/dashUser/CrudUser/message/:id">
+          <Link to={urlMessage}>
             <div className="icon">
               {' '}
               <img src={images.img3} alt="" />
@@ -82,7 +90,7 @@ function DasNav() {
         </div>
         <div className="item separator" />
         <div className="item">
-          <Link to="/dashUser/taskUser/:id">
+          <Link to={urlTasks}>
             <div className="icon">
               {' '}
               <img src={images.img5} alt="" />
