@@ -8,6 +8,7 @@ import qualification from './notas.png';
 import about from './slide01.jpg';
 import logout from './logout.png';
 import student from './students.png';
+import userStudent from './user2.jpg';
 
 export default {
   img1: user,
@@ -20,5 +21,6 @@ export default {
   img8: about,
   img9: logout,
   img10: student,
+  img11: userStudent,
 
 };

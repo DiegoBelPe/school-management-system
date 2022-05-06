@@ -30,7 +30,7 @@ function DasNav() {
 
       <div id="profile">
         <div id="profile-photho">
-          <img src={images.img1} alt="" />
+          <img src="https://res.cloudinary.com/borismg04/image/upload/v1651782518/vokrlm18kyulpsjtmucn.png" alt="" />
         </div>
         <div id="profile-name">
           <span>Diego Beltran</span>
