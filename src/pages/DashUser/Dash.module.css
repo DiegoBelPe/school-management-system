@@ -1,0 +1,48 @@
+:root {
+  --font: 'Raleway', sans-serif;
+  --first-color: #2c327d;
+  --second-color: #702355;
+  --third-color: #b16c33;
+  --black-color: #0a0a0a;
+  --white-color: #fefefe;
+}
+
+.container__dash {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 75% 75%;
+  grid-template-areas:
+    'navbar main'
+    'navbar main';
+}
+
+.container__dash > * {
+  box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  /* padding: 10px; */
+  text-align: center;
+}
+
+.header__dash {
+  grid-area: header;
+  background-color: var(--third-color);
+  color: white;
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color: var(--first-color);
+  color: white;
+  text-align: left;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: var(--first-color);
+  color: white;
+}

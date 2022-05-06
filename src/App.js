@@ -19,12 +19,16 @@ import Payments from './components/Payments/Payments';
 import PayPagos from './pages/PayPagos/PayPagos';
 import CrudUser from './components/MessageUser/CrudUser';
 import DataTableUser from './components/DataTableUser';
+import DashUser from './pages/DashUser/DashUser';
+import IntroHome from './components/IntroHome/IntroHome';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />}>
+          <Route path="/about" element={<About />} />
+        </Route>
         <Route path="/dash" element={<Dash />}>
           <Route path="table" element={<DataTable />} />
           <Route path="schedule" element={<Schedule />} />
@@ -43,8 +47,13 @@ function App() {
         <Route path="/uploadImage" element={<UploadImage />} />
         <Route path="/payments" element={<Payments />} />
         <Route path="/pagos" element={<PayPagos />} />
-        <Route path="/CrudUser/message/:id" element={<CrudUser />} />
-        <Route path="/taskUser/:id" element={<DataTableUser />} />
+        <Route path="/IntroHome" element={<IntroHome />} />
+        <Route path="/dashUser" element={<DashUser />}>
+          <Route path="CrudUser/message/:id" element={<CrudUser />} />
+          <Route path="taskUser/:id" element={<DataTableUser />} />
+          <Route path="calendar" element={<Calendar />} />
+          <Route path="schedule" element={<Schedule />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

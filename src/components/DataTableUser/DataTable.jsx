@@ -8,6 +8,7 @@ import {
   TableBody,
   TableRow,
 } from '@material-ui/core';
+import Checkbox from '@mui/material/Checkbox';
 
 import { useParams } from 'react-router-dom';
 import { getTasks } from '../../services/taskUser';
@@ -16,7 +17,7 @@ import { getAllTasksUser } from '../../store/tasksUser/actionsUserTask';
 function DataTable() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.taskUserReducer.tasks);
+  const data = useSelector((state) => state.taskUserReducer.tasksUser);
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -66,18 +67,18 @@ function DataTable() {
               <TableCell>Descripcion</TableCell>
               <TableCell>Observaciones</TableCell>
               <TableCell>Fecha de entrega</TableCell>
+              <TableCell>Accion</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data
-
               && data.map((tarea) => (
                 <TableRow key={tarea.id}>
                   <TableCell>{tarea.course}</TableCell>
                   <TableCell>{tarea.description}</TableCell>
                   <TableCell>{tarea.observations}</TableCell>
                   <TableCell>{tarea.endDate}</TableCell>
-                  <TableCell>&nbsp;&nbsp;&nbsp;</TableCell>
+                  <TableCell><Checkbox /></TableCell>
                 </TableRow>
               ))}
           </TableBody>

@@ -39,7 +39,7 @@ function DasNav() {
 
       <div id="menu-items">
         <div className="item">
-          <Link to="/dash">
+          <Link to="/dashUser">
             <div className="icon">
               {' '}
               <img src={images.img2} alt="icono home" />
@@ -54,7 +54,7 @@ function DasNav() {
         </div>
         <div className="item separator" />
         <div className="item">
-          <Link to="/dash/messages">
+          <Link to="/dashUser/CrudUser/message/:id">
             <div className="icon">
               {' '}
               <img src={images.img3} alt="" />
@@ -68,7 +68,7 @@ function DasNav() {
         </div>
         <div className="item separator" />
         <div className="item">
-          <Link to="/dash/calendar">
+          <Link to="/dashUser/calendar">
             <div className="icon">
               {' '}
               <img src={images.img4} alt="" />
@@ -82,7 +82,7 @@ function DasNav() {
         </div>
         <div className="item separator" />
         <div className="item">
-          <Link to="/dash/table">
+          <Link to="/dashUser/taskUser/:id">
             <div className="icon">
               {' '}
               <img src={images.img5} alt="" />
@@ -97,7 +97,7 @@ function DasNav() {
         </div>
         <div className="item separator" />
         <div className="item">
-          <Link to="/dash/schedule">
+          <Link to="/dashUser/schedule">
             <div className="icon">
               {' '}
               <img src={images.img6} alt="" />
@@ -106,21 +106,6 @@ function DasNav() {
             <div className="title">
               {' '}
               <span>Horario</span>
-              {' '}
-            </div>
-          </Link>
-        </div>
-        <div className="item separator" />
-        <div className="item">
-          <Link to="/dash/estudiantes">
-            <div className="icon">
-              {' '}
-              <img src={images.img10} alt="" />
-              {' '}
-            </div>
-            <div className="title">
-              {' '}
-              <span>Estudiantes</span>
               {' '}
             </div>
           </Link>

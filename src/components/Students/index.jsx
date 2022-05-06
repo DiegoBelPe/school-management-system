@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 import { Edit, Delete } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import images from '../../assets/images';
 import {
   getStudent,
   createStudent,
@@ -59,6 +60,7 @@ function index() {
     lastName: '',
     identification: '',
     grade: '',
+    avatar: '',
   });
 
   const handleChange = (e) => {
@@ -237,6 +239,7 @@ function index() {
               <TableCell>Apellidos</TableCell>
               <TableCell>Identificacion</TableCell>
               <TableCell>Grado</TableCell>
+              <TableCell>Avatar</TableCell>
               <TableCell>Acciones</TableCell>
             </TableRow>
           </TableHead>
@@ -248,6 +251,7 @@ function index() {
                   <TableCell>{student.lastName}</TableCell>
                   <TableCell>{student.identification}</TableCell>
                   <TableCell>{student.grade}</TableCell>
+                  <TableCell><img src={images.img11} alt="icono home" width="30" height="30" /></TableCell>
                   <TableCell>
                     <Edit
                       className={styles.iconos}
