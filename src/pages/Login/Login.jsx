@@ -24,7 +24,7 @@ function Login(props) {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.auth);
-  const rolUser = useSelector((state) => state.auth.user.rol);
+  /* const rolUser = useSelector((state) => state.auth.user.rol); */
   /* const { message } = useSelector((state) => state.message); */
   const dispatch = useDispatch();
 
