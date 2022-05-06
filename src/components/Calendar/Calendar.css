@@ -1,0 +1,5 @@
+.fondo{
+  background-image: url('../../assets/Fondo1.png');
+  background-size: cover;
+  background-repeat: repeat-y;
+}

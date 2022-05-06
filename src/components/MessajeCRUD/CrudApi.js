@@ -97,7 +97,7 @@ function CrudApi() {
   };
 
   return (
-    <div>
+    <div className={styles.fondo}>
       <h2 className={styles.form_input}>Buzon de Mensajes ADMIN</h2>
       <MessajeCRUDform
         createData={createData}
