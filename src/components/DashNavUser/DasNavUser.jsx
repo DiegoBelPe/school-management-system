@@ -6,10 +6,11 @@ import images from '../../assets/images';
 
 function DasNav() {
   const [openC, setOpenC] = useState(false);
-  const studentId = useSelector((state) => state.auth.user.studentId[0].id);
+  // const studentId = useSelector((state) => state.auth.user.studentId[0].id);
   const gradeId = useSelector((state) => state.auth.user.studentId[0].gradeId);
+
   const urlTasks = `/dashUser/taskUser/${gradeId}`;
-  const urlMessage = `/dashUser/CrudUser/message/${studentId}`;
+  const urlMessage = `/dashUser/CrudUser/message/${gradeId}`;
   const openMenu = () => {
     setOpenC(!openC);
   };
