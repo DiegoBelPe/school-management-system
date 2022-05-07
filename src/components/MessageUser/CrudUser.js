@@ -16,7 +16,7 @@ function CrudUser() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const url = 'http://localhost:8080/api/student/message';
+  const url = 'http://localhost:8080/api/grade/messages';
   const { id } = useParams();
 
   useEffect(() => {
