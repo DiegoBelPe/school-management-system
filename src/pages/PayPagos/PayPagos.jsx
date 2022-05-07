@@ -1,11 +1,12 @@
 import React from 'react';
+import './PayPagos.css';
 
 import NavBar from '../../components/NavBar';
 import Payments from '../../components/Payments/Payments';
 
 function PayPagos() {
   return (
-    <div>
+    <div className="pagePagos">
       <div>
         <NavBar />
       </div>

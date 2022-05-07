@@ -1,5 +1,6 @@
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import './Payments.css';
 
 import CheckoutForm from './CheckoutForm';
 
@@ -9,7 +10,7 @@ const stripePromise = loadStripe(
 
 function Payments() {
   return (
-    <div className="App">
+    <div className="formStripe">
       <Elements stripe={stripePromise}>
         <CheckoutForm />
       </Elements>
