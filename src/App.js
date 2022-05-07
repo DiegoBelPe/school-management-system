@@ -30,7 +30,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Route>
         <Route path="/dash" element={<Dash />}>
-          <Route path="table" element={<DataTable />} />
+          <Route path="table/:id" element={<DataTable />} />
           <Route path="schedule" element={<Schedule />} />
           <Route path="calendar" element={<Calendar />} />
           <Route path="messages" element={<CrudApi />} />
