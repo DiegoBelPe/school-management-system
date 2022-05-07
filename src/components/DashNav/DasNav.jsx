@@ -6,7 +6,8 @@ import images from '../../assets/images';
 
 function DasNav() {
   const [openC, setOpenC] = useState(false);
-  const gradeId = useSelector((state) => state.taskReducer.auth.user.gradeId);
+  const gradeId = useSelector((state) => state.taskReducer.gradeId);
+  console.log(gradeId);
   const taskUrl = `/dash/table/${gradeId}`;
   const openMenu = () => {
     setOpenC(!openC);
