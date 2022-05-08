@@ -85,16 +85,15 @@ function DataTable() {
     // eslint-disable-next-line no-unused-expressions
     caso === 'Editar' ? abrirCerrarModalEditar() : abrirCerrarModalEliminar();
   };
-
+  const { id } = useParams();
   useEffect(() => {
     const fetchTasks = async () => {
-      const results = await getTask();
+      const results = await getTask(id);
       dispatch(getAllTasks(results));
     };
     fetchTasks();
   }, []);
 
-  const { id } = useParams();
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createTask(id, consolaSeleccionada);
