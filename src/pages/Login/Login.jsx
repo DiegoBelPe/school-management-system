@@ -24,7 +24,6 @@ function Login(props) {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.auth);
-  /* const rolUser = useSelector((state) => state.auth.user.rol); */
   /* const { message } = useSelector((state) => state.message); */
   const dispatch = useDispatch();
 
@@ -36,24 +35,21 @@ function Login(props) {
     const pass = e.target.value;
     setPassword(pass);
   };
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     if (username) {
-      dispatch(login(username, password))
-        .then(() => {
-          history.push('/dash');
-          window.location.reload();
-        })
-        .catch((error) => {
-          setLoading(false);
-          console.log(error);
-        });
+     await dispatch(login(username, password));
+     setLoading(false);
     } else {
       setLoading(false);
     }
   };
+
   if (isLoggedIn) {
+    if(isAdmin) {
+      return <Navigate to="/juanchito" />;
+    }
     return <Navigate to="/dashUser" />;
   }
 
