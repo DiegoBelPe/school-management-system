@@ -10,7 +10,6 @@ function DasNav() {
   const messageId = useSelector((state) => state.auth.user.gradeId[0].id);
   const taskUrl = `/dash/table/${gradeId}`;
   const messageUrl = `/dash/message/${messageId}`;
-  console.log(messageUrl);
   const openMenu = () => {
     setOpenC(!openC);
   };

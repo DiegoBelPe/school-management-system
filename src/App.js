@@ -23,6 +23,7 @@ import DashUser from './pages/DashUser/DashUser';
 import IntroHome from './components/IntroHome/IntroHome';
 import AccordionUI from './components/AccordionUI/AccordionUI';
 import PageUserDash from './pages/PageUserDash/PageUserDash';
+import MuiAccordion from './components/MuiAccordion/MuiAccordion';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="message/:id" element={<CrudApi />} />
           <Route path="estudiantes" element={<Student />} />
         </Route>
+        <Route path="/Accordion" element={<MuiAccordion />} />
         <Route path="/navbar" element={<NavBar />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/functioncontainer" element={<FunctionContainer />} />
