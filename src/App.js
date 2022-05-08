@@ -48,6 +48,7 @@ function App() {
         <Route path="/payments" element={<Payments />} />
         <Route path="/pagos" element={<PayPagos />} />
         <Route path="/IntroHome" element={<IntroHome />} />
+        <Route path="/datatable" element={<DataTable />} />
         <Route path="/dashUser" element={<DashUser />}>
           <Route path="CrudUser/message/:id" element={<CrudUser />} />
           <Route path="taskUser/:id" element={<DataTableUser />} />

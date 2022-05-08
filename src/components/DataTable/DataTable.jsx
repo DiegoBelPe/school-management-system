@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 import { Edit, Delete } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import style from './DataTable.module.css';
 import {
   getTask,
   createTask,
@@ -222,7 +223,7 @@ function DataTable() {
   );
   return (
     <div>
-      <h1>Lista de Tareas</h1>
+      <h1 className={style.task__title}>Lista de Tareas</h1>
       <br />
       <Button onClick={abrirCerrarModalInsertar}>Insertar</Button>
       <br />

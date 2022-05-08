@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import styles from './Dash.module.css';
+import styles from './DashUser.module.css';
 import DashNavUser from '../../components/DashNavUser/DasNavUser';
 
 function Dash() {
