@@ -6,9 +6,11 @@ import images from '../../assets/images';
 
 function DasNav() {
   const [openC, setOpenC] = useState(false);
-  const gradeId = useSelector((state) => state.taskReducer.gradeId);
-  console.log(gradeId);
+  const gradeId = useSelector((state) => state.auth.user.gradeId[0].id);
+  const messageId = useSelector((state) => state.auth.user.gradeId[0].id);
   const taskUrl = `/dash/table/${gradeId}`;
+  const messageUrl = `/dash/message/${messageId}`;
+  console.log(messageUrl);
   const openMenu = () => {
     setOpenC(!openC);
   };
@@ -61,7 +63,7 @@ function DasNav() {
         </div>
         <div className="item separator" />
         <div className="item">
-          <Link to="/dash/messages">
+          <Link to={messageUrl}>
             <div className="icon">
               {' '}
               <img src={images.img3} alt="" />

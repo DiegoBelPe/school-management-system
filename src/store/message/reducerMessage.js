@@ -10,7 +10,7 @@ function messageReducer(state = initialState, action) {
     case READ_ALL_DATA:
       return {
         ...state,
-        db: action.payload.map((data) => data),
+        db: action.payload,
       };
 
     case CREATE_DATA: {
