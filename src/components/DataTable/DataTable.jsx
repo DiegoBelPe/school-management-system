@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import {
   Table,
   TableContainer,
@@ -93,29 +94,24 @@ function DataTable() {
     fetchTasks();
   }, []);
 
+  const { id } = useParams();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createTask(consolaSeleccionada);
+    await createTask(id, consolaSeleccionada);
     dispatch(postTask(consolaSeleccionada));
     abrirCerrarModalInsertar();
   };
 
   const handleSubmitEdit = async () => {
     await updateTask(consolaSeleccionada);
-    dispatch(
-      patchTask(
-        consolaSeleccionada,
-      ),
-    );
+    dispatch(patchTask(consolaSeleccionada));
     abrirCerrarModalEditar();
   };
 
   const handleSubmitDelete = async (e) => {
     e.preventDefault();
     await deleteTask(consolaSeleccionada.id);
-    dispatch(
-      deleteTasks(consolaSeleccionada.id),
-    );
+    dispatch(deleteTasks(consolaSeleccionada.id));
     abrirCerrarModalEliminar();
   };
   const bodyInsertar = (

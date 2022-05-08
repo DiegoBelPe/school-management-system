@@ -3,7 +3,7 @@ const BASE_URL = 'http://localhost:8080';
 
 export async function getTask() {
   try {
-    const resp = await fetch(`${BASE_URL}/api/grade/homeWork/:id`);
+    const resp = await fetch(`${BASE_URL}/api/grade/homeWork`);
     const tasks = await resp.json();
     return tasks;
   } catch (error) {
@@ -20,10 +20,10 @@ export async function oneTask(id) {
   }
 }
 
-export async function createTask(task) {
+export async function createTask(id, task) {
   try {
-    const resp = await fetch(`${BASE_URL}/api/grade/homeWork/:id`, {
-      method: 'PATCH',
+    const resp = await fetch(`${BASE_URL}/api/grade/homeWork/${id}`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
