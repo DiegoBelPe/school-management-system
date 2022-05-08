@@ -21,6 +21,8 @@ import CrudUser from './components/MessageUser/CrudUser';
 import DataTableUser from './components/DataTableUser';
 import DashUser from './pages/DashUser/DashUser';
 import IntroHome from './components/IntroHome/IntroHome';
+import AccordionUI from './components/AccordionUI/AccordionUI';
+import PageUserDash from './pages/PageUserDash/PageUserDash';
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
         <Route path="/pagos" element={<PayPagos />} />
         <Route path="/IntroHome" element={<IntroHome />} />
         <Route path="/datatable" element={<DataTable />} />
+        <Route path="/casdUser" element={<AccordionUI />} />
+        <Route path="/page-user-dash" element={<PageUserDash />} />
         <Route path="/dashUser" element={<DashUser />}>
           <Route path="CrudUser/message/:id" element={<CrudUser />} />
           <Route path="taskUser/:id" element={<DataTableUser />} />
