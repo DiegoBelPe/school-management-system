@@ -11,9 +11,8 @@ import MessageCRUD from './MessageCRUD';
 import styles from './CrudApi.module.css';
 
 function CrudApi() {
-  const state = useSelector((state) => state);
+  const db = useSelector((state) => state.auth.user.gradeId[0].mensajes);
   const dispatch = useDispatch();
-  const { db } = state.auth.user.gradeId[0].mensajes;
   const [dataToEdit, setDataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
