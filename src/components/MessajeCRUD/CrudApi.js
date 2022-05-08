@@ -1,6 +1,7 @@
 /* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { createAction, deleteAction, errorAction, readAllAction, updateAction } from '../../store/message/actionsMessage';
 import methodHTTP from '../../Methods/methodhHTTP';
 import MessajeCRUDform from './MessajeCRUDform';
@@ -12,18 +13,19 @@ import styles from './CrudApi.module.css';
 function CrudApi() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const { db } = state.messageReducer;
+  const { db } = state.auth.user.gradeId[0].mensajes;
   const [dataToEdit, setDataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const api = methodHTTP();
-  const url = 'https://backend-school-management.herokuapp.com/api/message';
+  const url = 'http://localhost:8080/api/grade/messages';
+  const { id } = useParams();
 
   useEffect(() => {
     setLoading(true);
     methodHTTP()
-      .get(url)
+      .get(`${url}/${id}`)
       .then((res) => {
         if (!res.err) {
           dispatch(readAllAction(res));

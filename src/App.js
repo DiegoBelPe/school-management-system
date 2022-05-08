@@ -33,7 +33,7 @@ function App() {
           <Route path="table/:id" element={<DataTable />} />
           <Route path="schedule" element={<Schedule />} />
           <Route path="calendar" element={<Calendar />} />
-          <Route path="messages" element={<CrudApi />} />
+          <Route path="message/:id" element={<CrudApi />} />
           <Route path="estudiantes" element={<Student />} />
         </Route>
         <Route path="/navbar" element={<NavBar />} />
@@ -42,7 +42,7 @@ function App() {
         <Route path="/modals" element={<Modals />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/CrudApi" element={<CrudApi />} />
+        <Route path="/message/:id" element={<CrudApi />} />
         <Route path="/verify-account/:token" element={<Activate />} />
         <Route path="/uploadImage" element={<UploadImage />} />
         <Route path="/payments" element={<Payments />} />
