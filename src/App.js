@@ -21,6 +21,7 @@ import CrudUser from './components/MessageUser/CrudUser';
 import DataTableUser from './components/DataTableUser';
 import DashUser from './pages/DashUser/DashUser';
 import IntroHome from './components/IntroHome/IntroHome';
+import MuiAccordion from './components/MuiAccordion/MuiAccordion';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="message/:id" element={<CrudApi />} />
           <Route path="estudiantes" element={<Student />} />
         </Route>
+        <Route path="/Accordion" element={<MuiAccordion />} />
         <Route path="/navbar" element={<NavBar />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/functioncontainer" element={<FunctionContainer />} />
