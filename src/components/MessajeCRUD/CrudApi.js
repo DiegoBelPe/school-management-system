@@ -38,7 +38,9 @@ function CrudApi() {
   }, [url, dispatch]);
 
   const createData = (data) => {
+    const endpointPost = `${url}/${id}`;
     const date = data;
+
     date.id = Date.now();
 
     const options = {
@@ -46,7 +48,7 @@ function CrudApi() {
       headers: { 'content-type': 'application/json' },
     };
 
-    api.post(url, options).then((res) => {
+    api.post(endpointPost, options).then((res) => {
       if (!res.err) {
         dispatch(createAction(res));
       } else {

@@ -4,9 +4,11 @@ import {
   LOGOUT,
   SET_MESSAGE,
   CREATE_TASK,
+  CREATE_MESSAGE,
 } from './types';
 import AuthService from '../services/auth.service';
 import { createTask } from '../../../services/task';
+// import { createMessage } from '../../../components/MessajeCRUD/CrudApi';
 
 export const login = (email, password) => (dispatch) => AuthService.login(email, password).then(
   (data) => {
@@ -44,6 +46,15 @@ export const postTask = (id, task) => (dispatch) => {
     dispatch({
       type: CREATE_TASK,
       payload: { task },
+    });
+  });
+};
+
+export const postMessage = (id, message) => (dispatch) => {
+  createMessage(id, message).then(() => {
+    dispatch({
+      type: CREATE_MESSAGE,
+      payload: { message },
     });
   });
 };
