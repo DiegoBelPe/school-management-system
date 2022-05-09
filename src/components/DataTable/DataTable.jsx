@@ -15,18 +15,9 @@ import {
 import { Edit, Delete } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import style from './DataTable.module.css';
-import {
-  getTask,
-  createTask,
-  deleteTask,
-  updateTask,
-} from '../../services/task';
-import {
-  getAllTasks,
-  postTask,
-  patchTask,
-  deleteTasks,
-} from '../../store/tasks/actions';
+import { getTask, deleteTask, updateTask } from '../../services/task';
+import { getAllTasks, patchTask, deleteTasks } from '../../store/tasks/actions';
+import { postTask } from '../../store/auth/actions/auth';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -94,10 +85,9 @@ function DataTable() {
     fetchTasks();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    await createTask(id, consolaSeleccionada);
-    dispatch(postTask(consolaSeleccionada));
+    dispatch(postTask(id, consolaSeleccionada));
     abrirCerrarModalInsertar();
   };
 
@@ -236,25 +226,25 @@ function DataTable() {
           </TableHead>
           <TableBody>
             {data
-              && data.map((tarea) => (
-                <TableRow key={tarea.id}>
-                  <TableCell>{tarea.course}</TableCell>
-                  <TableCell>{tarea.description}</TableCell>
-                  <TableCell>{tarea.observations}</TableCell>
-                  <TableCell>{tarea.endDate}</TableCell>
-                  <TableCell>
-                    <Edit
-                      className={styles.iconos}
-                      onClick={() => seleccionarConsola(tarea, 'Editar')}
-                    />
+            && data.map((tarea) => (
+              <TableRow key={tarea.id}>
+                <TableCell>{tarea.course}</TableCell>
+                <TableCell>{tarea.description}</TableCell>
+                <TableCell>{tarea.observations}</TableCell>
+                <TableCell>{tarea.endDate}</TableCell>
+                <TableCell>
+                  <Edit
+                    className={styles.iconos}
+                    onClick={() => seleccionarConsola(tarea, 'Editar')}
+                  />
                     &nbsp;&nbsp;&nbsp;
-                    <Delete
-                      className={styles.iconos}
-                      onClick={() => seleccionarConsola(tarea, 'Eliminar')}
-                    />
-                  </TableCell>
-                </TableRow>
-              ))}
+                  <Delete
+                    className={styles.iconos}
+                    onClick={() => seleccionarConsola(tarea, 'Eliminar')}
+                  />
+                </TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
