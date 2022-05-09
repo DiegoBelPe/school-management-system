@@ -44,12 +44,12 @@ function DasNav() {
       <div id="profile">
         <div id="profile-photho">
           <img
-            src="https://res.cloudinary.com/borismg04/image/upload/v1651782518/vokrlm18kyulpsjtmucn.png"
+            src="http://res.cloudinary.com/borismg04/image/upload/v1652115151/hxu07c2avtja5mpummu8.png"
             alt=""
           />
         </div>
         <div id="profile-name">
-          <span>Boris Monroy</span>
+          <span>Julián Beltrán</span>
         </div>
       </div>
 

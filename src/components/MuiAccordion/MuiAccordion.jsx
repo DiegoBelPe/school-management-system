@@ -15,12 +15,13 @@ export default function SimpleAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>
+            <h4>Proximas Tareas</h4>
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Matematicas Ejercicios de Fraccionarios.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -30,12 +31,15 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Accordion 2</Typography>
+          <Typography>
+            <h4>Los Ultimos Mensajes</h4>
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Se les recuerdan a los acudientes del periodo de evaluaciones para el tercer periodo.
+            <p>Gracias.</p>
+            <h4>Att.High School Make It Real Camp.</h4>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -45,8 +49,17 @@ export default function SimpleAccordion() {
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <Typography>Disabled Accordion</Typography>
+          <Typography>
+            <h4>Recordatorio</h4>
+          </Typography>
         </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            El sistema de pagos estara abierto a la primer semana de cada mes.
+            <p>Gracias.</p>
+            <h4>Att.High School Make It Real Camp.</h4>
+          </Typography>
+        </AccordionDetails>
       </Accordion>
     </div>
   );

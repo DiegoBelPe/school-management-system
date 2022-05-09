@@ -37,7 +37,6 @@ function CrudApi() {
         setLoading(false);
       });
   }, [url, dispatch]);
-
   const createData = (data) => {
     const endpointPost = `${url}/${id}`;
     const date = data;
@@ -51,7 +50,7 @@ function CrudApi() {
 
     api.post(endpointPost, options).then((res) => {
       if (!res.err) {
-        dispatch(postMessage(id, res));
+        dispatch(postMessage(id, data));
       } else {
         setError(res);
       }
@@ -99,6 +98,7 @@ function CrudApi() {
       console.log('No se elimino el registro');
     }
   };
+  console.log(db);
 
   return (
     <div className={styles.fondo}>

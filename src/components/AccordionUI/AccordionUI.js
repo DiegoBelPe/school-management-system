@@ -18,11 +18,12 @@ export default function MultiActionAreaCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            Motívate
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            No basta con querer: debes preguntarte a ti mismo qué vas a hacer para conseguir
+            lo que quieres.
+            <h5>Franklin D. Roosevelt</h5>
           </Typography>
         </CardContent>
       </CardActionArea>
