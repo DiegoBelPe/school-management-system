@@ -54,7 +54,7 @@ function Login(props) {
     }
   };
   if (isLoggedIn) {
-    return <Navigate to="/dashUser" />;
+    return <Navigate to="/dash" />;
   }
 
   return (
