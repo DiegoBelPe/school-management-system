@@ -48,7 +48,7 @@ export default function loginUser(state = initialState, action) {
       };
 
     case CREATE_MESSAGE:
-      console.log(payload);
+      console.log('prueba', payload.message);
       return {
         ...state,
         user: {
