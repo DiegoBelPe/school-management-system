@@ -55,7 +55,7 @@ function NavBar() {
         </NavLink>
         <NavLink
           className="link_title"
-          to="../Login"
+          to="../login"
           style={{ textDecoration: 'none' }}
         >
           <div className="nav-bar__button-login">Iniciar Sesión</div>
