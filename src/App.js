@@ -54,12 +54,12 @@ function App() {
         <Route path="/IntroHome" element={<IntroHome />} />
         <Route path="/datatable" element={<DataTable />} />
         <Route path="/casdUser" element={<AccordionUI />} />
-        <Route path="/page-user-dash" element={<PageUserDash />} />
         <Route path="/dashUser" element={<DashUser />}>
           <Route path="CrudUser/message/:id" element={<CrudUser />} />
           <Route path="taskUser/:id" element={<DataTableUser />} />
           <Route path="calendar" element={<Calendar />} />
           <Route path="schedule" element={<Schedule />} />
+          <Route path="page-user-dash" element={<PageUserDash />} />
         </Route>
       </Routes>
     </BrowserRouter>
