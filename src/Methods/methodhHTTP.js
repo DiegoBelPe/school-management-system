@@ -33,16 +33,19 @@ const methodHTTP = () => {
     options.method = 'POST';
     return customFetch(url, options);
   };
+
   const patch = (url, opt = {}) => {
     const options = opt;
     options.method = 'PATCH';
     return customFetch(url, options);
   };
+
   const put = (url, opt = {}) => {
     const options = opt;
     options.method = 'PUT';
     return customFetch(url, options);
   };
+
   const del = (url, opt = {}) => {
     const options = opt;
     options.method = 'DELETE';
