@@ -10,21 +10,25 @@ function PageUserDash() {
         <div className={style.container_card_info_title}>
           <img
             className={style.image__card}
-            src="https://res.cloudinary.com/borismg04/image/upload/v1651633044/jcs7g28mquibdzxxq2sc.jpg"
+            src="http://res.cloudinary.com/borismg04/image/upload/v1652115151/hxu07c2avtja5mpummu8.png"
             alt=""
             srcSet=""
           />
-        </div>
-        <div className={style.container_info__text}>
-          <h2> Datos del estudiante</h2>
-          <h4> Nombres </h4>
-          <h4> Curso </h4>
-          <h4> Identificacion </h4>
-          <h4> Año academico </h4>
+          <div className={style.container_info}>
+            <h2 className={style.container_infoTitle}> Datos del estudiante</h2>
+            <div className={style.container_info__label}>
+              <h4> Nombres: Julián Beltrán </h4>
+              <h4> Curso: 302 </h4>
+              <h4> Identificación: 12345678 </h4>
+              <h4> Año académico: Tercero </h4>
+            </div>
+          </div>
         </div>
       </div>
       <div className={style.container__accordion}>
         <AccordionUi />
+      </div>
+      <div className={style.container__Muiaccordion}>
         <MuiAccordion />
       </div>
     </div>
