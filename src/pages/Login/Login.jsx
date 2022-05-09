@@ -1,6 +1,5 @@
 import './Login.css';
 import { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { login } from '../../store/auth/actions/auth';
@@ -16,15 +15,13 @@ const required = (value) => {
   }
 };
 
-function Login(props) {
-  const { history } = props;
+function Login() {
   const form = useRef();
   /*   const checkBtn = useRef(); */
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.auth);
-  /* const rolUser = useSelector((state) => state.auth.user.rol); */
   /* const { message } = useSelector((state) => state.message); */
   const dispatch = useDispatch();
 
@@ -42,7 +39,6 @@ function Login(props) {
     if (username) {
       dispatch(login(username, password))
         .then(() => {
-          history.push('/dash');
           window.location.reload();
         })
         .catch((error) => {
@@ -54,7 +50,14 @@ function Login(props) {
     }
   };
   if (isLoggedIn) {
-    return <Navigate to="/dash" />;
+    const { rol } = JSON.parse(localStorage.getItem('user'));
+    console.log(rol);
+    if (rol === 'admin') {
+      return <Navigate to="/dash" />;
+    }
+    if (rol === 'parent') {
+      return <Navigate to="/dashUser" />;
+    }
   }
 
   return (
@@ -105,12 +108,5 @@ function Login(props) {
     </div>
   );
 }
-Login.propTypes = {
-  history: PropTypes.string,
-};
-
-Login.defaultProps = {
-  history: '',
-};
 
 export default Login;
