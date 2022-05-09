@@ -57,7 +57,7 @@ export async function updateTask(task) {
 
 export async function deleteTask(id) {
   try {
-    const resp = await fetch(`${BASE_URL}/api/tareas/${id}`, {
+    const resp = await fetch(`${BASE_URL}/api/grade/homeWork/${id}`, {
       method: 'DELETE',
     });
     const deletedTask = await resp.json();
