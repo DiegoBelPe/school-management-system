@@ -203,7 +203,8 @@ function DataTable() {
       <p>
         Estás seguro que deseas eliminar
         <br />
-        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>?
+        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>
+        ?
       </p>
       <div align="right">
         <Button color="secondary" onClick={handleSubmitDelete}>
@@ -232,8 +233,8 @@ function DataTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data &&
-              data.map((tarea) => (
+            {data
+              && data.map((tarea) => (
                 <TableRow key={tarea.id}>
                   <TableCell>{tarea.course}</TableCell>
                   <TableCell>{tarea.description}</TableCell>
