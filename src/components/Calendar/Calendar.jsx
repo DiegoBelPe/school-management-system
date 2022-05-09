@@ -7,7 +7,7 @@ import styles from './Calendar.css';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function Calendar() {
-  const { data: events, error } = useSWR('http://localhost:8080/api/calendar', fetcher);
+  const { data: events, error } = useSWR('https://backend-school-management.herokuapp.com/api/calendar', fetcher);
   if (error) {
     return <div>Tenemos un problema...</div>;
   }

@@ -1,11 +1,11 @@
-import useSWR from 'swr';
+/* import useSWR from 'swr';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress'; */
 import styles from './Schedule.module.css';
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+/* const fetcher = (...args) => fetch(...args).then((res) => res.json()); */
 function Schedule() {
   // const [events, setEvents] = useState([]);
   // useEffect(() => {
@@ -17,7 +17,7 @@ function Schedule() {
   //   fetchData();
   // }, []);
 
-  const { data: events, error } = useSWR('http://localhost:8080/api/schedules', fetcher);
+  /* const { data: events, error } = useSWR('http://localhost:8080/api/schedules', fetcher);
   if (error) {
     return <div>Tenemos un problema...</div>;
   }
@@ -30,11 +30,12 @@ function Schedule() {
   }
   const handleDateClick = (selectionInfo) => {
     console.log(selectionInfo);
-  };
+  }; */
 
   return (
     <div>
-      <FullCalendar
+      <img className={styles.horario__img} src="https://res.cloudinary.com/borismg04/image/upload/v1652128997/horario_fws5l0.png" alt="" />
+      {/* <FullCalendar
         plugins={[timeGridPlugin, interactionPlugin]}
         locale="es"
         weekends={false}
@@ -55,7 +56,7 @@ function Schedule() {
         expandRows
         aspectRatio="1.5"
         // events={events}
-      />
+      /> */}
     </div>
   );
 }

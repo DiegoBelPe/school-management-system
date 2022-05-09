@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/login';
+const API_URL = 'https://backend-school-management.herokuapp.com/login';
 
 const login = (email, password) => axios.post(API_URL, {
   email,
