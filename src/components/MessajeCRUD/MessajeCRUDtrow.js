@@ -37,10 +37,10 @@ MessajeCRUDtrow.propTypes = {};
 
 MessajeCRUDtrow.propTypes = {
   el: PropTypes.shape({
-    remitente: PropTypes.string.isRequired,
-    asunto: PropTypes.string.isRequired,
-    mensaje: PropTypes.string.isRequired,
-    _id: PropTypes.string.isRequired,
+    remitente: PropTypes.string,
+    asunto: PropTypes.string,
+    mensaje: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
   setDataToEdit: PropTypes.func.isRequired,
   deleteData: PropTypes.func.isRequired,
