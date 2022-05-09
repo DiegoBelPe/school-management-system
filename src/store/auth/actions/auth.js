@@ -8,7 +8,9 @@ import {
 } from './types';
 import AuthService from '../services/auth.service';
 import { createTask } from '../../../services/task';
-// import { createMessage } from '../../../components/MessajeCRUD/CrudApi';
+import methodHTTP from '../../../Methods/methodhHTTP';
+
+const api = methodHTTP();
 
 export const login = (email, password) => (dispatch) => AuthService.login(email, password).then(
   (data) => {
@@ -50,11 +52,11 @@ export const postTask = (id, task) => (dispatch) => {
   });
 };
 
-// export const postMessage = (id, message) => (dispatch) => {
-//   createMessage(id, message).then(() => {
-//     dispatch({
-//       type: CREATE_MESSAGE,
-//       payload: { message },
-//     });
-//   });
-// };
+export const postMessage = (id, message) => (dispatch) => {
+  api.post(id, message).then(() => {
+    dispatch({
+      type: CREATE_MESSAGE,
+      payload: { message },
+    });
+  });
+};

@@ -3,6 +3,7 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   CREATE_TASK,
+  CREATE_MESSAGE,
 } from '../actions/types';
 
 const user = JSON.parse(localStorage.getItem('user'));
@@ -45,6 +46,21 @@ export default function loginUser(state = initialState, action) {
           ],
         },
       };
+
+    case CREATE_MESSAGE:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          gradeId: [
+            {
+              ...state.user.gradeId[0],
+              mensajes: [...state.user.gradeId[0].mensajes, payload.message],
+            },
+          ],
+        },
+      };
+
     default:
       return state;
   }
