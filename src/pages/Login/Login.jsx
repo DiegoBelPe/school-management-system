@@ -56,7 +56,7 @@ function Login() {
       return <Navigate to="/dash" />;
     }
     if (rol === 'parent') {
-      return <Navigate to="/dashUser" />;
+      return <Navigate to="/dashUser/page-user-dash" />;
     }
   }
 
