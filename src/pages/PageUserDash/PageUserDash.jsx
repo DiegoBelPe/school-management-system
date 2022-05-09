@@ -17,7 +17,7 @@ function PageUserDash() {
           <div className={style.container_info}>
             <h2 className={style.container_infoTitle}> Datos del estudiante</h2>
             <div className={style.container_info__label}>
-              <h4> Nombres: Cristian Moreno </h4>
+              <h4> Nombres: Julián Beltrán </h4>
               <h4> Curso: 302 </h4>
               <h4> Identificación: 12345678 </h4>
               <h4> Año académico: Tercero </h4>
@@ -28,7 +28,9 @@ function PageUserDash() {
       <div className={style.container__accordion}>
         <AccordionUi />
       </div>
-      <MuiAccordion />
+      <div className={style.container__Muiaccordion}>
+        <MuiAccordion />
+      </div>
     </div>
   );
 }
