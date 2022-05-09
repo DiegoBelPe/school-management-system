@@ -55,7 +55,7 @@ function DasNav() {
 
       <div id="menu-items">
         <div className="item">
-          <Link to="/dashUser">
+          <Link to="/dashUser/page-user-dash">
             <div className="icon">
               {' '}
               <img src={images.img2} alt="icono home" />
