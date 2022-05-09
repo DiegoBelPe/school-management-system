@@ -7,7 +7,7 @@ function IntroHome() {
   return (
     <div className={styles.container_intro}>
       <div className={styles.container_intro_text}>
-        <h1 className={styles.title_intro}>El aprendizaje es un continuo</h1>
+        <h1 className={styles.title_intro}>El aprendizaje es un proceso continuo</h1>
         <p className={styles.text_intro}>
           La educación ayuda a la persona a aprender a ser lo que es capaz de
           ser.
