@@ -1,11 +1,30 @@
+.container__user_dash{
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  flex-wrap: wrap;
+  row-gap: 3rem;
+  column-gap: 10rem;
+}
+
 .container_card_info{
   width: 40rem;
   height: 20rem;
-  margin: 3rem 3rem;
   box-shadow: 0px 0px 10px #454545;
   padding: 1rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-content: center;
+}
+
+.container_card_info_title{
+  display:flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content:center;
+  height: 100%;
 }
 
 .container__accordion{
@@ -13,11 +32,30 @@
 }
 
 .image__card{
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
+  align-self: center;
+  border-radius: 1rem;
 }
 
-.container_info__text{
-  
+.container_info{
+  width: 15rem;
+  height: 15rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
+
+.container_info__label{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container__Muiaccordion{
+  align-self: flex-start;
+}
+
 
