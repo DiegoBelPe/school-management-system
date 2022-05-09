@@ -1,5 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
+import style from './Checkout.module.css';
+
 function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
@@ -34,12 +36,29 @@ function CheckoutForm() {
     } else {
       console.log('Payment Metodo Error!', error);
     }
+    document.querySelector('form').reset();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={style.form__container} onSubmit={handleSubmit}>
+      <h2 className="payment-form__title">Información de pago</h2>
+      <label className={style.label__pagos} htmlFor="name">
+        Nombres
+        <input className={style.input__pagos} id="name" type="text" name="name" />
+      </label>
+      <label className={style.label__pagos} htmlFor="email">
+        Correo
+        <input className={style.input__pagos} type="text" name="lastname" />
+      </label>
+
+      <label className={style.label__pagos} htmlFor="text">
+        Valor a Pagar
+        <input className={style.input__pagos} type="text" name="amount" />
+      </label>
+      <h3 className={style.title__datos__tarjeta}>Datos de la tarjeta</h3>
       <CardElement />
-      <button type="submit">Submit</button>
+      <br />
+      <button className={style.button__stripe} type="submit">Pagar</button>
     </form>
   );
 }

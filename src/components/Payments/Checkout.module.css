@@ -1,0 +1,27 @@
+.button__stripe{
+  background-color: blue;
+  width: 4rem;
+  height: 2rem;
+  color: aliceblue;
+  border-radius: 7px;
+}
+
+/* .form__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.label__pagos{
+  margin: 3px;
+}
+
+.input__pagos{
+  margin: 3px;
+  width: 100%;
+}
+
+.title__datos__tarjeta{
+  margin: 4px;
+}
