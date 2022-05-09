@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './DasNav.css';
 import { Link } from 'react-router-dom';
 import images from '../../assets/images';
+import { logout } from '../../store/auth/actions/auth';
 
 function DasNav() {
   const [openC, setOpenC] = useState(false);
@@ -12,6 +13,11 @@ function DasNav() {
   const messageUrl = `/dash/message/${messageId}`;
   const openMenu = () => {
     setOpenC(!openC);
+  };
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -134,7 +140,13 @@ function DasNav() {
           </Link>
         </div>
         <div className="item separator" />
-        <div className="item">
+        <div
+          className="item"
+          onClick={handleLogout}
+          onKeyPress={handleLogout}
+          role="button"
+          tabIndex="0"
+        >
           <Link to="/">
             <div className="icon">
               {' '}
