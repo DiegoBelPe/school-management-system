@@ -1,4 +1,10 @@
-import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from '../actions/types';
+import {
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT,
+  CREATE_TASK,
+  CREATE_MESSAGE,
+} from '../actions/types';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const initialState = user
@@ -27,6 +33,35 @@ export default function loginUser(state = initialState, action) {
         isLoggedIn: false,
         user: null,
       };
+    case CREATE_TASK:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          gradeId: [
+            {
+              ...state.user.gradeId[0],
+              homeWorks: [...state.user.gradeId[0].homeWorks, payload.task],
+            },
+          ],
+        },
+      };
+
+    case CREATE_MESSAGE:
+      console.log('prueba', payload.message);
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          gradeId: [
+            {
+              ...state.user.gradeId[0],
+              mensajes: [...state.user.gradeId[0].mensajes, payload.message],
+            },
+          ],
+        },
+      };
+
     default:
       return state;
   }

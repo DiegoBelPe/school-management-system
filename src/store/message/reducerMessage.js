@@ -1,4 +1,4 @@
-import { CREATE_DATA, DELETE_DATA, ERROR_DATA, READ_ALL_DATA, UPDATE_DATA } from './typesMessage';
+import { DELETE_DATA, ERROR_DATA, READ_ALL_DATA, UPDATE_DATA } from './typesMessage';
 
 export const initialState = {
   db: [],
@@ -10,15 +10,14 @@ function messageReducer(state = initialState, action) {
     case READ_ALL_DATA:
       return {
         ...state,
-        db: action.payload.map((data) => data),
+        db: action.payload,
       };
-
-    case CREATE_DATA: {
-      return {
-        ...state,
-        db: [...state.db, action.payload],
-      };
-    }
+    // case CREATE_DATA: {
+    //   return {
+    //     ...state,
+    //     db: [...state.db, action.payload],
+    //   };
+    // }
     case UPDATE_DATA: {
       const { _id: id } = action.payload;
       const newData = state.db.map((item) => {

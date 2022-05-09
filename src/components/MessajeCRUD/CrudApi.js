@@ -1,7 +1,9 @@
 /* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createAction, deleteAction, errorAction, readAllAction, updateAction } from '../../store/message/actionsMessage';
+import { useParams } from 'react-router-dom';
+import { deleteAction, errorAction, readAllAction, updateAction } from '../../store/message/actionsMessage';
+import { postMessage } from '../../store/auth/actions/auth';
 import methodHTTP from '../../Methods/methodhHTTP';
 import MessajeCRUDform from './MessajeCRUDform';
 import MessajeCRUDtable from './MessajeCRUDtable';
@@ -10,20 +12,20 @@ import MessageCRUD from './MessageCRUD';
 import styles from './CrudApi.module.css';
 
 function CrudApi() {
-  const state = useSelector((state) => state);
+  const db = useSelector((state) => state.auth.user.gradeId[0].mensajes);
   const dispatch = useDispatch();
-  const { db } = state.messageReducer;
   const [dataToEdit, setDataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const api = methodHTTP();
-  const url = 'https://backend-school-management.herokuapp.com/api/message';
+  const url = 'https://backend-school-management.herokuapp.com/api/grade/messages';
+  const { id } = useParams();
 
   useEffect(() => {
     setLoading(true);
     methodHTTP()
-      .get(url)
+      .get(`${url}/${id}`)
       .then((res) => {
         if (!res.err) {
           dispatch(readAllAction(res));
@@ -35,9 +37,10 @@ function CrudApi() {
         setLoading(false);
       });
   }, [url, dispatch]);
-
   const createData = (data) => {
+    const endpointPost = `${url}/${id}`;
     const date = data;
+
     date.id = Date.now();
 
     const options = {
@@ -45,9 +48,9 @@ function CrudApi() {
       headers: { 'content-type': 'application/json' },
     };
 
-    api.post(url, options).then((res) => {
+    api.post(endpointPost, options).then((res) => {
       if (!res.err) {
-        dispatch(createAction(res));
+        dispatch(postMessage(id, data));
       } else {
         setError(res);
       }
@@ -95,6 +98,7 @@ function CrudApi() {
       console.log('No se elimino el registro');
     }
   };
+  console.log(db);
 
   return (
     <div className={styles.fondo}>

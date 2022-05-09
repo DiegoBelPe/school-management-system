@@ -4,3 +4,9 @@
   align-items: center;
   height: 100vh;
 }
+
+.horario__img{
+  width: 60rem;
+  height: 40rem;
+  margin-top: 1rem;
+}

@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 import './DasNav.css';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import images from '../../assets/images';
+import { logout } from '../../store/auth/actions/auth';
 
 function DasNav() {
   const [openC, setOpenC] = useState(false);
-  const studentId = useSelector((state) => state.auth.user.studentId[0].id);
+  // const studentId = useSelector((state) => state.auth.user.studentId[0].id);
   const gradeId = useSelector((state) => state.auth.user.studentId[0].gradeId);
+
   const urlTasks = `/dashUser/taskUser/${gradeId}`;
-  const urlMessage = `/dashUser/CrudUser/message/${studentId}`;
+  const urlMessage = `/dashUser/CrudUser/message/${gradeId}`;
   const openMenu = () => {
     setOpenC(!openC);
+  };
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -36,18 +44,18 @@ function DasNav() {
       <div id="profile">
         <div id="profile-photho">
           <img
-            src="https://res.cloudinary.com/borismg04/image/upload/v1651782518/vokrlm18kyulpsjtmucn.png"
+            src="http://res.cloudinary.com/borismg04/image/upload/v1652115151/hxu07c2avtja5mpummu8.png"
             alt=""
           />
         </div>
         <div id="profile-name">
-          <span>Boris Monroy</span>
+          <span>Julián Beltrán</span>
         </div>
       </div>
 
       <div id="menu-items">
         <div className="item">
-          <Link to="/dashUser">
+          <Link to="/dashUser/page-user-dash">
             <div className="icon">
               {' '}
               <img src={images.img2} alt="icono home" />
@@ -119,7 +127,13 @@ function DasNav() {
           </Link>
         </div>
         <div className="item separator" />
-        <div className="item">
+        <div
+          className="item"
+          onClick={handleLogout}
+          onKeyPress={handleLogout}
+          role="button"
+          tabIndex="0"
+        >
           <Link to="/">
             <div className="icon">
               {' '}

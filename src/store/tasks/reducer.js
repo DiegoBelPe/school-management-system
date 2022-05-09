@@ -10,11 +10,6 @@ function todoApp(state = initialState, action) {
         ...state,
         tasks: action.payload,
       };
-    case 'CREATE_TASK':
-      return {
-        ...state,
-        tasks: [...state.tasks, action.payload],
-      };
     case 'UPDATE_TASK':
       return {
         ...state,

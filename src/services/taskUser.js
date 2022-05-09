@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080/api/grade';
+const BASE_URL = 'https://backend-school-management.herokuapp.com/api/grade';
 
 export async function getTask() {
   try {

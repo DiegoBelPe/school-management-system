@@ -39,7 +39,7 @@ function MessajeCRUDtable({ data, setDataToEdit, deleteData }) {
 MessajeCRUDtable.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.number,
       remitente: PropTypes.string.isRequired,
       asunto: PropTypes.string.isRequired,
       mensaje: PropTypes.string.isRequired,
