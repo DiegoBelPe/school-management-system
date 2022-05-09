@@ -1,8 +1,9 @@
-const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+/* const BASE_URL = process.env.REACT_APP_API_BASE_URL; */
+const BASE_URL = 'http://localhost:8080';
 
-export async function getTask() {
+export async function getTask(id) {
   try {
-    const resp = await fetch(`${BASE_URL}/api/tareas`);
+    const resp = await fetch(`${BASE_URL}/api/grade/homeWork/${id}`);
     const tasks = await resp.json();
     return tasks;
   } catch (error) {
@@ -19,9 +20,9 @@ export async function oneTask(id) {
   }
 }
 
-export async function createTask(task) {
+export async function createTask(id, task) {
   try {
-    const resp = await fetch(`${BASE_URL}/api/tareas`, {
+    const resp = await fetch(`${BASE_URL}/api/grade/homeWork/${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

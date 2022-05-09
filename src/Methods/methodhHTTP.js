@@ -26,6 +26,7 @@ const methodHTTP = () => {
       .catch((err) => err);
   };
   const get = (url, options = {}) => customFetch(url, options);
+
   const post = (url, opt = {}) => {
     const options = opt;
 

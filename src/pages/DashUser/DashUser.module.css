@@ -39,6 +39,7 @@
 
 .main {
   grid-area: main;
+  background-image: url('../../assets/FondoPago.png');
 }
 
 .footer {

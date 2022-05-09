@@ -21,6 +21,9 @@ import CrudUser from './components/MessageUser/CrudUser';
 import DataTableUser from './components/DataTableUser';
 import DashUser from './pages/DashUser/DashUser';
 import IntroHome from './components/IntroHome/IntroHome';
+import AccordionUI from './components/AccordionUI/AccordionUI';
+import PageUserDash from './pages/PageUserDash/PageUserDash';
+import MuiAccordion from './components/MuiAccordion/MuiAccordion';
 
 function App() {
   return (
@@ -30,24 +33,28 @@ function App() {
           <Route path="/about" element={<About />} />
         </Route>
         <Route path="/dash" element={<Dash />}>
-          <Route path="table" element={<DataTable />} />
+          <Route path="table/:id" element={<DataTable />} />
           <Route path="schedule" element={<Schedule />} />
           <Route path="calendar" element={<Calendar />} />
-          <Route path="messages" element={<CrudApi />} />
+          <Route path="message/:id" element={<CrudApi />} />
           <Route path="estudiantes" element={<Student />} />
         </Route>
+        <Route path="/Accordion" element={<MuiAccordion />} />
         <Route path="/navbar" element={<NavBar />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/functioncontainer" element={<FunctionContainer />} />
         <Route path="/modals" element={<Modals />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/CrudApi" element={<CrudApi />} />
+        <Route path="/message/:id" element={<CrudApi />} />
         <Route path="/verify-account/:token" element={<Activate />} />
         <Route path="/uploadImage" element={<UploadImage />} />
         <Route path="/payments" element={<Payments />} />
         <Route path="/pagos" element={<PayPagos />} />
         <Route path="/IntroHome" element={<IntroHome />} />
+        <Route path="/datatable" element={<DataTable />} />
+        <Route path="/casdUser" element={<AccordionUI />} />
+        <Route path="/page-user-dash" element={<PageUserDash />} />
         <Route path="/dashUser" element={<DashUser />}>
           <Route path="CrudUser/message/:id" element={<CrudUser />} />
           <Route path="taskUser/:id" element={<DataTableUser />} />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import {
   Table,
   TableContainer,
@@ -13,6 +14,7 @@ import {
 } from '@material-ui/core';
 import { Edit, Delete } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import style from './DataTable.module.css';
 import {
   getTask,
   createTask,
@@ -48,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 function DataTable() {
   const styles = useStyles();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.taskReducer.tasks);
+  const data = useSelector((state) => state.auth.user.gradeId[0].homeWorks);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
@@ -83,10 +85,10 @@ function DataTable() {
     // eslint-disable-next-line no-unused-expressions
     caso === 'Editar' ? abrirCerrarModalEditar() : abrirCerrarModalEliminar();
   };
-
+  const { id } = useParams();
   useEffect(() => {
     const fetchTasks = async () => {
-      const results = await getTask();
+      const results = await getTask(id);
       dispatch(getAllTasks(results));
     };
     fetchTasks();
@@ -94,27 +96,21 @@ function DataTable() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createTask(consolaSeleccionada);
+    await createTask(id, consolaSeleccionada);
     dispatch(postTask(consolaSeleccionada));
     abrirCerrarModalInsertar();
   };
 
   const handleSubmitEdit = async () => {
     await updateTask(consolaSeleccionada);
-    dispatch(
-      patchTask(
-        consolaSeleccionada,
-      ),
-    );
+    dispatch(patchTask(consolaSeleccionada));
     abrirCerrarModalEditar();
   };
 
   const handleSubmitDelete = async (e) => {
     e.preventDefault();
     await deleteTask(consolaSeleccionada.id);
-    dispatch(
-      deleteTasks(consolaSeleccionada.id),
-    );
+    dispatch(deleteTasks(consolaSeleccionada.id));
     abrirCerrarModalEliminar();
   };
   const bodyInsertar = (
@@ -222,7 +218,7 @@ function DataTable() {
   );
   return (
     <div>
-      <h1>Lista de Tareas</h1>
+      <h1 className={style.task__title}>Lista de Tareas</h1>
       <br />
       <Button onClick={abrirCerrarModalInsertar}>Insertar</Button>
       <br />
