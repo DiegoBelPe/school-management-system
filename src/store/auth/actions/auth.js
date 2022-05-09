@@ -50,11 +50,11 @@ export const postTask = (id, task) => (dispatch) => {
   });
 };
 
-export const postMessage = (id, message) => (dispatch) => {
-  createMessage(id, message).then(() => {
-    dispatch({
-      type: CREATE_MESSAGE,
-      payload: { message },
-    });
-  });
-};
+// export const postMessage = (id, message) => (dispatch) => {
+//   createMessage(id, message).then(() => {
+//     dispatch({
+//       type: CREATE_MESSAGE,
+//       payload: { message },
+//     });
+//   });
+// };
