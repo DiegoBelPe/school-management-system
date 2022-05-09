@@ -29,6 +29,9 @@ export async function createTask(id, task) {
       },
       body: JSON.stringify(task),
     });
+    if (!resp.ok) {
+      throw new Error(resp.status);
+    }
     const newTask = await resp.json();
     return newTask;
   } catch (error) {

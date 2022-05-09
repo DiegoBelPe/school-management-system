@@ -17,16 +17,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import style from './DataTable.module.css';
 import {
   getTask,
-  createTask,
   deleteTask,
   updateTask,
 } from '../../services/task';
 import {
   getAllTasks,
-  postTask,
   patchTask,
   deleteTasks,
 } from '../../store/tasks/actions';
+import { postTask } from '../../store/auth/actions/auth';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -94,10 +93,9 @@ function DataTable() {
     fetchTasks();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    await createTask(id, consolaSeleccionada);
-    dispatch(postTask(consolaSeleccionada));
+    dispatch(postTask(id, consolaSeleccionada));
     abrirCerrarModalInsertar();
   };
 
@@ -205,8 +203,7 @@ function DataTable() {
       <p>
         Estás seguro que deseas eliminar
         <br />
-        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>
-        ?
+        <b>{consolaSeleccionada && consolaSeleccionada.course}</b>?
       </p>
       <div align="right">
         <Button color="secondary" onClick={handleSubmitDelete}>
@@ -235,8 +232,8 @@ function DataTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data
-              && data.map((tarea) => (
+            {data &&
+              data.map((tarea) => (
                 <TableRow key={tarea.id}>
                   <TableCell>{tarea.course}</TableCell>
                   <TableCell>{tarea.description}</TableCell>
