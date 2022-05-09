@@ -10,7 +10,7 @@ function PageUserDash() {
         <div className={style.container_card_info_title}>
           <img
             className={style.image__card}
-            src="http://res.cloudinary.com/borismg04/image/upload/v1652115151/hxu07c2avtja5mpummu8.png"
+            src="https://res.cloudinary.com/borismg04/image/upload/v1652115151/hxu07c2avtja5mpummu8.png"
             alt=""
             srcSet=""
           />
